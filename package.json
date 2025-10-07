@@ -4,8 +4,18 @@
   "description": "Bem-vindo ao repositório do **Pedy Açaí**, meu novo projeto que une tecnologia e paixão pelo açaí!  \r Este é um sistema web completo para gerenciamento e experiência digital da sorveteria, criado para oferecer aos clientes uma forma prática, visual e interativa de explorar os produtos e sabores da casa.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:css": "tailwindcss -i ./src/scss/style.scss -o ./public/css/style.css --watch",
+    "watch:sass": "sass --watch src/scss:public/assets/css"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "scss": "^0.2.4",
+    "tailwindcss": "^3.4.14"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.14"
+  }
 }
