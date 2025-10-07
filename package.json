@@ -1,0 +1,11 @@
+{
+  "name": "pagepedy",
+  "version": "1.0.0",
+  "description": "Bem-vindo ao repositório do **Pedy Açaí**, meu novo projeto que une tecnologia e paixão pelo açaí!  \r Este é um sistema web completo para gerenciamento e experiência digital da sorveteria, criado para oferecer aos clientes uma forma prática, visual e interativa de explorar os produtos e sabores da casa.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
