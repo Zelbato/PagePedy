@@ -22,13 +22,13 @@ while ($mp = $res->fetch_assoc()) {
                   VALUES ('$id_producao', '{$mp['id_mp']}', '$quant_usada')");
 
 
-    $conexao->query("INSERT INTO estoque (estoque_matp_id, estoque_tipo, estoque_quantidade, estoque_status, data_saida)
-                  VALUES ('{$mp['id_mp']}', 'Matéria Prima', '$quant_usada', 'Disponivel', '$data')");
+    $conexao->query("INSERT INTO estoque (estoque_matp_id, estoque_tipo, estoque_quantidade,  data_saida)
+                  VALUES ('{$mp['id_mp']}', 'Matéria Prima', '$quant_usada', '$data')");
 }
 
 
-$conexao->query("INSERT INTO estoque (estoque_produto_id, estoque_tipo, estoque_quantidade, estoque_status, data_entrada)
-              VALUES ('$produto_id', 'Produto', '$quantidade', 'Disponivel', '$data')");
+$conexao->query("INSERT INTO estoque (estoque_produto_id, estoque_tipo, estoque_quantidade, data_entrada)
+              VALUES ('$produto_id', 'Produto', '$quantidade', '$data')");
 
 echo "✅ Produção registrada e estoque atualizado!";
 ?>
