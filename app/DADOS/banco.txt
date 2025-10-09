@@ -83,7 +83,6 @@ CREATE TABLE estoque (
     estoque_produto_id INT,
     estoque_tipo ENUM('Matéria Prima', 'Produto') NOT NULL,
     estoque_quantidade INT,
-    estoque_status ENUM('Disponivel','Esgotado') DEFAULT 'Esgotado',
     data_entrada DATE NOT NULL,
     data_saida DATE,
     FOREIGN KEY (estoque_produto_id) REFERENCES produto(id_prod),
