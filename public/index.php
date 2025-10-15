@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php
+// public/index.php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste Tailwind</title>
-    <link rel="stylesheet" href="assets/css/output.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+// Inclui a conexão com o banco (caminho relativo da pasta public para app/DADOS)
+require_once '../app/DADOS/config.php';
 
-<body class="flex justify-center items-center min-h-screen bg-gray-100">
+// Cabeçalho e rodapé (opcional)
+// include '../app/views/includes/header.php';
 
-    <div class="bg-red-500 text-white p-6 rounded-xl shadow-xl text-2xl font-bold">
-        Tailwind voltou a funcionar! 🚀
-    </div>
+// Pega o valor da página
+$page = isset($_GET['page']) ? $_GET['page'] : 'vcadastro_usuario';
 
-</body>
+// Caminho completo do arquivo na pasta views
+$file = '../app/view/' . $page . '.php';
 
-</html>
+// Inclui o arquivo se existir
+if (file_exists($file)) {
+    include $file;
+} else {
+    echo "<h1>Página não encontrada!</h1>";
+}
+
+// include '../app/views/includes/footer.php';
+?>
