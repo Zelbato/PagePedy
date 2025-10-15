@@ -1,0 +1,7 @@
+
+@use '../variables' as v;
+
+*{
+    background: v.$primaryBackg;
+    color: v.$secondText;
+}

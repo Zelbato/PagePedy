@@ -1,3 +1,8 @@
+* {
+  background: #ac34db;
+  color: rgb(25, 25, 25);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;/*# sourceMappingURL=style.css.map */
