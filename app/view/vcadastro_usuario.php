@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Principal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../../public/assets/css/style.css">
+   <link rel="stylesheet" href="<?php echo dirname($_SERVER['PHP_SELF']); ?>/assets/scss/style.css">
 
+    <title>Pagina Principal</title>
 
 </head>
 
@@ -28,8 +27,6 @@
             <input type="text" id="endereco" name="endereco" required>
 
             <button type="submit">Cadastrar</button>
-
-
         </form>
     </section>
 
