@@ -1,1 +1,39 @@
-@import 'pages/cadastro';
+@import 'pages/home';
+
+
+
+
+// Reset global
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Body
+body {
+  height: auto;
+  width: 100%;
+  font-family: $font;
+  background: $branco;
+}
+
+// Animação JS
+// .js-global {
+//   opacity: 0;
+//   transition: 0.5s;
+//   transform: translateX(-10rem);
+
+//   &.active {
+//     transform: translateX(0);
+//     opacity: 1;
+//   }
+// }
+
+// Responsivo
+@media (max-width: 1000px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+}

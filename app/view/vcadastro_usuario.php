@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="<?php echo dirname($_SERVER['PHP_SELF']); ?>/assets/scss/style.css">
-
+   <!-- <link rel="stylesheet" href="/PAGEPEDY/public/assets/scss/style.css"><--IMPORTANTE -->
+   <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/scss/style.css"><!--IMPORTANTE -->
     <title>Pagina Principal</title>
 
 </head>

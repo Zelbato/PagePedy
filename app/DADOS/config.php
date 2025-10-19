@@ -12,3 +12,9 @@ if($conexao->connect_errno){
  echo "";
 }
 ?>
+
+
+<!-- NÃO DELETAR -->
+<?php
+define('BASE_URL', '/PAGEPEDY/public/');
+?>
