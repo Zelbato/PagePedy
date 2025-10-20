@@ -17,26 +17,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data_venda = $_POST['data_venda'];
     $valor_total = $_POST['valor_total'];
 
-    // Conexão com o banco de dados
+   
     $conexao= new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-    // Verifica conexão
     if ($conexao>connect_error) {
         die("Conexão falhou: " . $conexao>connect_error);
     }
 
-    // Prepara e vincula
+  
     $stmt = $conexao>prepare("INSERT INTO receita (receita_prod_id, tipo_receita,descricao_R, data_venda, valor_total) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("issss", $receita_prod_id, $tipo_receita, $descricao_R, $data_venda, $valor_total);
 
-    // Executa a declaração
+
     if ($stmt->execute()) {
         echo "Nova receita cadastrada com sucesso!";
     } else {
         echo "Erro: " . $stmt->error;
     }
 
-    // Fecha a declaração e a conexão
+   
     $stmt->close();
     $conexao>close();
 }   
