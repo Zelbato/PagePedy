@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($stmt->execute()) {
         echo "Usuário cadastrado com sucesso!";
+        header("Location: ../view/home.php");
     } else {
         echo "Erro ao cadastrar usuário: " . $stmt->error;
     }   

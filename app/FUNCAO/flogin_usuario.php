@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['user_access'] = $acesso;
 
             echo "Login bem-sucedido! Bem-vindo, " . htmlspecialchars($nome) . ".";
+                  header("Location: ../view/home.php");
         } else {
             echo "Senha incorreta.";
         }
