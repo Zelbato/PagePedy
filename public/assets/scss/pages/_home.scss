@@ -1,0 +1,129 @@
+// ======================================
+// 🎨 Paleta de cores e fontes
+// ======================================
+$roxo-escuro: #7919c7;
+$preto: rgb(25, 25, 25);
+$branco: #f3f6f9;
+$font: 'Poppins', sans-serif;
+
+// ======================================
+// 🔹 Reset global
+// ======================================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// ======================================
+// 🔹 Body
+// ======================================
+body {
+  height: auto;
+  width: 100%;
+  font-family: $font;
+  background: $branco;
+}
+
+// ======================================
+// 🔹 Header
+// ======================================
+header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 99;
+  background: $preto;
+  box-shadow: 0 5px 100px #00000000;
+  transition: all 0.5s;
+
+  &.rolagem {
+    background: $preto;
+    border-bottom: 1px solid $preto;
+  }
+
+  .logo {
+    flex: 1;
+    margin: 0 5% 0 0;
+
+    a {
+      color: $branco;
+      font-family: $font;
+      font-size: 30px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+  }
+
+  .gradient {
+    font-size: 30px;
+    color: $roxo-escuro;
+  }
+
+  .teste {
+    color: $roxo-escuro;
+    font-size: 18px;
+  }
+
+  ul {
+    flex: 4;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0;
+
+    li {
+      list-style: none;
+      margin: 1% 1% 0 0;
+
+      a {
+        text-decoration: none;
+        color: $branco;
+        font-weight: 500;
+        text-transform: capitalize;
+        font-size: 18px;
+        position: relative;
+      }
+    }
+  }
+}
+
+// ======================================
+// 🔹 Ícones
+// ======================================
+i {
+  color: $branco;
+}
+
+// ======================================
+// 🔹 Checkbox oculto
+// ======================================
+#chk1 {
+  display: none;
+}
+
+// ======================================
+// 🔹 Animações JS
+// ======================================
+.js-global {
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateX(-10rem);
+
+  &.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// ======================================
+// 🔹 Responsivo
+// ======================================
+@media (max-width: 1000px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+}
