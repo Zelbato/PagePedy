@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-     <!--Icones Bootstrap-->
+    <!--Icones Bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--Icones Bootstrap-->
 
@@ -27,9 +28,10 @@
     <link rel="stylesheet" href="../../public/assets/scss/style.css">
     <title>PedyAçaí</title>
 </head>
+
 <body>
 
-<header class="header" role="banner">
+    <header class="header" role="banner">
 
         <div class="menu-mobile">
             <label for="chk1" onclick="menu()">
@@ -48,10 +50,17 @@
             <li><a id="#vocacional destaque" href="#" data-message=""><span class="teste">Cardápio</span></a>
             </li>
             <li><a id="#facul eventos" href="#" data-message="">Faculdades</a></li>
-            <!-- <li><a id="#cadastro cadastrar" href="cadastro.view.php" data-message="Opção de ir para o cadastro da sua 
+            <li><a id="#cadastro cadastrar" href="#" data-message="Opção de ir para o cadastro da sua "></a></li>
 
         </ul>
     </header>
-    
+
+    <main class="main">
+        <section class="inicio">
+            
+        </section>
+    </main>
+
 </body>
+
 </html>

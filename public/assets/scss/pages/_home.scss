@@ -1,7 +1,10 @@
 // ======================================
 // 🎨 Paleta de cores e fontes
 // ======================================
-$roxo-escuro: #7919c7;
+$roxo-escuro: #56125b;
+$verdeClaro:#7af21b;
+$verdeEscuro:#10a417;
+$cinza:#ddd6d6;
 $preto: rgb(25, 25, 25);
 $branco: #f3f6f9;
 $font: 'Poppins', sans-serif;
@@ -30,15 +33,20 @@ body {
 // ======================================
 header {
   width: 100%;
-  height: 60px;
+  height: 80px;
+  padding: 0 ;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   z-index: 99;
-  background: $preto;
+  background: $roxo-escuro;
   box-shadow: 0 5px 100px #00000000;
   transition: all 0.5s;
+
+  .menu-mobile{
+    display: none;
+  }
 
   &.rolagem {
     background: $preto;
@@ -47,7 +55,7 @@ header {
 
   .logo {
     flex: 1;
-    margin: 0 5% 0 0;
+    padding: 0 25px;
 
     a {
       color: $branco;
@@ -60,11 +68,11 @@ header {
 
   .gradient {
     font-size: 30px;
-    color: $roxo-escuro;
+    color: $verdeClaro;
   }
 
   .teste {
-    color: $roxo-escuro;
+    color: $verdeClaro;
     font-size: 18px;
   }
 
