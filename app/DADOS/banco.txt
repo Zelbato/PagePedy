@@ -100,28 +100,49 @@ CREATE TABLE despesas (
     descricao TEXT
 );
 
-
 CREATE TABLE receita (
     id_receita INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-     tipo_receita ENUM ('Produto','outro'),
-     descricao_R TEXT,
-    receita_prod_id INT,
+    tipo_receita ENUM('Produto', 'Outro') DEFAULT 'Produto',
+    descricao_R TEXT,
     data_venda DATE NOT NULL,
-    valor_total DECIMAL(10, 2) NOT NULL,
-    FOREIGN KEY (receita_prod_id) REFERENCES produto(id_prod)
+    valor_total DECIMAL(10, 2),
+    observacao TEXT
+);
+
+CREATE TABLE receita_produto (
+    id_receita INT NOT NULL,
+    id_prod INT NOT NULL,
+    quantidade INT NOT NULL,
+    preco_venda DECIMAL(10, 2) NOT NULL,
+    PRIMARY KEY (id_receita, id_prod),
+    FOREIGN KEY (id_receita) REFERENCES receita(id_receita),
+    FOREIGN KEY (id_prod) REFERENCES produto(id_prod)
 );
 
 
+
+<------------------------------------------------------------------------------------------------------------->
 CREATE TABLE orcamento (
     id_orc INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    orc_receita_id INT NOT NULL,
-    orc_despesas_id INT NOT NULL,
-    data_inicio DATE NOT NULL,
-    data_fim DATE NOT NULL,
-    valor_total DECIMAL(10, 2) NOT NULL,
+    empresa_id INT NOT NULL,
+    orc_despesas_id NOT NULL,
+    periodo_inicio DATE NOT NULL,
+    periodo_fim DATE NOT NULL,
+    receita_total DECIMAL(12, 2) DEFAULT 0.00,
+    despesa_total DECIMAL(12, 2) DEFAULT 0.00,
+    lucro_liquido DECIMAL(12, 2) GENERATED ALWAYS AS (receita_total - despesa_total) STORED,
+    valor_a_pagar DECIMAL(12, 2) DEFAULT 0.00,
+    status ENUM('Atualizado', 'Em Análise', 'Fechado') DEFAULT 'Atualizado',
+    ultima_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (empresa_id) REFERENCES empresa(id_empr),
+ );
+
+ orcamento_receita(
+    orc_id Int Not NULL,
+    orc_receita_id int Not NULL,
     FOREIGN KEY (orc_receita_id) REFERENCES receita(id_receita),
-    FOREIGN KEY (orc_despesas_id) REFERENCES despesas(id_despesas)
-);
+    FOREIGN KEY (orc_id) REFERENCES  orcamento(id_orc)
+ );
 
 
 CREATE TABLE rendimento_produto (

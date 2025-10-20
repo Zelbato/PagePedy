@@ -75,6 +75,38 @@
     ?>
         </select>
     <button type="submit">Deletar Produto</button>
+
+    </form>
+    <h1>todos os produtos</h1>
+
+    <?php
+    include '../DADOS/config.php';
+    $sql = "SELECT p.id_prod, p.nome_prod, p.descricao, p.preco, p.qtd_estoque, c.nome_cat 
+            FROM produto p 
+            JOIN categoria c ON p.categoria_id = c.id_cat"; 
+    $res = $conexao->query($sql);
+    echo "<table border='1'>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Quantidade em Estoque</th>
+                <th>Categoria</th>
+            </tr>";
+    while ($row = $res->fetch_assoc()) {
+        echo "<tr>
+                <td>{$row['id_prod']}</td>
+                <td>{$row['nome_prod']}</td>
+                <td>{$row['descricao']}</td>
+                <td>{$row['preco']}</td>
+                <td>{$row['qtd_estoque']}</td>
+                <td>{$row['nome_cat']}</td>
+              </tr>";
+    }
+    echo "</table>";
+    ?>
+    
     
 
 </body>

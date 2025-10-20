@@ -45,6 +45,32 @@
         <button type="submit">Deletar Despesa</button>
     </form>
     
+    <h1>editar despesas</h1>
+    <form action="../FUNCAO/fedite_despesas.php" method="POST">
+        <label for="id_despesas">ID da Despesa a ser editada:</label>
+        <input type="text" id="id_despesas" name="id_despesas" required><br>
+
+        <label for="categoria_despesa">Categoria da Despesa:</label>
+        <select id="categoria_despesa" name="categoria_despesa" required>
+            <option value="Fixa">Fixa</option>
+            <option value="Variável">Variável</option>
+        </select><br>
+
+        <label for="nome_despesa">Nome da Despesa:</label>
+        <input type="text" id="nome_despesa" name="nome_despesa" required><br>
+
+        <label for="valor_despesa">Valor da Despesa:</label>
+        <input type="number" step="0.01" id="valor_despesa" name="valor_despesa" required><br>
+
+        <label for="data_despesa">Data da Despesa:</label>
+        <input type="date" id="data_despesa" name="data_despesa" required><br>
+
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao"></textarea><br>
+
+        <button type="submit">Editar Despesa</button>
+    </form>
+    
 
 
     <h1>todas as despesas</h1>
