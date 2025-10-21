@@ -20,7 +20,7 @@
             <label>Matéria-prima:</label><br>
             <select name="estoque_matp_id">
                 <?php
-                include '../DADOS/config.php';
+                require_once '../DADOS/config.php';
                 $sql = "SELECT id_mp, nome_mp FROM materia_prima ORDER BY nome_mp";
                 $res = $conexao->query($sql);
                 while ($row = $res->fetch_assoc()) {
@@ -86,7 +86,7 @@
             <label>Matéria-prima:</label><br>
             <select name="estoque_matp_id">
                 <?php
-                include '../DADOS/config.php';
+                require_once '../DADOS/config.php';
                 $sql = "SELECT id_mp, nome_mp FROM materia_prima ORDER BY nome_mp";
                 $res = $conexao->query($sql);
                 while ($row = $res->fetch_assoc()) {
@@ -129,7 +129,7 @@
     
     <h1> estoque </h1>
     <?php
-    include '../DADOS/config.php';
+    require_once '../DADOS/config.php';
 
     //join para trazer o nome do produto ou matéria prima
     $sql = "

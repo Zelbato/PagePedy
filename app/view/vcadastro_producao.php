@@ -11,7 +11,7 @@
   <label>Produto:</label>
   <select name="produto_id">
     <?php
-      include '../DADOS/config.php';
+      require_once '../DADOS/config.php';
       $res = $conexao->query("SELECT id_prod, nome_prod FROM produto");
       while ($row = $res->fetch_assoc()) {
         echo "<option value='{$row['id_prod']}'>{$row['nome_prod']}</option>";
@@ -46,7 +46,7 @@
   <label>Produto:</label>
   <select name="produto_id">
     <?php
-      include '../DADOS/config.php';
+      require_once '../DADOS/config.php';
       $res = $conexao->query("SELECT id_prod, nome_prod FROM produto");
       while ($row = $res->fetch_assoc()) {
         echo "<option value='{$row['id_prod']}'>{$row['nome_prod']}</option>";
@@ -67,7 +67,7 @@
 
 
 <?php
-include '../DADOS/config.php';
+require_once '../DADOS/config.php';
 $res = $conexao->query("SELECT p.id_producao, pr.nome_prod, p.quantidade_produzida, p.data_producao
                         FROM producao p
                         JOIN produto pr ON p.produto_id = pr.id_prod");
