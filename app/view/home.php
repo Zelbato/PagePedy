@@ -25,7 +25,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!--Bootstrap-->
 
-    <link rel="stylesheet" href="../../public/assets/scss/style.css">
+    <link rel="stylesheet" href="../../public/assets/css/home.css">
     <title>PedyAçaí</title>
 </head>
 
