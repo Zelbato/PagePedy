@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="PagePedy/public/assets/scss/style.css">
     <title>Gerenciar Receitas</title>
     <style>
         .produto-item { margin-bottom: 10px; border: 1px solid #ccc; padding: 10px; }
