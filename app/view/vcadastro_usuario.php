@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/PAGEPEDY/public/assets/scss/style.css"><!--IMPORTANTE -->
-  <!-- <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/scss/style.css"><--IMPORTANTE -->
     <title>Pagina Principal</title>
 </head>
 
 <body>
-    
+
     <section class="back">
         <form action="../FUNCAO/fcadastro_usuario.php" method="POST" class="formulario">
             <h2>Cadastro de Usuário</h2>
