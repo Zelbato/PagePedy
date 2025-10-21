@@ -15,7 +15,7 @@
   <label>Categoria:</label>
   <select name="categoria_id">
     <?php
-      include '../DADOS/config.php';
+      require_once '../DADOS/config.php';
       $sql = "SELECT id_cat, nome_cat FROM categoria";
       $res = $conexao->query($sql);
       while ($row = $res->fetch_assoc()) {
@@ -66,7 +66,7 @@
     <label for="delete_id">ID do Produto a ser deletado:</label>
         <select id="delete_id" name="delete_id" required>
           <?php
-      include '../DADOS/config.php';
+      require_once '../DADOS/config.php';
       $sql = "SELECT id_prod, nome_prod FROM produto";
       $res = $conexao->query($sql);
       while ($row = $res->fetch_assoc()) {
@@ -80,7 +80,7 @@
     <h1>todos os produtos</h1>
 
     <?php
-    include '../DADOS/config.php';
+    require_once '../DADOS/config.php';
     $sql = "SELECT p.id_prod, p.nome_prod, p.descricao, p.preco, p.qtd_estoque, c.nome_cat 
             FROM produto p 
             JOIN categoria c ON p.categoria_id = c.id_cat"; 

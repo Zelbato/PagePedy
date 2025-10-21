@@ -24,7 +24,7 @@
         <label for="delete_id">ID da Categoria a ser deletada:</label>
         <select id="delete_id" name="delete_id" required>
             <?php
-            include '../DADOS/config.php';
+            require_once '../DADOS/config.php';
             $sql = "SELECT id_cat, nome_cat FROM categoria";
             $res = $conexao->query($sql);
             while ($row = $res->fetch_assoc()) {
@@ -42,7 +42,7 @@
             <th>Descrição</th>
         </tr>
         <?php
-        include '../FUNCAO/fcadastro_categoria.php';
+        require_once '../FUNCAO/fcadastro_categoria.php';
          $todas = $conexao->query("SELECT * FROM categoria");
         if ($todas->num_rows > 0) {
             while($row = $todas->fetch_assoc()) {
