@@ -57,7 +57,8 @@
 
     <main class="main">
         <section class="inicio">
-
+            <img src="#" alt="#">
+            <a href="#" class="btnCardapio">Cardapio</a>
         </section>
     </main>
 
