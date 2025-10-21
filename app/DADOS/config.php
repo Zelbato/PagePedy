@@ -16,7 +16,5 @@ if ($conexao->connect_errno) {
 
 <!-- NÃO DELETAR -->
 <?php
-
 define('BASE_URL', '/PAGEPEDY/public/');
-
 ?>
