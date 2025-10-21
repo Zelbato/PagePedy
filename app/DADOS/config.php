@@ -6,17 +6,15 @@ $dbname = "acai_bd";
 
 $conexao = new mysqli($host, $user, $pass, $dbname);
 
-if ($conexao->connect_errno) {
+if($conexao->connect_errno){
   echo "falha ao conectar: (" . $conexao->connect_errno . ")" . $conexao->connect_errno;
-} else {
-  echo "";
+}else{
+ echo "";
 }
 ?>
 
 
 <!-- NÃO DELETAR -->
 <?php
-
 define('BASE_URL', '/PAGEPEDY/public/');
-
 ?>
