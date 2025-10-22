@@ -1,0 +1,67 @@
+@import'./variables.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fundo da página */
+body {
+    background: linear-gradient(135deg, var(--roxoclaro), var(--roxo-escuro));
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    color: var(--preto);
+}
+.Login{
+     width: 100%;
+    display: flex;
+    justify-content: flex-end; 
+    padding-right: 80px; 
+}
+.Formulario_Login{
+    background: var(--branco);
+    padding: 40px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px var(--roxo-escuro);
+    width: 320px;
+}
+.Formulario_Login h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--preto);
+}
+.Formulario_Login label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+.Formulario_Login input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid var(--cinza);
+    border-radius: 8px;
+    outline: none;
+    background: var(--branco);
+    color: var(--preto);
+    font-size: 14px;
+}
+.Formulario_Login button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: var(--roxoclaro);
+    color: var(--branco);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.Formulario_Login button:hover {
+    background: var(--roxo-escuro);
+}

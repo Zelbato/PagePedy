@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/PAGEPEDY/public/assets/scss/style.css"><!--IMPORTANTE -->
+    <link rel="stylesheet" href="/PAGEPEDY/public/assets/css/cadastro.css"><!--IMPORTANTE -->
     <title>Pagina Principal</title>
 </head>
 
@@ -13,18 +13,19 @@
     <section class="back">
         <form action="../FUNCAO/fcadastro_usuario.php" method="POST" class="formulario">
             <h2>Cadastro de Usuário</h2>
+                 <br>
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
-
+                 <br>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
-
+                    <br>
             <label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" required>
-
+                    <br>
             <label for="endereco">Endereço:</label>
             <input type="text" id="endereco" name="endereco" required>
-
+                    <br>
             <button type="submit">Cadastrar</button>
         </form>
     </section>
