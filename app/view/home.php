@@ -47,21 +47,30 @@
 
         <ul>
             <li><a id="#home inicio" href="home.php" data-message="Opção de voltar para a pagina inicial">Inicio</a></li>
-            <li><a id="#vocacional destaque" href="#" data-message=""><span class="teste">Cardápio</span></a>
-            </li>
-            <li><a id="#facul eventos" href="#" data-message="">Faculdades</a></li>
-            <li><a id="#cadastro cadastrar" href="#" data-message="Opção de ir para o cadastro da sua "></a></li>
+            <li><a id="#pedidos meupedido" href="#" data-message="Opção de meus pedidos">Meus Pedidos</a></li>
+            <li><a id="#vocacional destaque" href="#" data-message=""><span class="teste">Cardápio</span></a></li>
+            <li><a id="promo promocao" href="#" data-message="Botão para entrar no catalogo de promoções"><span>Promoção</span></a></li>
+            <div class="icons">
+                <li><a id="car carrinho" href="#" data-message="meu carrinho de compras"><span><i class="fa-solid fa-cart-shopping"></i></span></a></li>
+                <li><a id="notf notificacao" href="#" data-message="minhas notificações"><span><i class="fa-solid fa-bell"></i></span></a></li>
+            </div>
 
         </ul>
     </header>
 
     <main class="main">
         <section class="inicio">
-            <img src="#" alt="#">
-            <a href="#" class="btnCardapio">Cardapio</a>
+            <div class="container">
+
+                <a href="#" class="btnCardapio">Cardapio</a>
+            </div>
         </section>
     </main>
 
 </body>
 
 </html>
+
+
+<!-- crie um header com as seguintes informações
+o menu deve  ter a opcao de logo com imagem, links para inicio, cardapio, meus pedidos, promoçoes, carrinho, contato/suporte, e um pra notificações -->
