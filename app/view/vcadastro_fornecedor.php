@@ -66,7 +66,7 @@
 
 <?php
 
-    include '../DADOS/config.php';
+    require_once '../DADOS/config.php';
 
 
     $sql = "SELECT * FROM fornecedor";
