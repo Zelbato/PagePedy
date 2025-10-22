@@ -30,10 +30,51 @@
 </head>
 
 <body>
+<!--Header & NavBar-->
+    <header class="header" role="banner">
+        <nav class="navbar section-content">
+            <a href="#" class="nav-logo">
+                <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2>
+            </a>
 
-    <header class="header" role="banner"></header>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Cardápio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Promoções</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Meus Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                </li>
+            </ul>
+        </nav>
 
+    </header>
 
+<main class="main">
+    <section class="hero-section">
+        <div class="section-content">
+            <div class="hero-details">
+                <h2 class="title">PedyAçaí</h2>
+                <h3 class="subTitle">venha comer conosco</h3>
+                <div class="btn">
+                    <a href="#" class="btnCadapio order-now">Cardápio</a>
+                </div><!--Btn-->
+            </div><!--Hero-details-->
+
+            <div class="hero-img-wrapper">
+                <img src="../../public/assets/img/acai1.png" alt="imagem de açai" class="hero-img">
+            </div>
+        </div><!--Section-Content-->
+    </section><!--Section-->
+</main><!--Main-->
 
 </body>
 
