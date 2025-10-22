@@ -33,34 +33,9 @@
 
     <header class="header" role="banner">
 
-        <div class="menu-mobile">
-            <label for="chk1" onclick="menu()">
-                <i class="fa-solid fa-bars"></i>
-            </label>
-        </div>
 
-        <input type="checkbox" name="" id="chk1">
-
-        <div class="logo">
-            <h1><a href="home.php" data-message="PedyAçaí">Pedy <span class="gradient">Açaí</span></a></h1>
-        </div>
-
-        <ul>
-            <li><a id="#home inicio" href="home.php" data-message="Opção de voltar para a pagina inicial">Inicio</a></li>
-            <li><a id="#vocacional destaque" href="#" data-message=""><span class="teste">Cardápio</span></a>
-            </li>
-            <li><a id="#facul eventos" href="#" data-message="">Faculdades</a></li>
-            <li><a id="#cadastro cadastrar" href="#" data-message="Opção de ir para o cadastro da sua "></a></li>
-
-        </ul>
     </header>
 
-    <main class="main">
-        <section class="inicio">
-            <img src="#" alt="#">
-            <a href="#" class="btnCardapio">Cardapio</a>
-        </section>
-    </main>
 
 </body>
 
