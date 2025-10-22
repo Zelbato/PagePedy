@@ -30,6 +30,7 @@ CREATE TABLE materia_prima (
     forn_id INT NOT NULL,
     nome_mp VARCHAR(90) NOT NULL,
     unidade ENUM('quilograma', 'gramas', 'litros', 'mililitro', 'metro', 'centimetros', 'tempo', 'unidade') NOT NULL DEFAULT 'quilograma',
+    tipo_mp ENUM('producao', 'acompanhamento') DEFAULT 'producao', // tipo adicionado
     quantidade DECIMAL(10, 2),
     preco_unitario DECIMAL(10, 2),
     data_compra DATE NOT NULL,
@@ -39,6 +40,7 @@ CREATE TABLE materia_prima (
 
 CREATE TABLE produto (
     id_prod INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    img_prod VARCHAR(255),
     categoria_id INT NOT NULL,
     nome_prod VARCHAR(100) NOT NULL,
     preco DECIMAL(10, 2),
@@ -118,6 +120,68 @@ CREATE TABLE receita_produto (
     FOREIGN KEY (id_receita) REFERENCES receita(id_receita),
     FOREIGN KEY (id_prod) REFERENCES produto(id_prod)
 );
+
+<------------------------------------------------------------------> 
+
+
+
+
+
+CREATE TABLE pedido (
+    id_pedi INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    data_pedido DATETIME DEFAULT CURRENT_TIMESTAMP,
+    status_pedi ENUM('preparando', 'a caminho', 'entregue', 'cancelado') DEFAULT 'preparando',
+    valor_total DECIMAL(10, 2) DEFAULT 0.00,
+    destino VARCHAR(255),
+    observacoes TEXT,
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id)
+);
+
+CREATE TABLE pedido_produto (
+    id_pedi INT NOT NULL,
+    id_prod INT NOT NULL,
+    quantidade INT NOT NULL DEFAULT 1,
+    preco_unitario DECIMAL(10,2) NOT NULL,
+    PRIMARY KEY (id_pedi, id_prod),
+    FOREIGN KEY (id_pedi) REFERENCES pedido(id_pedi),
+    FOREIGN KEY (id_prod) REFERENCES produto(id_prod)
+);
+
+CREATE TABLE pedido_materiaprima (
+    id_pedi INT NOT NULL,
+    id_matepri INT NOT NULL,
+    id_prod INT NOT NULL,
+    quantidade INT DEFAULT 1,
+    PRIMARY KEY (id_pedi, id_matepri, id_prod),
+    FOREIGN KEY (id_pedi) REFERENCES pedido(id_pedi),
+    FOREIGN KEY (id_matepri) REFERENCES materia_prima(id_mp),
+    FOREIGN KEY (id_prod) REFERENCES produto(id_prod)
+);
+
+
+
+
+
+
+
+
+
+CREATE TABLE pedido_usuario(
+    id_pedi INT NOT NULL,
+    id_usuario INT NOT NULL,
+    quantidade_prod_pedi INT Not NULL,
+    status_pedi ENUM ('preparando', 'a caminho', 'entregue', 'cancelado'),
+    PRIMARY KEY (id_pedi, id_mp),
+    destino,
+    FOREIGN KEY (id_pedi) REFERENCES produto(id_pedi),
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id)
+    
+);
+
+
+
+
 
 
 
