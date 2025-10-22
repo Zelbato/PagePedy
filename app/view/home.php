@@ -31,41 +31,9 @@
 
 <body>
 
-    <header class="header" role="banner">
+    <header class="header" role="banner"></header>
 
-        <div class="menu-mobile">
-            <label for="chk1" onclick="menu()">
-                <i class="fa-solid fa-bars"></i>
-            </label>
-        </div>
 
-        <input type="checkbox" name="" id="chk1">
-
-        <div class="logo">
-            <h1><a href="home.php" data-message="PedyAçaí">Pedy <span class="gradient">Açaí</span></a></h1>
-        </div>
-
-        <ul>
-            <li><a id="#home inicio" href="home.php" data-message="Opção de voltar para a pagina inicial">Inicio</a></li>
-            <li><a id="#pedidos meupedido" href="#" data-message="Opção de meus pedidos">Meus Pedidos</a></li>
-            <li><a id="#vocacional destaque" href="#" data-message=""><span class="teste">Cardápio</span></a></li>
-            <li><a id="promo promocao" href="#" data-message="Botão para entrar no catalogo de promoções"><span>Promoção</span></a></li>
-            <div class="icons">
-                <li><a id="car carrinho" href="#" data-message="meu carrinho de compras"><span><i class="fa-solid fa-cart-shopping"></i></span></a></li>
-                <li><a id="notf notificacao" href="#" data-message="minhas notificações"><span><i class="fa-solid fa-bell"></i></span></a></li>
-            </div>
-
-        </ul>
-    </header>
-
-    <main class="main">
-        <section class="inicio">
-            <div class="container">
-
-                <a href="#" class="btnCardapio">Cardapio</a>
-            </div>
-        </section>
-    </main>
 
 </body>
 
