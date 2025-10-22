@@ -31,12 +31,14 @@
 
 <body>
 
-    <header class="header" role="banner">
+    <header class="header" role="banner"></header>
 
-
-    </header>
 
 
 </body>
 
 </html>
+
+
+<!-- crie um header com as seguintes informações
+o menu deve  ter a opcao de logo com imagem, links para inicio, cardapio, meus pedidos, promoçoes, carrinho, contato/suporte, e um pra notificações -->

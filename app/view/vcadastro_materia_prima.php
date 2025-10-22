@@ -13,7 +13,7 @@
   <label>Fornecedor:</label>
   <select name="forn_id" required>
     <?php
-      include '../DADOS/config.php';
+      require_once '../DADOS/config.php';
       $sql = "SELECT id_forn, nome_forn FROM fornecedor";
       $res = $conexao->query($sql);
       while ($row = $res->fetch_assoc()) {
@@ -68,7 +68,7 @@
         <label for="delete_id">ID da Matéria-prima a ser deletada:</label>
         <select id="delete_id" name="delete_id" required>
             <?php
-            include '../DADOS/config.php';
+            require_once '../DADOS/config.php';
             $sql = "SELECT id_mp, nome_mp FROM materia_prima";
             $res = $conexao->query($sql);
             while ($row = $res->fetch_assoc()) {
@@ -92,7 +92,7 @@
     <th>Data da Compra</th>
   </tr>
   <?php
-    include '../DADOS/config.php';
+    require_once '../DADOS/config.php';
     $sql = "SELECT * FROM materia_prima";
     $res = $conexao->query($sql);
     if ($res->num_rows > 0) {
