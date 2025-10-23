@@ -15,7 +15,7 @@ require_once '../DADOS/config.php';
 <body>
 
     <section class="Login">
-         <form action="../FUNCAO/flogin_usuario.php" method="POST">
+         <form action="../FUNCAO/flogin_usuario.php" method="POST" class="Formulario_Login">
         <h2>Login de Usuário</h2>
         <label for="nome">nome</label>
         <input type="nome" id="nome" name="nome" required>
