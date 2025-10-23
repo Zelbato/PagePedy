@@ -7,11 +7,11 @@
 </head>
 <body>
 <h1>cadastro produção</h1>
-    <form action="../FUNCAO/fcadastro_producao.php" method="POST">
+    <form action="../../FUNCAO/fcadastro_producao.php" method="POST">
   <label>Produto:</label>
   <select name="produto_id">
     <?php
-      require_once '../DADOS/config.php';
+      require_once '../../DADOS/config.php';
       $res = $conexao->query("SELECT id_prod, nome_prod FROM produto");
       while ($row = $res->fetch_assoc()) {
         echo "<option value='{$row['id_prod']}'>{$row['nome_prod']}</option>";
@@ -30,7 +30,7 @@
 
 
 <h1>deletar produção</h1>
-<form action="../FUNCAO/fdelete_producao.php" method="POST">
+<form action="../../FUNCAO/fdelete_producao.php" method="POST">
   <label>ID da Produção:</label>
   <input type="number" name="producao_id" required><br>
   <button type="submit">Deletar Produção</button>
@@ -39,14 +39,14 @@
 
 <h1>editar produção</h1>
 
-<form action="../FUNCAO/fedite_producao.php" method="POST">
+<form action="../../FUNCAO/fedite_producao.php" method="POST">
   <label>ID da Produção:</label>
   <input type="number" name="producao_id" required><br>
 
   <label>Produto:</label>
   <select name="produto_id">
     <?php
-      require_once '../DADOS/config.php';
+      require_once '../../DADOS/config.php';
       $res = $conexao->query("SELECT id_prod, nome_prod FROM produto");
       while ($row = $res->fetch_assoc()) {
         echo "<option value='{$row['id_prod']}'>{$row['nome_prod']}</option>";
@@ -67,7 +67,7 @@
 
 
 <?php
-require_once '../DADOS/config.php';
+require_once '../../DADOS/config.php';
 $res = $conexao->query("SELECT p.id_producao, pr.nome_prod, p.quantidade_produzida, p.data_producao
                         FROM producao p
                         JOIN produto pr ON p.produto_id = pr.id_prod");

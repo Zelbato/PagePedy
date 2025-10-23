@@ -12,7 +12,7 @@
 
 <h1>Cadastrar Receita</h1>
 
-<form action="../FUNCAO/fcadastro_receita.php" method="POST" id="formReceita">
+<form action="../../FUNCAO/fcadastro_receita.php" method="POST" id="formReceita">
     <label for="tipo_receita">Tipo de Receita:</label>
     <select name="tipo_receita" id="tipo_receita" onchange="mostrarProdutos()">
         <option value="Produto">Produto</option>
@@ -38,7 +38,7 @@
                 <select name="id_prod[]">
                     <option value="">Selecione...</option>
                     <?php
-                    require_once '../DADOS/config.php';
+                    require_once '../../DADOS/config.php';
                     $sql = "SELECT id_prod, nome_prod FROM produto ORDER BY nome_prod ASC";
                     $res = $conexao->query($sql);
                     while ($row = $res->fetch_assoc()) {
@@ -63,7 +63,7 @@
 </form>
 
 <script>
-// inicializa exibindo conforme o valor atual
+
 document.addEventListener('DOMContentLoaded', function() {
     mostrarProdutos();
 });
@@ -111,7 +111,7 @@ function adicionarProduto() {
 
 <h1>Todas as Receitas</h1>
 <?php
-require_once '../DADOS/config.php';
+require_once '../../DADOS/config.php';
 
 $sql = "
     SELECT

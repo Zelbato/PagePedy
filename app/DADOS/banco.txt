@@ -27,7 +27,7 @@ CREATE TABLE fornecedor (
 
 CREATE TABLE materia_prima (
     id_mp INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    forn_id INT NOT NULL,
+    forn_id INT,
     nome_mp VARCHAR(90) NOT NULL,
     unidade ENUM('quilograma', 'gramas', 'litros', 'mililitro', 'metro', 'centimetros', 'tempo', 'unidade') NOT NULL DEFAULT 'quilograma',
     tipo_mp ENUM('producao', 'acompanhamento') DEFAULT 'producao', // tipo adicionado

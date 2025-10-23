@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="../FUNCAO/fcadastro_fornecedor.php" method="POST">
+    <form action="../../FUNCAO/fcadastro_fornecedor.php" method="POST">
         <h2>Cadastro de Fornecedor</h2>
         
         <label for="nome_forn">Nome do Fornecedor:</label>
@@ -30,7 +30,7 @@
  
 
     <h2>Deletar Fornecedor</h2>
-    <form action="../FUNCAO/fdelete_fornecedor.php" method="GET">
+    <form action="../../FUNCAO/fdelete_fornecedor.php" method="GET">
         <label for="delete_id">ID do Fornecedor:</label>
         <input type="text" id="delete_id" name="delete_id" required>
         <button type="submit">Deletar Fornecedor</button>
@@ -40,7 +40,7 @@
     </form>
 
     <h2>Editar Fornecedor</h2>
-    <form action="../FUNCAO/fedite_fornecedor.php" method="POST">
+    <form action="../../FUNCAO/fedite_fornecedor.php" method="POST">
         <label for="id_forn">ID do Fornecedor:</label>
         <input type="text" id="id_forn" name="id_forn" required>
 
@@ -66,7 +66,7 @@
 
 <?php
 
-    require_once '../DADOS/config.php';
+    require_once '../../DADOS/config.php';
 
 
     $sql = "SELECT * FROM fornecedor";

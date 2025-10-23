@@ -1,6 +1,6 @@
 <?php
 
-require_once "../DADOS/config.php";
+require_once "../../DADOS/config.php";
 session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['user_access'] = $acesso;
 
             if ($acesso === 2) {
-                header("Location: ../view/home_adm.php");
+                header("Location: ../view/EMPRESA/home_adm.php");
                 exit();
             }else {
                 header("Location: ../view/home.php");
