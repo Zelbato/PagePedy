@@ -9,7 +9,7 @@
 
 /* Fundo da página */
 body {
-background-color: var(--branco);
+    background-color: var(--branco);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -79,4 +79,33 @@ background-color: var(--branco);
     background: var(--roxo-escuro);
 }
 
+@media (max-width: 768px) {
+    body {
+        justify-content: center; 
+        align-items: flex-start;
+        padding-top: 40px;
+        height: auto;
+    }
 
+    .back {
+        justify-content: center;
+        padding: 0 20px;
+    }
+
+    .formulario {
+        width: 90%;
+        max-width: 360px;
+        padding: 30px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .formulario h2 {
+        font-size: 1.2rem;
+    }
+
+    .formulario input,
+    .formulario button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
