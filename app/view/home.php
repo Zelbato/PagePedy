@@ -25,43 +25,56 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!--Bootstrap-->
 
-    <link rel="stylesheet" href="../../public/assets/scss/style.css">
+    <link rel="stylesheet" href="../../public/assets/css/home.css">
     <title>PedyAçaí</title>
 </head>
 
 <body>
-
+    <!--Header & NavBar-->
     <header class="header" role="banner">
+        <nav class="navbar section-content">
+            <a href="#" class="nav-logo">
+                <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2>
+            </a>
 
-        <div class="menu-mobile">
-            <label for="chk1" onclick="menu()">
-                <i class="fa-solid fa-bars"></i>
-            </label>
-        </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Cardápio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Promoções</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Meus Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                </li>
+            </ul>
+        </nav>
 
-        <input type="checkbox" name="" id="chk1">
-
-        <div class="logo">
-            <h1><a href="home.php" data-message="PedyAçaí">Pedy <span class="gradient">Açaí</span></a></h1>
-        </div>
-
-        <ul>
-            <li><a id="#home inicio" href="home.php" data-message="Opção de voltar para a pagina inicial">Inicio</a></li>
-            <li><a id="#vocacional destaque" href="#" data-message=""><span class="teste">Cardápio</span></a>
-            </li>
-            <li><a id="#facul eventos" href="#" data-message="">Faculdades</a></li>
-            <li><a id="#cadastro cadastrar" href="#" data-message="Opção de ir para o cadastro da sua "></a></li>
-
-        </ul>
     </header>
 
     <main class="main">
-        <section class="inicio">
-            <img src="#" alt="#">
-            <a href="#" class="btnCardapio">Cardapio</a>
-        </section>
-    </main>
+        <section class="hero-section">
+            <div class="section-content">
+                <div class="hero-details">
+                    <h2 class="title">PedyAçaí</h2>
+                    <h3 class="subTitle">venha comer conosco</h3>
+                    <div class="btn">
+                        <a href="#" class="btnCadapio order-now">Cardápio</a>
+                    </div><!--Btn-->
+                </div><!--Hero-details-->
 
+                <div class="hero-img-wrapper">
+                    <img src="../../public/assets/img/acai-6.png" alt="imagem de açai" class="hero-img">
+                </div>
+            </div><!--Section-Content-->
+        </section><!--Section-->
+    </main><!--Main-->
 </body>
 
 </html>
