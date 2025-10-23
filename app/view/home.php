@@ -75,11 +75,6 @@
         </div><!--Section-Content-->
     </section><!--Section-->
 </main><!--Main-->
-
-</body>
+    </body>
 
 </html>
-
-
-<!-- crie um header com as seguintes informações
-o menu deve  ter a opcao de logo com imagem, links para inicio, cardapio, meus pedidos, promoçoes, carrinho, contato/suporte, e um pra notificações -->
