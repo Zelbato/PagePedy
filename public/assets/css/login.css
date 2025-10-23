@@ -9,20 +9,22 @@
 
 /* Fundo da página */
 body {
-    background: linear-gradient(135deg, var(--roxoclaro), var(--roxo-escuro));
+     background-color: var(--branco);
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: flex-end; 
     color: var(--preto);
 }
-.Login{
-     width: 100%;
+.Login {
+    width: 100%;
     display: flex;
     justify-content: flex-end; 
     padding-right: 80px; 
 }
-.Formulario_Login{
+
+/* Formulário */
+.Formulario_login {
     background: var(--branco);
     padding: 40px;
     border-radius: 12px;
@@ -30,17 +32,22 @@ body {
     box-shadow: 0 4px 20px var(--roxo-escuro);
     width: 320px;
 }
-.Formulario_Login h2 {
+
+/* Título */
+.Formulario_login h2 {
     text-align: center;
     margin-bottom: 20px;
     color: var(--preto);
 }
-.Formulario_Login label {
+
+/* Labels e inputs */
+.Formulario_login label {
     display: block;
     margin-bottom: 6px;
     font-weight: 600;
 }
-.Formulario_Login input {
+
+.Formulario_login input {
     width: 100%;
     padding: 10px;
     margin-bottom: 16px;
@@ -51,9 +58,11 @@ body {
     color: var(--preto);
     font-size: 14px;
 }
-.Formulario_Login button {
+
+/* Botão */
+.Formulario_login button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: none;
     border-radius: 8px;
     background: var(--roxoclaro);
@@ -61,7 +70,36 @@ body {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
 }
-.Formulario_Login button:hover {
-    background: var(--roxo-escuro);
+
+@media (max-width: 768px) {
+    body {
+        justify-content: center; 
+        align-items: flex-start;
+        padding-top: 40px;
+        height: auto;
+    }
+
+    .Login {
+        justify-content: center;
+        padding: 0 20px;
+    }
+
+    .Formulario_login {
+        width: 90%;
+        max-width: 360px;
+        padding: 30px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .Formulario_login h2 {
+        font-size: 1.2rem;
+    }
+
+    .Formulario_login input,
+    .Formulario_login button {
+        font-size: 14px;
+        padding: 10px;
+    }
 }
