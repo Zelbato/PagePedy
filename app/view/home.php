@@ -30,7 +30,7 @@
 </head>
 
 <body>
-<!--Header & NavBar-->
+    <!--Header & NavBar-->
     <header class="header" role="banner">
         <nav class="navbar section-content">
             <a href="#" class="nav-logo">
@@ -58,23 +58,23 @@
 
     </header>
 
-<main class="main">
-    <section class="hero-section">
-        <div class="section-content">
-            <div class="hero-details">
-                <h2 class="title">PedyAçaí</h2>
-                <h3 class="subTitle">venha comer conosco</h3>
-                <div class="btn">
-                    <a href="#" class="btnCadapio order-now">Cardápio</a>
-                </div><!--Btn-->
-            </div><!--Hero-details-->
+    <main class="main">
+        <section class="hero-section">
+            <div class="section-content">
+                <div class="hero-details">
+                    <h2 class="title">PedyAçaí</h2>
+                    <h3 class="subTitle">venha comer conosco</h3>
+                    <div class="btn">
+                        <a href="#" class="btnCadapio order-now">Cardápio</a>
+                    </div><!--Btn-->
+                </div><!--Hero-details-->
 
-            <div class="hero-img-wrapper">
-                <img src="../../public/assets/img/acai1.png" alt="imagem de açai" class="hero-img">
-            </div>
-        </div><!--Section-Content-->
-    </section><!--Section-->
-</main><!--Main-->
-    </body>
+                <div class="hero-img-wrapper">
+                    <img src="../../public/assets/img/acai-6.png" alt="imagem de açai" class="hero-img">
+                </div>
+            </div><!--Section-Content-->
+        </section><!--Section-->
+    </main><!--Main-->
+</body>
 
 </html>
