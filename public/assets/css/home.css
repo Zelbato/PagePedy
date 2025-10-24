@@ -509,16 +509,7 @@ img {
     border-radius: 2px;
 }
 
-.sobre-section .sobre-content .sobre-default {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 30px;
-    width: 100%;
-}
-
-.sobre-section .sobre-content .sobre-text {
+/* .sobre-section .sobre-content .sobre-text {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -540,5 +531,5 @@ img {
     width: 350px;
     height: 100%;
     object-fit: cover;
-    /* mantém proporção sem deformar */
-}
+    /* mantém proporção sem deformar *
+} */
