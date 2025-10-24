@@ -25,6 +25,10 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!--Bootstrap-->
 
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!--Font Awesome-->
+
     <link rel="stylesheet" href="../../public/assets/css/home.css">
     <title>PedyAçaí</title>
 </head>
@@ -33,16 +37,25 @@
     <!--Header & NavBar-->
     <header class="header" role="banner">
         <nav class="navbar section-content">
-            <a href="#" class="nav-logo">
+            <a href="home.php" class="nav-logo">
                 <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2>
             </a>
 
             <ul class="nav-menu">
+                <button id="menuCloseBtn" class="fas fa-times"></button>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Inicio</a>
+                    <a href="home.php" class="nav-link primary">Inicio</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Cardápio</a>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Cardápio<i class="fa-solid fa-chevron-down"></i> </a>
+
+                    <ul class="dropdown-menu">
+                        <li class="nav-ms-link"><a href="#" class="nav-link">Açaí</a></li>
+                        <li class="nav-ms-link"><a href="#" class="nav-link">Sorvetes</a></li>
+                        <li class="nav-ms-link"><a href="#" class="nav-link">Milk-shake</a></li>
+                        <li class="nav-ms-link"><a href="#" class="nav-link">Balde de Açaí</a></li>
+                        <li class="nav-ms-link"><a href="#" class="nav-link">Balde de Sorvete</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">Promoções</a>
@@ -54,6 +67,7 @@
                     <a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
                 </li>
             </ul>
+            <button id="menuOpenBtn" class="fas fa-bars"></button>
         </nav>
 
     </header>
@@ -62,8 +76,9 @@
         <section class="hero-section">
             <div class="section-content">
                 <div class="hero-details">
-                    <h2 class="title">PedyAçaí</h2>
-                    <h3 class="subTitle">venha comer conosco</h3>
+                    <h2 class="title">Pedy<span>Açaí</span> </h2>
+                    <h3 class="subTitle">Mais que sabor, uma explosão de energia em cada copo</h3>
+                    <p>Experimente agora e descubra por que todo mundo ama o nosso açaí!</p>
                     <div class="btn">
                         <a href="#" class="btnCadapio order-now">Cardápio</a>
                     </div><!--Btn-->
@@ -74,7 +89,74 @@
                 </div>
             </div><!--Section-Content-->
         </section><!--Section-->
+
+        <section class="products-section">
+            <div class="section-types">
+                <div class="title-product">
+                    <h2 class="title">Nossos Produtos</h2>
+                </div>
+
+                <div class="product-content">
+                    <div class="card-product">
+                        <div class="cards">
+                            <a href="#">
+                                <img src="../../public/assets/img/açai-5.png" alt="imagem de açaí" class="card-image">
+                                <div class="card-effect">
+                                    <h3 class="card-text">Açaí</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-product">
+                        <div class="cards">
+                            <a href="#">
+                                <img src="../../public/assets/img/sorvete-1.png" alt="imagem de açaí" class="card-image">
+                                <div class="card-effect">
+                                    <h3 class="card-text">Sorvetes</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-product">
+                        <div class="cards">
+                            <a href="#">
+                                <img src="../../public/assets/img/acai-6.png" alt="imagem de açaí" class="card-image">
+                                <div class="card-effect">
+                                    <h3 class="card-text">Milk-Shake</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="sobre-section">
+            <div class="sobre-content">
+                <div class="title-sobre">
+                    <h2 class="title">Sobre a Empresa</h2>
+                </div>
+
+                <div class="sobre-default">
+                    <div class="sobre-text">
+                        <p class="txt-sobre">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Adipisci doloribus, esse laboriosam perferendis molestias
+                            consequatur sed hic ex reprehenderit saepe voluptate? Fuga,
+                            in quasi. Provident neque harum necessitatibus deserunt repudiandae!
+                        </p>
+                        <div class="image-sobre">
+                            <img src="../../public/assets/img/hrdeacai.png" alt="imagem sobre a empresa" class="image">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </main><!--Main-->
+
+    <script src="../../public/assets/js/script.js"></script>
 </body>
 
 </html>
