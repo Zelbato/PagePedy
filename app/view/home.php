@@ -80,7 +80,7 @@
                     <h3 class="subTitle">Mais que sabor, uma explosão de energia em cada copo</h3>
                     <p>Experimente agora e descubra por que todo mundo ama o nosso açaí!</p>
                     <div class="btn">
-                        <a href="#" class="btnCadapio order-now">Cardápio</a>
+                        <a href="vcardapio.php" class="btnCadapio order-now">Cardápio</a>
                     </div><!--Btn-->
                 </div><!--Hero-details-->
 
@@ -95,11 +95,10 @@
                 <div class="title-product">
                     <h2 class="title">Nossos Produtos</h2>
                 </div>
-
                 <div class="product-content">
                     <div class="card-product">
                         <div class="cards">
-                            <a href="#">
+                            <a href="vcardapio.php">
                                 <img src="../../public/assets/img/açai-5.png" alt="imagem de açaí" class="card-image">
                                 <div class="card-effect">
                                     <h3 class="card-text">Açaí</h3>
@@ -109,7 +108,7 @@
                     </div>
                     <div class="card-product">
                         <div class="cards">
-                            <a href="#">
+                            <a href="vcardapio.php">
                                 <img src="../../public/assets/img/sorvete-1.png" alt="imagem de açaí" class="card-image">
                                 <div class="card-effect">
                                     <h3 class="card-text">Sorvetes</h3>
@@ -119,7 +118,7 @@
                     </div>
                     <div class="card-product">
                         <div class="cards">
-                            <a href="#">
+                            <a href="vcardapio.php">
                                 <img src="../../public/assets/img/acai-6.png" alt="imagem de açaí" class="card-image">
                                 <div class="card-effect">
                                     <h3 class="card-text">Milk-Shake</h3>
@@ -127,7 +126,6 @@
                             </a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -150,7 +148,21 @@
                             <img src="../../public/assets/img/hrdeacai.png" alt="imagem sobre a empresa" class="image">
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="avaliation-section">
+            <div class="avaliation-content">
+                <div class="title-avaliation">
+                    <h2 class="text-avaliation">Avaliações</h2>
+                </div>
+
+                <div class="avaliation-cards" id="avaliationCards">
+                    <div class="card" id="card">
+                        <img src="#" alt="imagem de avaliações" class="image-avalion">
+                       
+                    </div>
                 </div>
             </div>
         </section>
