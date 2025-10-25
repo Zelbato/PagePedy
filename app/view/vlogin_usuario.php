@@ -12,7 +12,7 @@
     <section class="Login">
          <form action="../FUNCAO/flogin_usuario.php" method="POST" class="Formulario_login">
         <h2>Login de Usuário</h2>
-        <label for="nome">nome</label>
+        <label for="nome">Nome</label>
         <input type="nome" id="nome" name="nome" required>
         
         <label for="email">Email:</label>
