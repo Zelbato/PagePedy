@@ -16,7 +16,7 @@
          <form action="../FUNCAO/flogin_usuario.php" method="POST" class="Formulario_login">
 >>>>>>> 271a5f537e0add7e4de6a6e41420bf53128188f4
         <h2>Login de Usuário</h2>
-        <label for="nome">nome</label>
+        <label for="nome">Nome</label>
         <input type="nome" id="nome" name="nome" required>
         
         <label for="email">Email:</label>
