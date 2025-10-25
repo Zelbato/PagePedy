@@ -80,7 +80,7 @@
                     <h3 class="subTitle">Mais que sabor, uma explosão de energia em cada copo</h3>
                     <p>Experimente agora e descubra por que todo mundo ama o nosso açaí!</p>
                     <div class="btn">
-                        <a href="#" class="btnCadapio order-now">Cardápio</a>
+                        <a href="vcardapio.php" class="btnCadapio order-now">Cardápio</a>
                     </div><!--Btn-->
                 </div><!--Hero-details-->
 
@@ -95,11 +95,10 @@
                 <div class="title-product">
                     <h2 class="title">Nossos Produtos</h2>
                 </div>
-
                 <div class="product-content">
                     <div class="card-product">
                         <div class="cards">
-                            <a href="#">
+                            <a href="vcardapio.php">
                                 <img src="../../public/assets/img/açai-5.png" alt="imagem de açaí" class="card-image">
                                 <div class="card-effect">
                                     <h3 class="card-text">Açaí</h3>
@@ -109,7 +108,7 @@
                     </div>
                     <div class="card-product">
                         <div class="cards">
-                            <a href="#">
+                            <a href="vcardapio.php">
                                 <img src="../../public/assets/img/sorvete-1.png" alt="imagem de açaí" class="card-image">
                                 <div class="card-effect">
                                     <h3 class="card-text">Sorvetes</h3>
@@ -119,15 +118,14 @@
                     </div>
                     <div class="card-product">
                         <div class="cards">
-                            <a href="#">
-                                <img src="../../public/assets/img/acai-6.png" alt="imagem de açaí" class="card-image">
+                            <a href="vcardapio.php">
+                                <img src="../../public/assets/img/download__1_-removebg-preview.png" alt="imagem de açaí" class="card-image">
                                 <div class="card-effect">
                                     <h3 class="card-text">Milk-Shake</h3>
                                 </div>
                             </a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -150,11 +148,62 @@
                             <img src="../../public/assets/img/hrdeacai.png" alt="imagem sobre a empresa" class="image">
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
+
+        <!-- <section class="avaliation-section">
+            <div class="avaliation-content">
+                <div class="title-avaliation">
+                    <h2 class="text-avaliation">Avaliações</h2>
+                </div>
+
+                <div class="avaliation-cards" id="avaliationCards">
+                    <div class="card" id="card">
+                        <img src="#" alt="imagem de avaliações" class="image-avalion">
+                       
+                    </div>
+                </div>
+            </div>
+        </section> -->
     </main><!--Main-->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2>
+                <p>Mais que sabor, uma explosão de energia em cada copo!</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="home.php">Início</a></li>
+                    <li><a href="vcardapio.php">Cardápio</a></li>
+                    <li><a href="#">Promoções</a></li>
+                    <li><a href="#">Meus Pedidos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> PedyAçaí - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
 
     <script src="../../public/assets/js/script.js"></script>
 </body>
