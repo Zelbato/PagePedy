@@ -119,7 +119,7 @@
                     <div class="card-product">
                         <div class="cards">
                             <a href="vcardapio.php">
-                                <img src="../../public/assets/img/acai-6.png" alt="imagem de açaí" class="card-image">
+                                <img src="../../public/assets/img/download__1_-removebg-preview.png" alt="imagem de açaí" class="card-image">
                                 <div class="card-effect">
                                     <h3 class="card-text">Milk-Shake</h3>
                                 </div>
@@ -152,7 +152,7 @@
             </div>
         </section>
 
-        <section class="avaliation-section">
+        <!-- <section class="avaliation-section">
             <div class="avaliation-content">
                 <div class="title-avaliation">
                     <h2 class="text-avaliation">Avaliações</h2>
@@ -165,8 +165,45 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </main><!--Main-->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2>
+                <p>Mais que sabor, uma explosão de energia em cada copo!</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="home.php">Início</a></li>
+                    <li><a href="vcardapio.php">Cardápio</a></li>
+                    <li><a href="#">Promoções</a></li>
+                    <li><a href="#">Meus Pedidos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> PedyAçaí - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
 
     <script src="../../public/assets/js/script.js"></script>
 </body>
