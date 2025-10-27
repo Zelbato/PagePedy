@@ -1,25 +1,24 @@
-
 <?php
 // public/index.php
 
 // Inclui a conexão com o banco (caminho relativo da pasta public para app/DADOS)
-require_once '../app/DADOS/config.php';
+//require_once '../app/DADOS/config.php';
 
 // Cabeçalho e rodapé (opcional)
 // include '../app/views/includes/header.php';
 
 // Pega o valor da página
-$page = isset($_GET['page']) ? $_GET['page'] : 'vcadastro_usuario';
+//$page = isset($_GET['page']) ? $_GET['page'] : 'vlogin_usuario';
 
 // Caminho completo do arquivo na pasta views
-$file = '../app/view/' . $page . '.php';
+//$file = '../app/view/' . $page . '.php';
 
 // Inclui o arquivo se existir
-if (file_exists($file)) {
-    include $file;
-} else {
-    echo "<h1>Página não encontrada!</h1>";
-}
+//if (file_exists($file)) {
+    //include $file;
+//} else {
+  //  echo "<h1>Página não encontrada!</h1>";
+//}
 
 // include '../app/views/includes/footer.php';
 ?>

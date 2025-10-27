@@ -228,308 +228,62 @@ img {
 
 }
 
-/* Banner */
-.banner-cardapio {
-    height: 45vh;
+
+/*PROMOÇÃO*/
+.cardapio-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    color: var(--branco);
-}
-
-.banner-cardapio .overlay {
-    position: absolute;
-    inset: 0;
-    background: var(--roxoclaro);
-}
-
-.banner-cardapio .banner-text {
-    position: relative;
-    text-align: center;
-    z-index: 2;
-}
-
-.banner-cardapio h1 {
-    font-size: 48px;
-    font-weight: 700;
-    color: var(--branco);
-}
-
-.banner-cardapio p {
-    font-size: 20px;
-    margin-top: 10px;
-}
-
-/* Categorias */
-.categorias {
-    text-align: center;
-    padding: 50px 20px 30px;
-}
-
-.categorias h2 {
-    color: var(--roxo-escuro);
-    font-size: 2rem;
-    margin-bottom: 25px;
-    font-weight: 600;
-}
-
-.btnCategoria {
-    display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
-}
-
-.btnCategoria button {
-    padding: 10px 25px;
-    border-radius: 50px;
-    background: var(--roxoclaro);
-    color: var(--branco);
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.btnCategoria button:hover,
-.btnCategoria .ativo {
-    background: var(--laranja);
-    color: var(--preto);
-}
-
-/* Produtos */
-.produtos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-    padding: 40px 50px;
-    justify-items: center;
-    animation: fadeIn 0.5s ease;
-    
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
 }
 
 .card-produto {
     background: var(--branco);
     border-radius: 18px;
+    box-shadow: 0 4px 10px rgba(80, 0, 100, 0.2);
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(80, 0, 100, 0.2);
     transition: 0.3s ease;
-    width: 100%;
+    flex: 1 1 220px;   /* largura mínima para caber 2~3 cards em desktop */
     max-width: 280px;
-    flex: 1 1 45%;
-    /* permite 2 cards por linha */
+    padding: 15px;
 }
 
 .card-produto img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
-}
-
-.card-produto h3 {
-    color: var(--roxo-escuro);
-    margin: 10px 0 5px;
-}
-
-.card-produto .descricao {
-    font-size: 0.9rem;
-    color: var(--cinzaEscuro);
     margin-bottom: 10px;
+    border-radius: 12px;
+}
+
+.card-produto h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #206ab8;
 }
 
 .card-produto .preco {
-    display: block;
-    background: transparent;
-    color: var(--roxo-escuro);
     font-weight: bold;
-    padding: 8px 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    color: #206ab8;
+    margin-bottom: 10px;
 }
 
-/* Botão de adicionar */
-.btn-add {
-    background: var(--verdeEscuro);
-    color: var(--branco);
-    border: none;
-    width: 100%;
-    padding: 10px;
-    font-weight: 600;
-    transition: 0.3s;
-    border-radius: 0 0 18px 18px;
+.card-produto .descricao {
+    font-size: 0.95rem;
+    color: #555;
 }
 
-/* Animação */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Hover efeito */
+.card-produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(80, 0, 100, 0.3);
 }
 
-/* Responsivo */
-@media (max-width: 600px) {
-    .banner-cardapio h1 {
-        font-size: 2.2rem;
-    }
-
-    .banner-cardapio p {
-        font-size: 1rem;
-    }
-
+/* Responsivo - celulares */
+@media (max-width: 480px) {
     .card-produto {
-        flex: 1 1 48%;
-        /* dois cards por linha */
-    }
-
-    .card-produto img {
-        display: none;
+        flex: 1 1 48%; /* dois cards por linha */
     }
 }
-
-/*Rodapé*/
-.footer {
-    background: var(--roxo-escuro);
-    color: var(--roxo-escuro);
-    padding: 50px 20px 10px;
-    font-family: 'Fredoka', sans-serif;
-    border-top: 1px solid var(--cinza);
-}
-
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 30px;
-}
-
-.footer-logo {
-    flex: 1 1 250px;
-}
-
-.footer-logo .txt-logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--branco);
-}
-
-.footer-logo .txt-gradient {
-    background: var(--verdeClaro);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.footer-logo p {
-    margin-top: 10px;
-    font-size: 14px;
-    color: var(--cinza);
-    line-height: 1.5;
-}
-
-.footer-links {
-    flex: 1 1 200px;
-}
-
-.footer-links h3 {
-    color: var(--branco);
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin: 8px 0;
-}
-
-.footer-links a {
-    color: var(--cinza);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: var(--laranja);
-}
-
-.footer-social {
-    flex: 1 1 200px;
-}
-
-.footer-social h3 {
-    color: var(--branco);
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-.social-icons a {
-    color: var(--branco);
-    margin-right: 15px;
-    font-size: 22px;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.social-icons a:hover {
-    color: var(--laranja);
-    transform: scale(1.2);
-}
-
-.footer-bottom {
-    text-align: center;
-    border-top: 1px solid #333;
-    padding-top: 15px;
-    margin-top: 40px;
-    font-size: 14px;
-    color: var(--cinza);
-}
-
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        max-width: 768px;
-        margin: 0 auto;
-        gap: 0;
-    }
-
-    .footer-logo {
-        flex: 1 1 125px;
-    }
-
-    .footer-links h3 {
-        margin-bottom: 5px;
-    }
-
-    .footer-links {
-        flex: 1 1 230px;
-    }
-
-    .footer-social {
-        flex: 1 1 100px;
-    }
-
-    .footer-links,
-    .footer-social {
-        margin-top: 0;
-    }
-
-    .social-icons a {
-        margin: 0 10px;
-    }
-}
-
