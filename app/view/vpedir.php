@@ -4,10 +4,94 @@
     <meta charset="UTF-8">
     <title>Monte seu Açaí</title>
     <style>
-        body { font-family: Arial; margin: 30px; }
-        .section { margin-bottom: 25px; }
-        .acomp-list { columns: 2; }
-        button { padding: 10px 20px; cursor: pointer; }
+    /* ======= ESTILO GERAL ======= */
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f7f9fb;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* ======= FORMULÁRIO ======= */
+form {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 25px 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ======= SEÇÕES ======= */
+.section {
+    margin-bottom: 35px;
+}
+
+.section h2 {
+    font-size: 1.3rem;
+    color: #007bff;
+    border-left: 5px solid #007bff;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+/* ======= INPUTS ======= */
+label {
+    display: block;
+    font-size: 1rem;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #007bff; /* cor do check e radio */
+    transform: scale(1.2);
+    margin-right: 8px;
+}
+
+/* ======= LISTA DE ACOMPANHAMENTOS ======= */
+.acomp-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* duas colunas */
+    gap: 8px;
+}
+
+@media (max-width: 500px) {
+    .acomp-list {
+        grid-template-columns: 1fr; /* coluna única no celular */
+    }
+}
+
+/* ======= BOTÃO ======= */
+button {
+    width: 100%;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* ======= ANIMAÇÃO LEVE ======= */
+form {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
     </style>
 </head>
 <body>
