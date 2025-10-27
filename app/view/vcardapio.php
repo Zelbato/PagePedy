@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,15 +49,15 @@
                     <a href="#" class="nav-link">Cardápio<i class="fa-solid fa-chevron-down"></i> </a>
 
                     <ul class="dropdown-menu">
-                        <li class="nav-ms-link"><a href="#" class="nav-link">Açaí</a></li>
-                        <li class="nav-ms-link"><a href="#" class="nav-link">Sorvetes</a></li>
-                        <li class="nav-ms-link"><a href="#" class="nav-link">Milk-shake</a></li>
-                        <li class="nav-ms-link"><a href="#" class="nav-link">Balde de Açaí</a></li>
-                        <li class="nav-ms-link"><a href="#" class="nav-link">Balde de Sorvete</a></li>
+                        <li class="nav-ms-link"><a href="vcardapio.php#acai" class="nav-link">Açaí</a></li>
+                        <li class="nav-ms-link"><a href="vcardapio.php#sorvete" class="nav-link">Sorvetes</a></li>
+                        <li class="nav-ms-link"><a href="vcardapio.php#milkshake" class="nav-link">Milk-shake</a></li>
+                        <li class="nav-ms-link"><a href="vcardapio.php#balde" class="nav-link">Baldes</a></li>
+                        <!-- <li class="nav-ms-link"><a href="#" class="nav-link">Balde de Sorvete</a></li> -->
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Promoções</a>
+                    <a href="vpromocao.php" class="nav-link">Promoções</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">Meus Pedidos</a>
@@ -69,6 +70,155 @@
         </nav>
 
     </header>
-</body>
-</html>
 
+    <main class="main">
+
+        <!-- Banner -->
+        <section class="banner-cardapio">
+            <div class="overlay"></div>
+            <div class="banner-text">
+                <h1>Cardápio</h1>
+                <p>Descubra o sabor perfeito: açaí, sorvetes e muito mais</p>
+            </div>
+        </section>
+
+        <!-- Categorias -->
+        <section class="categorias">
+            <h2>Escolha sua categoria</h2>
+            <div class="btnCategoria">
+                <button id="todos" class="ativo" data-categoria="todos"><i class="fa-solid fa-layer-group"></i> Todos</button>
+                <button id="acai" data-categoria="acai"><i class="fa-solid fa-bowl-food"></i> Açaí</button>
+                <button id="sovete" data-categoria="sorvete"><i class="fa-solid fa-ice-cream"></i> Sorvetes</button>
+                <button id="milkshake" data-categoria="milkshake"><i class="fa-solid fa-mug-hot"></i> Milkshakes</button>
+                <button id="baldes" data-categoria="complemento"><i class="fa-solid fa-cookie-bite"></i> Baldes</button>
+            </div>
+        </section>
+
+        <!-- Produtos -->
+        <section class="produtos">
+            <div class="card-produto acai">
+                <img src="../../public/assets/img/acai-6-teste.png" alt="Açaí Tradicional">
+                <h3>Açaí Tradicional</h3>
+                <p class="descricao">Cremoso e gelado, feito na hora!</p>
+                <span class="preco">R$ 12,00</span>
+                <button class="btn-add">Adicionar</button>
+            </div>
+
+            <div class="card-produto acai">
+                <img src="../../public/assets/img/acai-6-teste.png" alt="Açaí com Frutas">
+                <h3>Açaí com Frutas</h3>
+                <p class="descricao">Banana, morango e granola.</p>
+                <span class="preco">R$ 15,00</span>
+                <button class="btn-add">Adicionar</button>
+            </div>
+
+            <div class="card-produto sorvete">
+                <img src="../../public/assets/img/acai-6-teste.png" alt="Sorvete na Casquinha">
+                <h3>Sorvete na Casquinha</h3>
+                <p class="descricao">Baunilha, chocolate ou morango.</p>
+                <span class="preco">R$ 5,00</span>
+                <button class="btn-add">Adicionar</button>
+            </div>
+
+            <div class="card-produto sorvete">
+                <img src="../../public/assets/img/acai-6-teste.png" alt="Sorvete no Copo">
+                <h3>Sorvete no Copo</h3>
+                <p class="descricao">Escolha até 3 sabores!</p>
+                <span class="preco">R$ 8,00</span>
+                <button class="btn-add">Adicionar</button>
+            </div>
+
+            <div class="card-produto milkshake">
+                <img src="../../public/assets/img/acai-6-teste.png" alt="Milkshake de Chocolate">
+                <h3>Milkshake de Chocolate</h3>
+                <p class="descricao">Gelado, doce e delicioso.</p>
+                <span class="preco">R$ 10,00</span>
+                <button class="btn-add">Adicionar</button>
+            </div>
+
+            <div class="card-produto complemento">
+                <img src="../../public/assets/img/acai-6-teste.png" alt="Leite Ninho">
+                <h3>Leite Ninho</h3>
+                <p class="descricao">O toque especial para seu açaí.</p>
+                <span class="preco">R$ 4,00</span>
+                <button class="btn-add">Adicionar</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2>
+                <p>Mais que sabor, uma explosão de energia em cada copo!</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="home.php">Início</a></li>
+                    <li><a href="vcardapio.php">Cardápio</a></li>
+                    <li><a href="vpromocao.php">Promoções</a></li>
+                    <li><a href="#">Meus Pedidos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> PedyAçaí - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener("load", () => {
+            const hash = window.location.hash; // pega #sorvete ou qualquer outra seção
+            if (hash) {
+                const section = document.querySelector(hash);
+                if (section) {
+                    // rolar suavemente para a seção
+                    section.scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+                    // executa JS específico da seção
+                    switch (hash) {
+                        case "#sorvete":
+                            initSorveteSection();
+                            break;
+                        case "#acai":
+                            initAcaiSection();
+                            break;
+                            // adicione mais seções aqui
+                    }
+                }
+            }
+        });
+
+        // Exemplo de função para a seção Sorvete
+        function initSorveteSection() {
+            console.log("JS da seção Sorvete executado!");
+            // Coloque aqui todo o JS que precisa rodar na seção Sorvete
+        }
+
+        // Exemplo de função para a seção Açaí
+        function initAcaiSection() {
+            console.log("JS da seção Açaí executado!");
+        }
+    </script>
+
+    <script src="../../public/assets/js/cardápio.js"></script>
+    <script src="../../public/assets/js/script.js"></script>
+</body>
+
+</html>

@@ -50,11 +50,11 @@
                     <a href="#" class="nav-link">Cardápio<i class="fa-solid fa-chevron-down"></i> </a>
 
                     <ul class="dropdown-menu">
-                        <li class="nav-ms-link"><a href="#" class="nav-link">Açaí</a></li>
-                        <li class="nav-ms-link"><a href="#" class="nav-link">Sorvetes</a></li>
-                        <li class="nav-ms-link"><a href="#" class="nav-link">Milk-shake</a></li>
-                        <li class="nav-ms-link"><a href="#" class="nav-link">Balde de Açaí</a></li>
-                        <li class="nav-ms-link"><a href="#" class="nav-link">Balde de Sorvete</a></li>
+                        <li class="nav-ms-link"><a href="vcardapio.php#acai" class="nav-link">Açaí</a></li>
+                        <li class="nav-ms-link"><a href="vcardapio.php#sorvete" class="nav-link">Sorvetes</a></li>
+                        <li class="nav-ms-link"><a href="vcardapio.php#milkshake" class="nav-link">Milk-shake</a></li>
+                        <li class="nav-ms-link"><a href="vcardapio.php#balde" class="nav-link">Baldes</a></li>
+                        <!-- <li class="nav-ms-link"><a href="#" class="nav-link">Balde de Sorvete</a></li> -->
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -98,7 +98,7 @@
                 <div class="product-content">
                     <div class="card-product">
                         <div class="cards">
-                            <a href="vcardapio.php">
+                            <a href="vcardapio.php#acai">
                                 <img src="../../public/assets/img/açai-5.png" alt="imagem de açaí" class="card-image">
                                 <div class="card-effect">
                                     <h3 class="card-text">Açaí</h3>
@@ -108,7 +108,7 @@
                     </div>
                     <div class="card-product">
                         <div class="cards">
-                            <a href="vcardapio.php">
+                            <a href="vcardapio.php#sorvete">
                                 <img src="../../public/assets/img/sorvete-1.png" alt="imagem de açaí" class="card-image">
                                 <div class="card-effect">
                                     <h3 class="card-text">Sorvetes</h3>
@@ -118,7 +118,7 @@
                     </div>
                     <div class="card-product">
                         <div class="cards">
-                            <a href="vcardapio.php">
+                            <a href="vcardapio.php#milkshake">
                                 <img src="../../public/assets/img/download__1_-removebg-preview.png" alt="imagem de açaí" class="card-image">
                                 <div class="card-effect">
                                     <h3 class="card-text">Milk-Shake</h3>

@@ -1,13 +1,15 @@
 
 :root{
 --roxo-escuro: #300a33;
+--roxoclaro:#890AA3;
 --verdeClaro:#7af21b;
 --verdeEscuro:#10a417;
---cinza:#c6c6c6;
---preto: rgb(25, 25, 25);
 --branco: #f3f6f9;
---font: 'Poppins', sans-serif;
---roxoclaro:#890AA3;
+--cinza:#c6c6c6;
+--cinzaEscuro:#333;
+--preto: rgb(25, 25, 25);
+--pretoTransparen:rgba(0, 0, 0, 0.247);
 --laranja:orange;
 --laranjaEscuro:rgb(170, 117, 18);
+--font: 'Poppins', sans-serif;
 }
