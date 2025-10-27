@@ -27,7 +27,7 @@ CREATE TABLE fornecedor (
 
 CREATE TABLE materia_prima (
     id_mp INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    forn_id INT NOT NULL,
+    forn_id INT,
     nome_mp VARCHAR(90) NOT NULL,
     unidade ENUM('quilograma', 'gramas', 'litros', 'mililitro', 'metro', 'centimetros', 'tempo', 'unidade') NOT NULL DEFAULT 'quilograma',
     tipo_mp ENUM('producao', 'acompanhamento') DEFAULT 'producao', // tipo adicionado
@@ -184,10 +184,12 @@ CREATE TABLE pedido_usuario(
 
 
 
+
+<------------------------------------------------------------------------------------------------------------->
 CREATE TABLE orcamento (
     id_orc INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     empresa_id INT NOT NULL,
-    orc_despesas_id INT NOT NULL,
+    orc_despesas_id NOT NULL,
     periodo_inicio DATE NOT NULL,
     periodo_fim DATE NOT NULL,
     receita_total DECIMAL(12, 2) DEFAULT 0.00,
@@ -196,10 +198,10 @@ CREATE TABLE orcamento (
     valor_a_pagar DECIMAL(12, 2) DEFAULT 0.00,
     status ENUM('Atualizado', 'Em Análise', 'Fechado') DEFAULT 'Atualizado',
     ultima_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (empresa_id) REFERENCES empresa(id_empr)
+    FOREIGN KEY (empresa_id) REFERENCES empresa(id_empr),
  );
 
-Create TABLE orcamento_receita(
+ orcamento_receita(
     orc_id Int Not NULL,
     orc_receita_id int Not NULL,
     FOREIGN KEY (orc_receita_id) REFERENCES receita(id_receita),

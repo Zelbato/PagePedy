@@ -1,0 +1,33 @@
+$roxo-escuro: #56125b;
+$verdeClaro:#7af21b;
+$verdeEscuro:#10a417;
+$cinza:#ddd6d6;
+$preto: rgb(25, 25, 25);
+$branco: #f3f6f9;
+$font: 'Poppins', sans-serif;
+
+.Login{
+  display: flex;
+padding: 20px 40px;
+margin: auto 0;
+border-radius: 16px;
+align-items: center;
+justify-content: center;
+
+.Formulario_Login{
+    flex-direction: column;
+    display: flex;
+    gap: 15px;
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    background-color: $branco;
+    border-radius: 16px;
+    box-shadow: 0 8px 8px 0px #56125b;
+    justify-content: center;
+
+}
+button{
+    border-radius: 20px;
+}
+}
