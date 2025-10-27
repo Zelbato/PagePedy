@@ -229,37 +229,141 @@ img {
 }
 
 /* Banner */
+
+/* === Ajuste geral do banner === */
 .banner-cardapio {
-    height: 45vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
-    color: var(--branco);
+    width: 100%;
+    background: var(--roxoclaro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 120px 20px 80px;
+    /* espaço extra no topo e embaixo */
+    box-sizing: border-box;
 }
 
+/* === Corrige o overlay translúcido === */
 .banner-cardapio .overlay {
     position: absolute;
     inset: 0;
-    background: var(--roxoclaro);
+    background: linear-gradient(120deg, var(--roxoclaro), var(--roxo-escuro));
+    opacity: 0.08;
+    /* mais suave */
+    z-index: 1;
 }
 
-.banner-cardapio .banner-text {
+/* === Formulário centralizado e destacado === */
+.form-pedido {
     position: relative;
-    text-align: center;
     z-index: 2;
+    background: #fff;
+    width: 95%;
+    max-width: 750px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease;
+    margin-top: 40px;
 }
 
-.banner-cardapio h1 {
-    font-size: 48px;
+/* === Título e subtítulo centralizados === */
+.titulo-pedido {
+    font-size: 2rem;
+    color: var(--roxoclaro);
+    text-align: center;
     font-weight: 700;
-    color: var(--branco);
+    margin-bottom: 8px;
 }
 
-.banner-cardapio p {
-    font-size: 20px;
-    margin-top: 10px;
+.descricao-pedido {
+    text-align: center;
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 35px;
 }
+
+/* === Cabeçalhos das seções === */
+.form-pedido h2 {
+    font-size: 1.2rem;
+    color: var(--laranja);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-pedido h2::before {
+    content: "🍧";
+    font-size: 1.2rem;
+}
+
+/* === Caixas das opções === */
+.form-pedido label.opcao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fafafa;
+    border: 1px solid #e4e0ee;
+    padding: 12px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.form-pedido label.opcao:hover {
+    background: #f4f0ff;
+    border-color: var(--roxoclaro);
+}
+
+/* === Grade dos acompanhamentos === */
+.form-pedido .acomp-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+@media (max-width: 600px) {
+    .form-pedido .acomp-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* === Botão final === */
+.btn-finalizar {
+    width: 100%;
+    background: var(--laranja);
+    color: var(--preto);
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 25px;
+}
+
+.btn-finalizar:hover {
+    background: var(--verdeEscuro);
+    color: var(--branco);
+    transform: translateY(-2px);
+}
+
+/* === Animação suave === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* Categorias */
 .categorias {
@@ -308,7 +412,7 @@ img {
     padding: 40px 50px;
     justify-items: center;
     animation: fadeIn 0.5s ease;
-    
+
 }
 
 .card-produto {
@@ -532,4 +636,3 @@ img {
         margin: 0 10px;
     }
 }
-
