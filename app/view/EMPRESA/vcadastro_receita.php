@@ -102,7 +102,6 @@ function adicionarProduto() {
 
     container.appendChild(novoProduto);
 
-    // após adicionar, ajustar required/disabled conforme o tipo atual
     mostrarProdutos();
 }
 </script>
@@ -160,17 +159,12 @@ while ($row = $res->fetch_assoc()) {
         $has_products = false;
     }
 
-    // Se existe produto associado (rp.id_prod não nulo)
     if (!empty($row['id_prod'])) {
         $has_products = true;
         $subtotal = (float)$row['quantidade'] * (float)$row['preco_venda'];
 
-        // Se for a primeira linha do grupo (primeiro produto da receita), mostramos os dados da receita
-        // Para detectar isso, olhamos se a última linha exibida teve a mesma receita — simplificamos:
-        // se a receita mudou, mostramos os dados; caso contrário, deixamos colunas da receita vazias.
         static $last_displayed_receita = null;
         if ($last_displayed_receita !== $row['id_receita']) {
-            // primeira linha desta receita
             echo "<tr>
                     <td>{$row['id_receita']}</td>
                     <td>{$row['tipo_receita']}</td>
@@ -184,7 +178,6 @@ while ($row = $res->fetch_assoc()) {
                   </tr>";
             $last_displayed_receita = $row['id_receita'];
         } else {
-            // linhas adicionais do mesmo pedido (só produtos)
             echo "<tr>
                     <td></td>
                     <td></td>
@@ -198,7 +191,6 @@ while ($row = $res->fetch_assoc()) {
                   </tr>";
         }
     } else {
-        // Receita sem produtos (tipo 'Outro' ou sem itens)
         echo "<tr>
                 <td>{$row['id_receita']}</td>
                 <td>{$row['tipo_receita']}</td>
