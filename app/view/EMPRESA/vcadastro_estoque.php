@@ -8,7 +8,7 @@
 <body>
     <h2>Cadastro de Movimentação de Estoque</h2>
 
-    <form action="../FUNCAO/fcadastro_estoque.php" method="POST">
+    <form action="../../FUNCAO/fcadastro_estoque.php" method="POST">
         <label>Tipo de Estoque:</label><br>
         <select name="estoque_tipo" id="estoque_tipo" onchange="mostrarCampos()" required>
             <option value="">Selecione...</option>
@@ -20,7 +20,7 @@
             <label>Matéria-prima:</label><br>
             <select name="estoque_matp_id">
                 <?php
-                require_once '../DADOS/config.php';
+                require_once '../../DADOS/config.php';
                 $sql = "SELECT id_mp, nome_mp FROM materia_prima ORDER BY nome_mp";
                 $res = $conexao->query($sql);
                 while ($row = $res->fetch_assoc()) {
@@ -64,14 +64,14 @@
     </script>
 
     <h1>deletar intem de estoque</h1>
-    <form action="../FUNCAO/fdelete_estoque.php" method="GET">
+    <form action="../../FUNCAO/fdelete_estoque.php" method="GET">
         <label>ID do item estocado a ser deletado:</label><br>
         <input type="number" name="delete_id" required><br>
         <button type="submit">Deletar Item</button>
     </form>
 
     <h1>editar estoque</h1>
-    <form action="../FUNCAO/fedite_estoque.php" method="POST">
+    <form action="../../FUNCAO/fedite_estoque.php" method="POST">
         <label>ID do item estocado a ser editado:</label><br>
         <input type="number" name="id_estoque" required><br>
 
@@ -86,7 +86,7 @@
             <label>Matéria-prima:</label><br>
             <select name="estoque_matp_id">
                 <?php
-                require_once '../DADOS/config.php';
+                require_once '../../DADOS/config.php';
                 $sql = "SELECT id_mp, nome_mp FROM materia_prima ORDER BY nome_mp";
                 $res = $conexao->query($sql);
                 while ($row = $res->fetch_assoc()) {
@@ -129,9 +129,9 @@
     
     <h1> estoque </h1>
     <?php
-    require_once '../DADOS/config.php';
+    require_once '../../DADOS/config.php';
 
-    //join para trazer o nome do produto ou matéria prima
+    
     $sql = "
         SELECT 
             e.id_estoque,

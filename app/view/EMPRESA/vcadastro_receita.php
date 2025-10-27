@@ -1,8 +1,12 @@
+<<<<<<< HEAD
+=======
+
+RECEITA.PHP
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="PagePedy/public/assets/scss/style.css">
     <title>Gerenciar Receitas</title>
     <style>
         .produto-item { margin-bottom: 10px; border: 1px solid #ccc; padding: 10px; }
@@ -13,7 +17,7 @@
 
 <h1>Cadastrar Receita</h1>
 
-<form action="../FUNCAO/fcadastro_receita.php" method="POST" id="formReceita">
+<form action="../../FUNCAO/fcadastro_receita.php" method="POST" id="formReceita">
     <label for="tipo_receita">Tipo de Receita:</label>
     <select name="tipo_receita" id="tipo_receita" onchange="mostrarProdutos()">
         <option value="Produto">Produto</option>
@@ -39,7 +43,7 @@
                 <select name="id_prod[]">
                     <option value="">Selecione...</option>
                     <?php
-                    require_once '../DADOS/config.php';
+                    require_once '../../DADOS/config.php';
                     $sql = "SELECT id_prod, nome_prod FROM produto ORDER BY nome_prod ASC";
                     $res = $conexao->query($sql);
                     while ($row = $res->fetch_assoc()) {
@@ -64,7 +68,7 @@
 </form>
 
 <script>
-// inicializa exibindo conforme o valor atual
+
 document.addEventListener('DOMContentLoaded', function() {
     mostrarProdutos();
 });
@@ -103,7 +107,6 @@ function adicionarProduto() {
 
     container.appendChild(novoProduto);
 
-    // após adicionar, ajustar required/disabled conforme o tipo atual
     mostrarProdutos();
 }
 </script>
@@ -112,7 +115,7 @@ function adicionarProduto() {
 
 <h1>Todas as Receitas</h1>
 <?php
-require_once '../DADOS/config.php';
+require_once '../../DADOS/config.php';
 
 $sql = "
     SELECT
@@ -161,17 +164,12 @@ while ($row = $res->fetch_assoc()) {
         $has_products = false;
     }
 
-    // Se existe produto associado (rp.id_prod não nulo)
     if (!empty($row['id_prod'])) {
         $has_products = true;
         $subtotal = (float)$row['quantidade'] * (float)$row['preco_venda'];
 
-        // Se for a primeira linha do grupo (primeiro produto da receita), mostramos os dados da receita
-        // Para detectar isso, olhamos se a última linha exibida teve a mesma receita — simplificamos:
-        // se a receita mudou, mostramos os dados; caso contrário, deixamos colunas da receita vazias.
         static $last_displayed_receita = null;
         if ($last_displayed_receita !== $row['id_receita']) {
-            // primeira linha desta receita
             echo "<tr>
                     <td>{$row['id_receita']}</td>
                     <td>{$row['tipo_receita']}</td>
@@ -185,7 +183,6 @@ while ($row = $res->fetch_assoc()) {
                   </tr>";
             $last_displayed_receita = $row['id_receita'];
         } else {
-            // linhas adicionais do mesmo pedido (só produtos)
             echo "<tr>
                     <td></td>
                     <td></td>
@@ -193,13 +190,12 @@ while ($row = $res->fetch_assoc()) {
                     <td></td>
                     <td></td>
                     <td>" . htmlspecialchars($row['nome_prod']) . "</td>
-                    <td>{$row['quantidade']}</td>
+                    <td>{$row['quantidade']}</td>	
                     <td>{$row['preco_venda']}</td>
                     <td>" . number_format($subtotal, 2, ',', '.') . "</td>
                   </tr>";
         }
     } else {
-        // Receita sem produtos (tipo 'Outro' ou sem itens)
         echo "<tr>
                 <td>{$row['id_receita']}</td>
                 <td>{$row['tipo_receita']}</td>
@@ -217,3 +213,4 @@ echo "</table>";
 
 </body>
 </html>
+>>>>>>> 172a3e948b75525d6443533047b00868a3fe5185

@@ -7,7 +7,7 @@
 <body>
 
     <h1>Cadastro de Produto</h1>
-    <form action="../FUNCAO/fcadastro_produto.php" method="POST" enctype="multipart/form-data">
+    <form action="../../FUNCAO/fcadastro_produto.php" method="POST" enctype="multipart/form-data">
 
         <label for="img_prod">Imagem do Produto:</label><br>
         <input type="file" id="img_prod" name="img_prod" accept="image/*"><br><br>
@@ -16,7 +16,7 @@
         <select id="categoria_id" name="categoria_id" required>
             <option value="">Selecione...</option>
             <?php
-            require_once '../DADOS/config.php';
+            require_once '../../DADOS/config.php';
             $sql = "SELECT id_cat, nome_cat FROM categoria ORDER BY nome_cat ASC";
             $res = $conexao->query($sql);
             while ($row = $res->fetch_assoc()) {
@@ -43,13 +43,13 @@
     <hr>
 
     <h1>Editar Produto</h1>
-    <form action="../FUNCAO/fedite_produto.php" method="POST" enctype="multipart/form-data">
+    <form action="../../FUNCAO/fedite_produto.php" method="POST" enctype="multipart/form-data">
 
         <label for="id_prod">Selecione o Produto:</label><br>
         <select id="id_prod" name="id_prod" required>
             <option value="">Selecione...</option>
             <?php
-            require_once '../DADOS/config.php';
+            require_once '../../DADOS/config.php';
             $sql = "SELECT id_prod, nome_prod FROM produto ORDER BY nome_prod ASC";
             $res = $conexao->query($sql);
             while ($row = $res->fetch_assoc()) {
@@ -79,12 +79,12 @@
     <hr>
 
     <h1>Deletar Produto</h1>
-    <form action="../FUNCAO/fdelete_produto.php" method="GET">
+    <form action="../../FUNCAO/fdelete_produto.php" method="GET">
         <label for="id_prod_delete">Selecione o Produto:</label><br>
         <select id="id_prod_delete" name="id_prod" required>
             <option value="">Selecione...</option>
             <?php
-            require_once '../DADOS/config.php';
+            require_once '../../DADOS/config.php';
             $sql = "SELECT id_prod, nome_prod FROM produto ORDER BY nome_prod ASC";
             $res = $conexao->query($sql);
             while ($row = $res->fetch_assoc()) {

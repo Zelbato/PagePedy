@@ -16,7 +16,7 @@
 <body>
     
     <h1>Cadastro de Despesas</h1>
-    <form action="../FUNCAO/fcadastro_despesas.php" method="POST">
+    <form action="../../FUNCAO/fcadastro_despesas.php" method="POST">
      <label for="categoria_despesa">Categoria da Despesa:</label>
      <select id="categoria_despesa" name="categoria_despesa" required>
           <option value="Fixa">Fixa</option>
@@ -46,7 +46,7 @@
     </form>
     
     <h1>editar despesas</h1>
-    <form action="../FUNCAO/fedite_despesas.php" method="POST">
+    <form action="../../FUNCAO/fedite_despesas.php" method="POST">
         <label for="id_despesas">ID da Despesa a ser editada:</label>
         <input type="text" id="id_despesas" name="id_despesas" required><br>
 
@@ -74,7 +74,7 @@
 
 
     <h1>todas as despesas</h1>
-   <?php require_once "../DADOS/config.php";
+   <?php require_once "../../DADOS/config.php";
     $sql = "SELECT * FROM despesas";
     $res = $conexao->query($sql);
     if ($res->num_rows > 0) {
