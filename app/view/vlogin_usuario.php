@@ -33,14 +33,15 @@
 
 <body>
 
-    <section class="Login">
-        <form action="../FUNCAO/flogin_usuario.php" method="POST" class="Formulario_Login">
-            <div class="login_usuario_info">
+    <section class="Login-container">
+           <div class="login_usuario_info">
             <h2>Bem-vindo à Pedy<span>Açaí</span></h2>
             <img src="../../public/assets/img/pedyacai.png" alt="acai" class="img-info">
             <p>Cadastre-se e aproveite o melhor do sabor artesanal.</p>
         </div>
-         <div class="Login-form">
+
+        <div class="Login-form">
+        <form action="../FUNCAO/flogin_usuario.php" method="POST" class="Formulario_Login">
         <h2>Login de Usuário</h2>
         <label for="nome">Nome</label>
         <input type="nome" id="nome" name="nome" required>
@@ -55,6 +56,7 @@
     </form>
 </div>
     </section>
+
 </body>
 
 </html>
