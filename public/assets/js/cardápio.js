@@ -21,3 +21,14 @@ botoes.forEach(botao => {
     });
   });
 });
+
+// Quando o usuário selecionar um tamanho, mostra o card de acompanhamentos
+const radios = document.querySelectorAll('input[name="base_id"]');
+const acompDiv = document.getElementById('acompanhamentos');
+
+radios.forEach(radio => {
+  radio.addEventListener('change', () => {
+    acompDiv.classList.remove('oculto');
+    acompDiv.classList.add('mostrar');
+  });
+});

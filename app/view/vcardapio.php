@@ -76,66 +76,64 @@
         <!-- Banner -->
         <section class="banner-cardapio">
             <div class="overlay"></div>
-            
-<div class="overlay"></div>
 
-<form class="form-pedido" action="../view/vfinalizar_pedido.php" method="POST">
-    <h1 class="titulo-pedido">Monte seu Pedido 🍧</h1>
-    <p class="descricao-pedido">Escolha a base e os acompanhamentos do seu açaí do seu jeito!</p>
+            <div class="banner-text">
+                <h1>Cardápio</h1>
+                <p>Descubra o sabor perfeito: açaí, sorvetes e muito mais</p>
+            </div>
+        </section>
 
-    <!-- ESCOLHER BASE -->
-    <div class="section">
-        <h2>1️⃣ Escolha o tamanho da base:</h2>
-        <?php
-        require_once '../DADOS/config.php';
-        $sql = "SELECT id_prod, nome_prod, preco FROM produto 
+        <!--Monte seu pedido-->
+        <section class="monteOseu">
+            <form class="form-pedido" action="../view/vfinalizar_pedido.php" method="POST">
+                <h1 class="titulo-pedido">Monte seu Pedido</h1>
+                <p class="descricao-pedido">Escolha a base e os acompanhamentos do seu açaí do seu jeito!</p>
+
+                <!-- ESCOLHER BASE -->
+                <div class="tamanhos-copo card">
+                    <h2>1️⃣ Escolha o tamanho da base:</h2>
+                    <?php
+                    require_once '../DADOS/config.php';
+                    $sql = "SELECT id_prod, nome_prod, preco FROM produto 
                 JOIN categoria ON produto.categoria_id = categoria.id_cat 
                 WHERE categoria.nome_cat = 'Base'";
-        $res = $conexao->query($sql);
-        if ($res->num_rows > 0) {
-            while ($row = $res->fetch_assoc()) {
-                echo "<label class='opcao'>
+                    $res = $conexao->query($sql);
+                    if ($res->num_rows > 0) {
+                        while ($row = $res->fetch_assoc()) {
+                            echo "<label class='opcao'>
                         <input type='radio' name='base_id' value='{$row['id_prod']}' required> 
                         <span><b>{$row['nome_prod']}</b> - R$ " . number_format($row['preco'], 2, ',', '.') . "</span>
                       </label>";
-            }
-        } else {
-            echo "<p>Nenhuma base disponível.</p>";
-        }
-        ?>
-    </div>
+                        }
+                    } else {
+                        echo "<p>Nenhuma base disponível.</p>";
+                    }
+                    ?>
+                </div>
 
-    <!-- ESCOLHER ACOMPANHAMENTOS -->
-    <div class="section">
-        <h2>2️⃣ Escolha seus acompanhamentos:</h2>
-        <div class="acomp-list">
-        <?php
-        $sql = "SELECT id_mp, nome_mp, preco_unitario FROM materia_prima WHERE tipo_mp = 'acompanhamento'";
-        $res = $conexao->query($sql);
-        if ($res->num_rows > 0) {
-            while ($row = $res->fetch_assoc()) {
-                echo "<label class='opcao'>
+                <!-- ESCOLHER ACOMPANHAMENTOS -->
+                <div class="acompanhamentos card oculto" id="acompanhamentos">
+                    <h2>2️⃣ Escolha seus acompanhamentos:</h2>
+                    <div class="acomp-list">
+                        <?php
+                        $sql = "SELECT id_mp, nome_mp, preco_unitario FROM materia_prima WHERE tipo_mp = 'acompanhamento'";
+                        $res = $conexao->query($sql);
+                        if ($res->num_rows > 0) {
+                            while ($row = $res->fetch_assoc()) {
+                                echo "<label class='opcao'>
                         <input type='checkbox' name='acompanhamentos[{$row['id_mp']}]' value='{$row['id_mp']}'>
                         <span>{$row['nome_mp']} - R$ " . number_format($row['preco_unitario'], 2, ',', '.') . "</span>
                       </label>";
-            }
-        } else {
-            echo "<p>Nenhum acompanhamento disponível.</p>";
-        }
-        ?>
-        </div>
-    </div>
+                            }
+                        } else {
+                            echo "<p>Nenhum acompanhamento disponível.</p>";
+                        }
+                        ?>
+                    </div>
+                </div>
 
-    <button type="submit" class="btn-finalizar">➡️ Finalizar Pedido</button>
-</form>
-
-
-
-            
-            <!-- <div class="banner-text">
-                <h1>Cardápio</h1>
-                <p>Descubra o sabor perfeito: açaí, sorvetes e muito mais</p>
-            </div> -->
+                <button type="submit" class="btn-finalizar">➡️ Finalizar Pedido</button>
+            </form>
         </section>
 
         <!-- Categorias -->
