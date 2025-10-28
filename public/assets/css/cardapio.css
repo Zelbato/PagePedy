@@ -230,45 +230,131 @@ img {
 
 /* Banner */
 
-/* === Ajuste geral do banner === */
-.banner-cardapio {
-    position: relative;
-    width: 100%;
-    background: var(--roxoclaro);
+.monteOseu {
+    background: #f3f6f9;
+    padding: 50px 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 120px 20px 80px;
-    /* espaço extra no topo e embaixo */
-    box-sizing: border-box;
+    align-items: flex-start;
+    font-family: "Poppins", sans-serif;
 }
 
-/* === Corrige o overlay translúcido === */
-.banner-cardapio .overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(120deg, var(--roxoclaro), var(--roxo-escuro));
-    opacity: 0.08;
-    /* mais suave */
-    z-index: 1;
-}
-
-/* === Formulário centralizado e destacado === */
 .form-pedido {
-    position: relative;
-    z-index: 2;
-    background: #fff;
-    width: 95%;
-    max-width: 750px;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.5s ease;
-    margin-top: 40px;
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* === Título e subtítulo centralizados === */
+.titulo-pedido,
+.descricao-pedido {
+    width: 100%;
+    text-align: center;
+}
+
+.titulo-pedido {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #206ab8;
+}
+
+.descricao-pedido {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* ===== CARD GENÉRICO ===== */
+.card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 25px 30px;
+    flex: 1;
+    min-width: 380px;
+    max-width: 500px;
+    transition: all 0.4s ease;
+}
+
+/* ===== OCULTAR ACOMPANHAMENTOS ===== */
+.oculto {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+.mostrar {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* ===== OPÇÕES ===== */
+.opcao {
+    display: flex;
+    align-items: center;
+    background: #f9fbfd;
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.opcao:hover {
+    border-color: #206ab8;
+    background: #eaf2fc;
+}
+
+.opcao input {
+    accent-color: #206ab8;
+    margin-right: 10px;
+    transform: scale(1.1);
+}
+
+.opcao span {
+    color: #333;
+}
+
+/* ===== BOTÃO FINALIZAR ===== */
+.btn-finalizar {
+    width: 100%;
+    max-width: 300px;
+    margin: 40px auto 0;
+    padding: 15px;
+    background: #206ab8;
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-finalizar:hover {
+    background: #174d8a;
+    transform: scale(1.03);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 900px) {
+    .form-pedido {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 90%;
+    }
+}
+
+
+/* 
 .titulo-pedido {
     font-size: 2rem;
     color: var(--roxoclaro);
@@ -284,7 +370,6 @@ img {
     margin-bottom: 35px;
 }
 
-/* === Cabeçalhos das seções === */
 .form-pedido h2 {
     font-size: 1.2rem;
     color: var(--laranja);
@@ -299,7 +384,6 @@ img {
     font-size: 1.2rem;
 }
 
-/* === Caixas das opções === */
 .form-pedido label.opcao {
     display: flex;
     align-items: center;
@@ -317,7 +401,6 @@ img {
     border-color: var(--roxoclaro);
 }
 
-/* === Grade dos acompanhamentos === */
 .form-pedido .acomp-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -330,7 +413,7 @@ img {
     }
 }
 
-/* === Botão final === */
+
 .btn-finalizar {
     width: 100%;
     background: var(--laranja);
@@ -351,7 +434,6 @@ img {
     transform: translateY(-2px);
 }
 
-/* === Animação suave === */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -362,7 +444,7 @@ img {
         opacity: 1;
         transform: translateY(0);
     }
-}
+} */
 
 
 /* Categorias */
