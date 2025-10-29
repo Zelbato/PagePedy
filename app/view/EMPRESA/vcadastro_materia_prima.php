@@ -62,36 +62,42 @@
             </div>
             <div class="form-group">
               <label for="tipo_mp">Tipo:</label>
-              <select class="tipo-card" id="tipo_mp" name="tipo_mp" required>
-                <option value="producao">Produção</option>
-                <option value="acompanhamento">Acompanhamento</option>
-              </select>
+              <div class="select-content">
+                <select class="tipo-card" id="tipo_mp" name="tipo_mp" required>
+                  <!-- <option value="producao">Produção</option> -->
+                  <option value="acompanhamento">Acompanhamento</option>
+                </select>
+              </div>
             </div>
             <div class="form-group">
               <label for="forn_id">Fornecedor:</label>
-              <select class="fornecedor-card" id="forn_id" name="forn_id" required>
-                <?php
-                require_once '../../DADOS/config.php';
-                $sql = "SELECT id_forn, nome_forn FROM fornecedor";
-                $res = $conexao->query($sql);
-                while ($row = $res->fetch_assoc()) {
-                  echo "<option value='{$row['id_forn']}'>{$row['nome_forn']}</option>";
-                }
-                ?>
-              </select>
+              <div class="select-content">
+                <select class="fornecedor-card" id="forn_id" name="forn_id" required>
+                  <?php
+                  require_once '../../DADOS/config.php';
+                  $sql = "SELECT id_forn, nome_forn FROM fornecedor";
+                  $res = $conexao->query($sql);
+                  while ($row = $res->fetch_assoc()) {
+                    echo "<option value='{$row['id_forn']}'>{$row['nome_forn']}</option>";
+                  }
+                  ?>
+                </select>
+              </div>
             </div>
             <div class="form-group">
               <label for="unidade">Unidade:</label>
-              <select class="unidade-card" id="unidade" name="unidade">
-                <option value="quilograma">Quilograma</option>
-                <option value="gramas">Gramas</option>
-                <option value="litros">Litros</option>
-                <option value="mililitros">Mililitros</option>
-                <option value="metros">Metros</option>
-                <option value="centimetros">Centímetros</option>
-                <option value="tempo">Tempo</option>
-                <option value="unidade">Unidade</option>
-              </select>
+              <div class="select-content">
+                <select class="unidade-card" id="unidade" name="unidade">
+                  <option value="quilograma">Quilograma</option>
+                  <option value="gramas">Gramas</option>
+                  <option value="litros">Litros</option>
+                  <option value="mililitros">Mililitros</option>
+                  <option value="metros">Metros</option>
+                  <option value="centimetros">Centímetros</option>
+                  <option value="tempo">Tempo</option>
+                  <option value="unidade">Unidade</option>
+                </select>
+              </div>
             </div>
             <div class="form-group">
               <label for="quantidade">Quantidade:</label>
@@ -222,40 +228,40 @@
     </div>
   </main>
 
-   <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2>
-                <p>Mais que sabor, uma explosão de energia em cada copo!</p>
-            </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2>
+        <p>Mais que sabor, uma explosão de energia em cada copo!</p>
+      </div>
 
-            <div class="footer-links">
-                <h3>Links Rápidos</h3>
-                <ul>
-                    <li><a href="home.php">Início</a></li>
-                    <li><a href="vcardapio.php">Cardápio</a></li>
-                    <li><a href="#">Promoções</a></li>
-                    <li><a href="#">Meus Pedidos</a></li>
-                </ul>
-            </div>
+      <div class="footer-links">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="home.php">Início</a></li>
+          <li><a href="vcardapio.php">Cardápio</a></li>
+          <li><a href="#">Promoções</a></li>
+          <li><a href="#">Meus Pedidos</a></li>
+        </ul>
+      </div>
 
-            <div class="footer-social">
-                <h3>Siga-nos</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                </div>
-            </div>
+      <div class="footer-social">
+        <h3>Siga-nos</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
         </div>
+      </div>
+    </div>
 
-        <div class="footer-bottom">
-            <p>&copy; <span id="year"></span> PedyAçaí - Todos os direitos reservados.</p>
-        </div>
-    </footer>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> PedyAçaí - Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
-    <script src="../../../public/assets/js/script.js"></script>
+  <script src="../../../public/assets/js/script.js"></script>
 
   <script>
     // Alterna seções ao clicar nos botões

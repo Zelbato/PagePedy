@@ -42,6 +42,7 @@ button {
 
 body {
     padding-top: 70px;
+    background: var(--branco);
 }
 
 /* ==========================
@@ -242,6 +243,8 @@ body {
 
 }
 
+
+
 .main-content {
     width: 90%;
     max-width: 1200px;
@@ -394,12 +397,12 @@ body {
 }
 
 .btn-danger {
-    background-color:var(--btnDelete);
+    background-color: var(--btnDelete);
     color: var(--branco);
 }
 
 .btn-danger:hover {
-    background-color:var(--btnDeleteHover);
+    background-color: var(--btnDeleteHover);
 }
 
 /* TABELAS */
@@ -452,26 +455,28 @@ body {
     }
 }
 
+.select-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-select {
+
+.select-content select {
     width: 100%;
     padding: 10px 12px;
     border-radius: 6px;
     border: 1px solid var(--cinza);
     font-size: 1rem;
-    background-color: var(--brancoFull);
+    background-color: var(--branco);
     color: var(--cinzaEscuro);
     transition: 0.3s;
 }
 
-select:focus {
+.select-content select:focus {
     outline: none;
     border-color: var(--roxoclaro);
     box-shadow: 0 0 0 2px rgba(128, 0, 128, 0.2);
-}
-
-select option {
-    padding: 10px;
 }
 
 
@@ -509,9 +514,15 @@ select option {
         width: 50%;
     }
 
-    select {
-        font-size: 0.95rem;
-        padding: 8px 10px;
+    .select-content {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .select-content select {
+        width: 250px;
+        font-size: 12px;
     }
 }
 
@@ -536,19 +547,26 @@ select option {
         gap: 15px;
     }
 
-    select {
-        font-size: 0.9rem;
-        padding: 7px 10px;
+    .select-content {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .select-content select {
+        width: 250px;
+        font-size: 12px;
     }
 }
 
 /* Smartphones pequenos */
 @media screen and (max-width: 480px) {
 
-    .section{
+    .section {
         background: transparent;
         border: none;
     }
+
     .actions-bar {
         flex-direction: column;
         gap: 8px;
@@ -580,9 +598,16 @@ select option {
         padding: 10px;
     }
 
-    select {
-        font-size: 0.85rem;
-        padding: 6px 8px;
+    .select-content {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .select-content select {
+        width: 230px;
+        font-size: 15px;
+        padding: 10px;
     }
 }
 
