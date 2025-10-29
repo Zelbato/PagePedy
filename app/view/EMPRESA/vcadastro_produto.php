@@ -69,6 +69,7 @@
      <!-- Container de Cards/Formulários -->
     <div class="card-container">
       <!-- Seção Cadastrar -->
+       
     <h1>Cadastro de Produto</h1>
     <form action="../../FUNCAO/fcadastro_produto.php" method="POST" enctype="multipart/form-data" class="Formulario_produto">
 
