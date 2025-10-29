@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 @import'./variables.css';
 
 * {
@@ -18,17 +20,19 @@ body {
 }
 
 .Login-container {
-    width: 100%;
     display: flex;
-    justify-content: flex-end; 
-    padding-right: 80px; 
+    background: var(--branco);
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 900px;
+    max-width: 95%;
 }
 
 .login_usuario_info{
     background: linear-gradient(160deg, var(--roxo-escuro), var(--roxoclaro));
     color: var(--branco);
     padding: 50px 40px;
-    /* flex: 1.2; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -112,32 +116,21 @@ button:hover {
 
 
 @media (max-width: 768px) {
-    body {
-        justify-content: center; 
-        align-items: flex-start;
-        padding-top: 40px;
-        height: auto;
+    .Login-container {
+        flex-direction: column;
+        box-shadow: none;
     }
 
-    .Login {
-        justify-content: center;
-        padding: 0 20px;
+    .login_usuario_info {
+        padding: 40px 20px;
+        display: none;
     }
 
-    .Formulario_Login {
-        width: 90%;
-        max-width: 360px;
-        padding: 30px;
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+    .Login-form {
+        padding: 40px 20px;
     }
 
-    .Formulario_Login h2 {
-        font-size: 1.2rem;
-    }
-
-    .Formulario_Login input,
-    .Formulario_Login button {
-        font-size: 14px;
-        padding: 10px;
+    button {
+        padding: 12px;
     }
 }
