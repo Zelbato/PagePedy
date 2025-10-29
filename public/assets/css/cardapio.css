@@ -227,21 +227,31 @@ img {
     }
 
 }
+.banner-text {
+    background: var(--roxoclaro);
+    color: var(--branco);
+    text-align: center;
+    height: auto;
+    padding: 80px 20px 20px;
+    
 
-/* Banner */
+}
+
 
 .monteOseu {
     background: #f3f6f9;
-    padding: 50px 20px;
+    padding: 40px 20px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    font-family: "Poppins", sans-serif;
+    align-items: center;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    font-family: var(--fontFredoka);
 }
 
 .form-pedido {
     display: flex;
-    gap: 30px;
+    flex-direction: column;
     max-width: 1200px;
     width: 100%;
     flex-wrap: wrap;
@@ -257,28 +267,30 @@ img {
 .titulo-pedido {
     font-size: 2rem;
     font-weight: 700;
-    color: #206ab8;
+    color: var(--roxoclaro);
 }
 
 .descricao-pedido {
     font-size: 1rem;
-    color: #555;
-    margin-bottom: 30px;
+    color: var(--cinzaEscuro);
+    margin-bottom: 0px;
 }
 
-/* ===== CARD GENÉRICO ===== */
 .card {
-    background: #fff;
+    display: flex;
+    align-items: center;
+    
+    background: var(--branco);
     border-radius: 18px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     padding: 25px 30px;
+    margin-top: 20px;
     flex: 1;
     min-width: 380px;
-    max-width: 500px;
+    height: 500px;
+    /* max-width: 500px; */
     transition: all 0.4s ease;
 }
 
-/* ===== OCULTAR ACOMPANHAMENTOS ===== */
 .oculto {
     opacity: 0;
     pointer-events: none;
@@ -292,13 +304,13 @@ img {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* ===== OPÇÕES ===== */
 .opcao {
     display: flex;
     align-items: center;
     background: #f9fbfd;
     border-radius: 12px;
     padding: 10px 14px;
+    width: 100%;
     margin-bottom: 10px;
     cursor: pointer;
     transition: 0.3s;
@@ -306,12 +318,12 @@ img {
 }
 
 .opcao:hover {
-    border-color: #206ab8;
+    border-color: var(--roxoclaro);
     background: #eaf2fc;
 }
 
 .opcao input {
-    accent-color: #206ab8;
+    accent-color: var(--roxoclaro);
     margin-right: 10px;
     transform: scale(1.1);
 }
@@ -320,14 +332,13 @@ img {
     color: #333;
 }
 
-/* ===== BOTÃO FINALIZAR ===== */
 .btn-finalizar {
     width: 100%;
     max-width: 300px;
     margin: 40px auto 0;
     padding: 15px;
-    background: #206ab8;
-    color: #fff;
+    background: var(--laranja);
+    color: var(--branco);
     border: none;
     border-radius: 14px;
     font-size: 1.1rem;
@@ -337,7 +348,7 @@ img {
 }
 
 .btn-finalizar:hover {
-    background: #174d8a;
+    background: var(--roxoclaro);
     transform: scale(1.03);
 }
 
@@ -365,7 +376,7 @@ img {
 
 .descricao-pedido {
     text-align: center;
-    color: #555;
+    color: var(--cinzaEscuro);
     font-size: 1rem;
     margin-bottom: 35px;
 }

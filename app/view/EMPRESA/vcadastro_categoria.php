@@ -42,7 +42,7 @@
             <th>Descrição</th>
         </tr>
         <?php
-        require_once '../../FUNCAO/fcadastro_categoria.php';
+        require_once '../../DADOS/config.php';
          $todas = $conexao->query("SELECT * FROM categoria");
         if ($todas->num_rows > 0) {
             while($row = $todas->fetch_assoc()) {
