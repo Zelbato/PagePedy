@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!--Icones Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--Icones Bootstrap-->
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Google Fonts-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--Bootstrap-->
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!--Font Awesome-->
+    <title>Document</title>
+    <link rel="stylesheet" href="../../public/assets/css/cadastro_produto.css"><!--IMPORTANTE -->
     <meta charset="UTF-8">
     <title>Gerenciar Produtos</title>
 </head>
 <body>
 
     <h1>Cadastro de Produto</h1>
-    <form action="../../FUNCAO/fcadastro_produto.php" method="POST" enctype="multipart/form-data">
+    <form action="../../FUNCAO/fcadastro_produto.php" method="POST" enctype="multipart/form-data" class="Formulario_produto">
 
         <label for="img_prod">Imagem do Produto:</label><br>
         <input type="file" id="img_prod" name="img_prod" accept="image/*"><br><br>
@@ -24,7 +50,8 @@
             }
             ?>
         </select><br><br>
-
+        
+    
         <label for="nome_prod">Nome do Produto:</label><br>
         <input type="text" id="nome_prod" name="nome_prod" required><br><br>
 
@@ -43,7 +70,7 @@
     <hr>
 
     <h1>Editar Produto</h1>
-    <form action="../../FUNCAO/fedite_produto.php" method="POST" enctype="multipart/form-data">
+    <form action="../../FUNCAO/fedite_produto.php" method="POST" enctype="multipart/form-data" class="Form2_produto">
 
         <label for="id_prod">Selecione o Produto:</label><br>
         <select id="id_prod" name="id_prod" required>
@@ -79,7 +106,7 @@
     <hr>
 
     <h1>Deletar Produto</h1>
-    <form action="../../FUNCAO/fdelete_produto.php" method="GET">
+    <form action="../../FUNCAO/fdelete_produto.php" method="GET" class="form3_produto">
         <label for="id_prod_delete">Selecione o Produto:</label><br>
         <select id="id_prod_delete" name="id_prod" required>
             <option value="">Selecione...</option>
