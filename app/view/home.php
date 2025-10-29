@@ -80,7 +80,7 @@
                     <h3 class="subTitle">Mais que sabor, uma explosão de energia em cada copo</h3>
                     <p>Experimente agora e descubra por que todo mundo ama o nosso açaí!</p>
                     <div class="btn">
-                        <a href="vcardapio.php" class="btnCadapio order-now">Cardápio</a>
+                        <a href="vcardapio.php" class="btnCadapio order-now">Monte seu Açaí</a>
                     </div><!--Btn-->
                 </div><!--Hero-details-->
 

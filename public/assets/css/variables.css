@@ -5,6 +5,7 @@
 --verdeClaro:#7af21b;
 --verdeEscuro:#10a417;
 --branco: #f3f6f9;
+--brancoFull:#fff;
 --cinza:#c6c6c6;
 --cinzaEscuro:#333;
 --preto: rgb(25, 25, 25);
@@ -12,4 +13,7 @@
 --laranja:orange;
 --laranjaEscuro:rgb(170, 117, 18);
 --font: 'Fredoka', sans-serif;
+
+--btnDelete:red;
+--btnDeleteHover:rgb(184, 6, 6);
 }
