@@ -31,7 +31,44 @@
     <title>Gerenciar Produtos</title>
 </head>
 <body>
+ <!-- Header -->
+  <header class="header" role="banner">
+    <nav class="navbar section-content">
+      <a href="home.php" class="nav-logo">
+        <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2>
+      </a>
+      <ul class="nav-menu">
+        <button id="menuCloseBtn" class="fas fa-times"></button>
+        <li class="nav-item"><a href="home.php" class="nav-link primary">Inicio</a></li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link">Cardápio<i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li class="nav-ms-link"><a href="vcardapio.php#acai" class="nav-link">Açaí</a></li>
+            <li class="nav-ms-link"><a href="vcardapio.php#sorvete" class="nav-link">Sorvetes</a></li>
+            <li class="nav-ms-link"><a href="vcardapio.php#milkshake" class="nav-link">Milk-shake</a></li>
+            <li class="nav-ms-link"><a href="vcardapio.php#balde" class="nav-link">Baldes</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link">Promoções</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Meus Pedidos</a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      </ul>
+      <button id="menuOpenBtn" class="fas fa-bars"></button>
+    </nav>
+  </header>
 
+ <main class="main-content">
+    <!-- Coluna de Botões -->
+    <div class="actions-bar">
+      <button class="active" data-card="cadastrar">Cadastrar</button>
+      <button data-card="editar">Editar</button>
+      <button data-card="deletar">Deletar</button>
+      <button data-card="listar">Listar</button>
+    </div>
+
+     <!-- Container de Cards/Formulários -->
+    <div class="card-container">
+      <!-- Seção Cadastrar -->
     <h1>Cadastro de Produto</h1>
     <form action="../../FUNCAO/fcadastro_produto.php" method="POST" enctype="multipart/form-data" class="Formulario_produto">
 
