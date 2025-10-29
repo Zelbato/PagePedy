@@ -4,8 +4,7 @@
 --roxoclaro:#890AA3;
 --verdeClaro:#7af21b;
 --verdeEscuro:#10a417;
---branco: #f3f6f9;
---brancoFull:#fff;
+--branco: #fff;/*f3f6f9*/
 --cinza:#c6c6c6;
 --cinzaEscuro:#333;
 --preto: rgb(25, 25, 25);
@@ -16,4 +15,7 @@
 
 --btnDelete:red;
 --btnDeleteHover:rgb(184, 6, 6);
+
+--fontPoppins: url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+--fontFredoka: url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 }
