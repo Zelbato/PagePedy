@@ -7,13 +7,11 @@ CREATE TABLE usuario (
     acesso INT NOT NULL DEFAULT 1
 );
 
-
 CREATE TABLE categoria (
     id_cat INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nome_cat VARCHAR(100) NOT NULL,
     descricao TEXT
 );
-
 
 CREATE TABLE fornecedor (
     id_forn INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -24,19 +22,17 @@ CREATE TABLE fornecedor (
     endereco VARCHAR(255)
 );
 
-
 CREATE TABLE materia_prima (
     id_mp INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     forn_id INT,
     nome_mp VARCHAR(90) NOT NULL,
-    unidade ENUM('quilograma', 'gramas', 'litros', 'mililitro', 'metro', 'centimetros', 'tempo', 'unidade') NOT NULL DEFAULT 'quilograma',
-    tipo_mp ENUM('producao', 'acompanhamento') DEFAULT 'producao', // tipo adicionado
+    unidade ENUM('quilograma','gramas','litros','mililitro','metro','centimetros','tempo','unidade') NOT NULL DEFAULT 'quilograma',
+    tipo_mp ENUM('producao','acompanhamento') DEFAULT 'producao',
     quantidade DECIMAL(10, 2),
     preco_unitario DECIMAL(10, 2),
     data_compra DATE NOT NULL,
     FOREIGN KEY (forn_id) REFERENCES fornecedor(id_forn)
 );
-
 
 CREATE TABLE produto (
     id_prod INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -50,7 +46,6 @@ CREATE TABLE produto (
     FOREIGN KEY (categoria_id) REFERENCES categoria(id_cat)
 );
 
-
 CREATE TABLE produto_materiaprima (
     id_prod INT NOT NULL,
     id_mp INT NOT NULL,
@@ -60,7 +55,6 @@ CREATE TABLE produto_materiaprima (
     FOREIGN KEY (id_mp) REFERENCES materia_prima(id_mp)
 );
 
-
 CREATE TABLE producao (
     id_producao INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     produto_id INT NOT NULL,
@@ -68,7 +62,6 @@ CREATE TABLE producao (
     data_producao DATE NOT NULL,
     FOREIGN KEY (produto_id) REFERENCES produto(id_prod)
 );
-
 
 CREATE TABLE producao_materiaprima (
     id_producao INT NOT NULL,
@@ -78,7 +71,6 @@ CREATE TABLE producao_materiaprima (
     FOREIGN KEY (id_producao) REFERENCES producao(id_producao),
     FOREIGN KEY (id_mp) REFERENCES materia_prima(id_mp)
 );
-
 
 CREATE TABLE estoque (
     id_estoque INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -92,7 +84,6 @@ CREATE TABLE estoque (
     FOREIGN KEY (estoque_matp_id) REFERENCES materia_prima(id_mp)
 );
 
-
 CREATE TABLE despesas (
     id_despesas INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     categoria_despesa ENUM('Fixa','Variável') NOT NULL,
@@ -104,7 +95,7 @@ CREATE TABLE despesas (
 
 CREATE TABLE receita (
     id_receita INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    tipo_receita ENUM('Produto', 'Outro') DEFAULT 'Produto',
+    tipo_receita ENUM('Produto','Outro') DEFAULT 'Produto',
     descricao_R TEXT,
     data_venda DATE NOT NULL,
     valor_total DECIMAL(10, 2),
@@ -120,12 +111,6 @@ CREATE TABLE receita_produto (
     FOREIGN KEY (id_receita) REFERENCES receita(id_receita),
     FOREIGN KEY (id_prod) REFERENCES produto(id_prod)
 );
-
-<------------------------------------------------------------------> 
-
-
-
-
 
 CREATE TABLE pedido (
     id_pedi INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -159,37 +144,22 @@ CREATE TABLE pedido_materiaprima (
     FOREIGN KEY (id_prod) REFERENCES produto(id_prod)
 );
 
-
-
-
-
-
-
-
-
-CREATE TABLE pedido_usuario(
+-- Corrigida
+CREATE TABLE pedido_usuario (
     id_pedi INT NOT NULL,
     id_usuario INT NOT NULL,
-    quantidade_prod_pedi INT Not NULL,
-    status_pedi ENUM ('preparando', 'a caminho', 'entregue', 'cancelado'),
-    PRIMARY KEY (id_pedi, id_mp),
-    destino,
-    FOREIGN KEY (id_pedi) REFERENCES produto(id_pedi),
+    quantidade_prod_pedi INT NOT NULL,
+    status_pedi ENUM('preparando', 'a caminho', 'entregue', 'cancelado'),
+    destino VARCHAR(255),
+    PRIMARY KEY (id_pedi, id_usuario),
+    FOREIGN KEY (id_pedi) REFERENCES pedido(id_pedi),
     FOREIGN KEY (id_usuario) REFERENCES usuario(id)
-    
 );
 
-
-
-
-
-
-
-<------------------------------------------------------------------------------------------------------------->
+-- Corrigida
 CREATE TABLE orcamento (
     id_orc INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    empresa_id INT NOT NULL,
-    orc_despesas_id NOT NULL,
+    orc_despesas_id INT,
     periodo_inicio DATE NOT NULL,
     periodo_fim DATE NOT NULL,
     receita_total DECIMAL(12, 2) DEFAULT 0.00,
@@ -197,17 +167,16 @@ CREATE TABLE orcamento (
     lucro_liquido DECIMAL(12, 2) GENERATED ALWAYS AS (receita_total - despesa_total) STORED,
     valor_a_pagar DECIMAL(12, 2) DEFAULT 0.00,
     status ENUM('Atualizado', 'Em Análise', 'Fechado') DEFAULT 'Atualizado',
-    ultima_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (empresa_id) REFERENCES empresa(id_empr),
- );
+    ultima_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
 
- orcamento_receita(
-    orc_id Int Not NULL,
-    orc_receita_id int Not NULL,
+CREATE TABLE orcamento_receita (
+    orc_id INT NOT NULL,
+    orc_receita_id INT NOT NULL,
+    PRIMARY KEY (orc_id, orc_receita_id),
     FOREIGN KEY (orc_receita_id) REFERENCES receita(id_receita),
-    FOREIGN KEY (orc_id) REFERENCES  orcamento(id_orc)
- );
-
+    FOREIGN KEY (orc_id) REFERENCES orcamento(id_orc)
+);
 
 CREATE TABLE rendimento_produto (
     id_rend_prod INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -216,3 +185,25 @@ CREATE TABLE rendimento_produto (
     data_venda DATE NOT NULL,
     FOREIGN KEY (rend_prod_id) REFERENCES produto(id_prod)
 );
+
+CREATE TABLE mensagens (
+    id_msg INT AUTO_INCREMENT PRIMARY KEY,
+    remetente_id INT NOT NULL,
+    destinatario_id INT NOT NULL,
+    conteudo TEXT NOT NULL,
+    data_envio DATETIME DEFAULT CURRENT_TIMESTAMP,
+    lida BOOLEAN DEFAULT 0,
+    FOREIGN KEY (remetente_id) REFERENCES usuario(id),
+    FOREIGN KEY (destinatario_id) REFERENCES usuario(id)
+);
+
+CREATE TABLE notificacoes (
+    id_notif INT AUTO_INCREMENT PRIMARY KEY,
+    tipo ENUM('pedido', 'mensagem') NOT NULL,
+    descricao TEXT NOT NULL,
+    data_notificacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    lida BOOLEAN DEFAULT 0
+);
+
+
+
