@@ -69,15 +69,19 @@
      <!-- Container de Cards/Formulários -->
     <div class="card-container">
       <!-- Seção Cadastrar -->
-       
-    <h1>Cadastro de Produto</h1>
-    <form action="../../FUNCAO/fcadastro_produto.php" method="POST" enctype="multipart/form-data" class="Formulario_produto">
-
-        <label for="img_prod">Imagem do Produto:</label><br>
-        <input type="file" id="img_prod" name="img_prod" accept="image/*"><br><br>
-
-        <label for="categoria_id">Categoria:</label><br>
-        <select id="categoria_id" name="categoria_id" required>
+    <section class="section section-cadastrar active" aria-labelledby="cadastro-mp">
+     <h2 id="cadastro-mp" class="section-title">Cadastro de produto</h2>
+    <form action="../../FUNCAO/fcadastro_produto.php" method="POST" enctype="multipart/form-data" class="form form-cadastro">
+     <fieldset class="fieldset">
+      <legend class="legend">Informações do produto</legend>
+                  <div class="form-group">
+        <label for="img_prod">Imagem do Produto:</label>
+        <input type="file" id="img_prod" name="img_prod" accept="image/*">
+          </div>
+           <div class="form-group">
+        <label for="categoria_id">Categoria:</label>
+         <div class="select-content">
+        <select  class="tipo-card" id="categoria_id" name="categoria_id" required>
             <option value="">Selecione...</option>
             <?php
             require_once '../../DADOS/config.php';
@@ -87,31 +91,45 @@
                 echo "<option value='{$row['id_cat']}'>{$row['nome_cat']}</option>";
             }
             ?>
-        </select><br><br>
+        </select>
+          </div>
+          </div>
         
-    
-        <label for="nome_prod">Nome do Produto:</label><br>
-        <input type="text" id="nome_prod" name="nome_prod" required><br><br>
-
-        <label for="preco">Preço:</label><br>
-        <input type="number" step="0.01" id="preco" name="preco" required><br><br>
-
-        <label for="descricao">Descrição:</label><br>
-        <textarea id="descricao" name="descricao" required></textarea><br><br>
-
-        <label for="data_cadastro">Data de Cadastro:</label><br>
-        <input type="date" id="data_cadastro" name="data_cadastro" required><br><br>
-
-        <button type="submit">Cadastrar Produto</button>
+             <div class="form-group">
+        <label for="nome_prod">Nome do Produto:</label>
+        <input type="text" id="nome_prod" name="nome_prod" required>
+              </div>
+                  <div class="form-group">
+        <label for="preco">Preço:</label>
+        <input type="number" step="0.01" id="preco" name="preco" required>
+              </div>
+                  <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" required></textarea>
+           </div>
+              <div class="form-group">
+        <label for="data_cadastro">Data de Cadastro:</label>
+        <input type="date" id="data_cadastro" name="data_cadastro" required>
+                   </div>
+                      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Cadastrar Produto</button>
+          </div>
+               </fieldset>
     </form>
-
+    </section>
     <hr>
 
-    <h1>Editar Produto</h1>
-    <form action="../../FUNCAO/fedite_produto.php" method="POST" enctype="multipart/form-data" class="Form2_produto">
 
-        <label for="id_prod">Selecione o Produto:</label><br>
-        <select id="id_prod" name="id_prod" required>
+  <!-- Seção Editar -->
+     <section class="section section-editar" aria-labelledby="editar-mp">
+       <h2 id="editar-mp" class="section-title">Editar Produto</h2>
+    <form action="../../FUNCAO/fedite_produto.php" method="POST" enctype="multipart/form-data" class="form form-editar">
+      <fieldset class="fieldset">
+       <legend class="legend">Informações para Edição</legend>
+        <div class="form-group">
+        <div class="select-content">
+        <label for="id_prod">Selecione o Produto:</label>
+        <select id="id_prod" name="id_prod" required class="tipo-card" >
             <option value="">Selecione...</option>
             <?php
             require_once '../../DADOS/config.php';
@@ -121,31 +139,44 @@
                 echo "<option value='{$row['id_prod']}'>{$row['nome_prod']}</option>";
             }
             ?>
-        </select><br><br>
-
+        </select>
+          </div>
+          </div>
+          <div class="form-group">
         <label for="img_prod_edit">Nova Imagem (opcional):</label><br>
-        <input type="file" id="img_prod_edit" name="img_prod" accept="image/*"><br><br>
-
+        <input type="file" id="img_prod_edit" name="img_prod" accept="image/*">
+             </div>
+          <div class="form-group">
         <label for="nome_prod">Nome:</label><br>
-        <input type="text" id="nome_prod" name="nome_prod" required><br><br>
-
+        <input type="text" id="nome_prod" name="nome_prod" required>
+           </div>
+                   <div class="form-group">
         <label for="descricao">Descrição:</label><br>
-        <textarea id="descricao" name="descricao" required></textarea><br><br>
-
-        <label for="preco">Preço:</label><br>
-        <input type="number" step="0.01" id="preco" name="preco" required><br><br>
-
+        <textarea id="descricao" name="descricao" required></textarea>
+                   </div>
+                <div class="form-group">
+        <label for="preco">Preço:</label>
+        <input type="number" step="0.01" id="preco" name="preco" required>
+                  </div>
+                <div class="form-group">
         <label for="quantidade_estoque">Quantidade em Estoque:</label><br>
-        <input type="number" id="quantidade_estoque" name="quantidade_estoque" required><br><br>
-
-        <button type="submit">Editar Produto</button>
+        <input type="number" id="quantidade_estoque" name="quantidade_estoque" required>
+               </div>
+                 <div class="form-actions">
+        <button type="submit" class="btn btn-secondary">Editar Produto</button>
+         </div>
+              </fieldset>
     </form>
-
+          </section>
     <hr>
-
-    <h1>Deletar Produto</h1>
-    <form action="../../FUNCAO/fdelete_produto.php" method="GET" class="form3_produto">
-        <label for="id_prod_delete">Selecione o Produto:</label><br>
+    <!-- Seção Deletar -->
+           <section class="section section-deletar" aria-labelledby="deletar-mp">
+     <h2 id="deletar-mp" class="section-title">Deletar Produto</h2>
+    <form action="../../FUNCAO/fdelete_produto.php" method="GET" class="form form-deletar">
+       <fieldset class="fieldset">
+         <legend class="legend">Selecione o Produto para Excluir</legend>
+           <div class="form-group">
+        <label for="id_prod_delete">Selecione o Produto:</label>
         <select id="id_prod_delete" name="id_prod" required>
             <option value="">Selecione...</option>
             <?php
@@ -156,11 +187,14 @@
                 echo "<option value='{$row['id_prod']}'>{$row['nome_prod']}</option>";
             }
             ?>
-        </select><br><br>
-
-        <button type="submit">Excluir Produto</button>
+        </select>
+            </div>
+               <div class="form-actions">
+        <button type="submit"  class="btn btn-danger">Excluir Produto</button>
+         </div>
+              </fieldset>
     </form>
-
+          </section>
     <hr>
 
     <h1>Lista de Produtos</h1>
@@ -199,6 +233,63 @@
         echo "<p>Nenhum produto cadastrado.</p>";
     }
     ?>
+
+
+
+
+
+
+ <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2>
+        <p>Mais que sabor, uma explosão de energia em cada copo!</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="home.php">Início</a></li>
+          <li><a href="vcardapio.php">Cardápio</a></li>
+          <li><a href="#">Promoções</a></li>
+          <li><a href="#">Meus Pedidos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h3>Siga-nos</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> PedyAçaí - Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="../../../public/assets/js/script.js"></script>
+
+  <script>
+    // Alterna seções ao clicar nos botões
+    const botoes = document.querySelectorAll('.actions-bar button');
+    const secoes = document.querySelectorAll('.section');
+
+    botoes.forEach(btn => {
+      btn.addEventListener('click', () => {
+        botoes.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        secoes.forEach(sec => sec.classList.remove('active'));
+        const alvo = btn.getAttribute('data-card');
+        document.querySelector(`.section-${alvo}`).classList.add('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
