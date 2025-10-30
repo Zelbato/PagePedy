@@ -73,7 +73,7 @@
 
     <main class="main">
 
-        <!-- Banner -->
+
         <section class="banner-cardapio">
             <div class="overlay"></div>
 
@@ -83,13 +83,13 @@
             </div>
         </section>
 
-        <!--Monte seu pedido-->
+
         <section class="monteOseu">
             <form class="form-pedido" action="../view/vfinalizar_pedido.php" method="POST">
                 <h1 class="titulo-pedido">Monte seu Pedido</h1>
                 <p class="descricao-pedido">Escolha a base e os acompanhamentos do seu açaí do seu jeito!</p>
 
-                <!-- ESCOLHER BASE -->
+          
                 <div class="tamanhos-copo card">
                     <h2>1️⃣ Escolha o tamanho da base:</h2>
                     <?php
@@ -111,7 +111,6 @@
                     ?>
                 </div>
 
-                <!-- ESCOLHER ACOMPANHAMENTOS -->
                 <div class="acompanhamentos card oculto" id="acompanhamentos">
                     <h2>2️⃣ Escolha seus acompanhamentos:</h2>
                     <div class="acomp-list">
@@ -136,7 +135,7 @@
             </form>
         </section>
 
-        <!-- Categorias -->
+ 
         <section class="categorias">
             <h2>Escolha sua categoria</h2>
             <div class="btnCategoria">
@@ -148,7 +147,7 @@
             </div>
         </section>
 
-        <!-- Produtos -->
+     
         <section class="produtos">
             <div class="card-produto acai">
                 <img src="../../public/assets/img/acai-6-teste.png" alt="Açaí Tradicional">
@@ -236,16 +235,15 @@
 
     <script>
         window.addEventListener("load", () => {
-            const hash = window.location.hash; // pega #sorvete ou qualquer outra seção
+            const hash = window.location.hash; 
             if (hash) {
                 const section = document.querySelector(hash);
                 if (section) {
-                    // rolar suavemente para a seção
+           
                     section.scrollIntoView({
                         behavior: "smooth"
                     });
 
-                    // executa JS específico da seção
                     switch (hash) {
                         case "#sorvete":
                             initSorveteSection();
@@ -253,19 +251,19 @@
                         case "#acai":
                             initAcaiSection();
                             break;
-                            // adicione mais seções aqui
+                           
                     }
                 }
             }
         });
 
-        // Exemplo de função para a seção Sorvete
+  
         function initSorveteSection() {
             console.log("JS da seção Sorvete executado!");
-            // Coloque aqui todo o JS que precisa rodar na seção Sorvete
+           
         }
 
-        // Exemplo de função para a seção Açaí
+  
         function initAcaiSection() {
             console.log("JS da seção Açaí executado!");
         }

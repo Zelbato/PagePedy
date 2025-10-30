@@ -2,12 +2,14 @@
 require_once "../DADOS/config.php";
 session_start();
 
-$usuario_id = $_SESSION['id'] ?? 1; // so pra teste 
+$usuario_id = $_SESSION['id'] ?? 1; // apenas para teste
 
 $sql = "SELECT id_pedi, data_pedido, valor_total, status_pedi, destino
         FROM pedido
         WHERE usuario_id = ?
-        ORDER BY data_pedido DESC";
+        ORDER BY data_pedido DESC
+        LIMIT 3";
+
 $stmt = $conexao->prepare($sql);
 $stmt->bind_param("i", $usuario_id);
 $stmt->execute();

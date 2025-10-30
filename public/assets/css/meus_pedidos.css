@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+
+:root {
+    --roxo-escuro: #300a33;
+    --roxoclaro: #890AA3;
+    --verdeClaro: #7af21b;
+    --verdeEscuro: #10a417;
+    --branco: #f3f6f9;
+    --brancoFull: #fff;
+    --cinza: #c6c6c6;
+    --cinzaEscuro: #333;
+    --preto: rgb(25, 25, 25);
+    --pretoTransparen: rgba(0, 0, 0, 0.247);
+    --laranja: orange;
+    --laranjaEscuro: rgb(170, 117, 18);
+    --font: 'Fredoka', sans-serif;
+    --btnDelete: red;
+    --btnDeleteHover: rgb(184, 6, 6);
+}
+
+/* ======= GERAL ======= */
+body {
+    font-family: var(--font);
+    background-color: var(--branco);
+    color: var(--preto);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: var(--brancoFull);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px var(--pretoTransparen);
+    padding: 30px;
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    text-align: center;
+    color: var(--roxoclaro);
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+/* ======= TABELA ======= */
+.tabela-container {
+    overflow-x: auto;
+}
+
+.tabela-pedidos {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--brancoFull);
+}
+
+.tabela-pedidos th {
+    background: var(--roxoclaro);
+    color: var(--brancoFull);
+    padding: 14px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.tabela-pedidos td {
+    border-bottom: 1px solid var(--cinza);
+    padding: 12px;
+    color: var(--cinzaEscuro);
+    transition: background 0.3s ease;
+}
+
+.tabela-pedidos tr:hover td {
+    background: var(--branco);
+}
+
+.tabela-pedidos tr:nth-child(even) {
+    background: var(--branco);
+}
+
+/* ======= STATUS ======= */
+.status {
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 6px 10px;
+    border-radius: 8px;
+    text-align: center;
+    width: fit-content;
+}
+
+/* Cores de status usando a paleta */
+.status.finalizado {
+    background: var(--verdeClaro);
+    color: var(--preto);
+}
+
+.status.cancelado {
+    background: var(--btnDelete);
+    color: var(--brancoFull);
+}
+
+.status.pendente,
+.status.em-andamento {
+    background: var(--laranja);
+    color: var(--preto);
+}
+
+/* ======= MENSAGEM VAZIA ======= */
+.sem-pedidos {
+    text-align: center;
+    color: var(--cinzaEscuro);
+    font-size: 1.1em;
+    margin-top: 30px;
+}
+
+/* ======= RESPONSIVO ======= */
+@media (max-width: 768px) {
+    .tabela-pedidos,
+    .tabela-pedidos thead,
+    .tabela-pedidos tbody,
+    .tabela-pedidos th,
+    .tabela-pedidos td,
+    .tabela-pedidos tr {
+        display: block;
+        width: 100%;
+    }
+
+    .tabela-pedidos thead {
+        display: none;
+    }
+
+    .tabela-pedidos tr {
+        margin-bottom: 18px;
+        background: var(--brancoFull);
+        border: 1px solid var(--cinza);
+        border-radius: 10px;
+        box-shadow: 0 3px 8px var(--pretoTransparen);
+        padding: 10px;
+    }
+
+    .tabela-pedidos td {
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 6px;
+        font-size: 15px;
+    }
+
+    .tabela-pedidos td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--roxoclaro);
+    }
+
+    .status {
+        margin-top: 6px;
+        font-size: 14px;
+    }
+}

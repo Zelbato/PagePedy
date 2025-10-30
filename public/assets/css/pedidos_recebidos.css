@@ -1,0 +1,127 @@
+:root{
+    --roxo-escuro: #300a33;
+    --roxoclaro:#890AA3;
+    --verdeClaro:#7af21b;
+    --verdeEscuro:#10a417;
+    --branco: #f3f6f9;
+    --brancoFull:#fff;
+    --cinza:#c6c6c6;
+    --cinzaEscuro:#333;
+    --preto: rgb(25, 25, 25);
+    --laranja: orange;
+    --font: 'Fredoka', sans-serif;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--branco);
+    margin: 0;
+    padding: 20px;
+}
+
+.pedidos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: var(--roxo-escuro);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.tabela-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--brancoFull);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background: var(--roxoclaro);
+    color: var(--brancoFull);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--cinza);
+    transition: background 0.3s;
+}
+
+tbody tr:hover {
+    background: rgba(137, 10, 163, 0.05);
+}
+
+.status {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.sem-pedidos {
+    text-align: center;
+    color: var(--cinzaEscuro);
+    font-style: italic;
+}
+
+.form-status {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.form-status select {
+    padding: 5px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--cinza);
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.form-status select:focus {
+    border-color: var(--roxoclaro);
+}
+
+.form-status button {
+    padding: 6px 10px;
+    background: var(--roxoclaro);
+    color: var(--brancoFull);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.form-status button:hover {
+    background: var(--roxo-escuro);
+    transform: translateY(-1px);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    th, td {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    .form-status {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .form-status button {
+        width: 100%;
+    }
+}

@@ -5,10 +5,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') exit('Acesso inválido.');
 $base_id = $_POST['base_id'];
 $acompanhamentos = $_POST['acompanhamentos'] ?? [];
 
-
 $sqlBase = "SELECT nome_prod, preco FROM produto WHERE id_prod = $base_id";
 $base = $conexao->query($sqlBase)->fetch_assoc();
-
 
 $total = $base['preco'];
 $itens = [];
@@ -29,39 +27,53 @@ if (!empty($acompanhamentos)) {
 <head>
     <meta charset="UTF-8">
     <title>Finalizar Pedido</title>
+    <link rel="stylesheet" href="../../public/assets/css/finalizar_pedido.css">
 </head>
 <body>
-<h1>Resumo do Pedido</h1>
+    <div class="resumo-container">
+        <h1 class="titulo-pedido">Resumo do Pedido</h1>
 
-<p><strong>Base:</strong> <?= htmlspecialchars($base['nome_prod']) ?> — R$ <?= number_format($base['preco'], 2, ',', '.') ?></p>
+        <div class="cards-wrapper">
+            <div class="card-produto card-hover">
+                <h2>Base</h2>
+                <p><?= htmlspecialchars($base['nome_prod']) ?> — <span class="preco">R$ <?= number_format($base['preco'], 2, ',', '.') ?></span></p>
+            </div>
 
-<h3>Acompanhamentos:</h3>
-<ul>
-    <?php
-    if (!empty($itens)) {
-        foreach ($itens as $item) {
-            echo "<li>{$item['nome_mp']} — R$ " . number_format($item['preco_unitario'], 2, ',', '.') . "</li>";
-        }
-    } else {
-        echo "<li>Nenhum acompanhamento selecionado.</li>";
-    }
-    ?>
-</ul>
+            <div class="card-produto card-hover">
+                <h2>Acompanhamentos</h2>
+                <ul>
+                <?php
+                if (!empty($itens)) {
+                    foreach ($itens as $item) {
+                        echo "<li>🍧 {$item['nome_mp']} — <span class='preco'>R$ " . number_format($item['preco_unitario'], 2, ',', '.') . "</span></li>";
+                    }
+                } else {
+                    echo "<li>Nenhum acompanhamento selecionado.</li>";
+                }
+                ?>
+                </ul>
+            </div>
 
-<h2>Total: R$ <?= number_format($total, 2, ',', '.') ?></h2>
+            <div class="total-card card-hover">
+                <h2>Total</h2>
+                <p class="total-value">R$ <?= number_format($total, 2, ',', '.') ?></p>
+            </div>
+        </div>
 
-<form action="../FUNCAO/ffinalizar_pedido.php" method="POST">
-    <input type="hidden" name="base_id" value="<?= $base_id ?>">
-    <?php
-    foreach ($acompanhamentos as $id_mp) {
-        echo "<input type='hidden' name='acompanhamentos[]' value='$id_mp'>";
-    }
-    ?>
-    <input type="hidden" name="total" value="<?= $total ?>">
-    <label>Destino (endereço):</label><br>
-    <input type="text" name="destino" required><br><br>
-    <button type="submit">Confirmar Pedido ✅</button>
-</form>
+        <form action="../FUNCAO/ffinalizar_pedido.php" method="POST" class="form-finalizar">
+            <input type="hidden" name="base_id" value="<?= $base_id ?>">
+            <?php
+            foreach ($acompanhamentos as $id_mp) {
+                echo "<input type='hidden' name='acompanhamentos[]' value='$id_mp'>";
+            }
+            ?>
+            <input type="hidden" name="total" value="<?= $total ?>">
 
+            <label for="destino">Destino (endereço):</label>
+            <input type="text" name="destino" id="destino" required placeholder="Digite seu endereço">
+
+            <button type="submit" class="btn-finalizar">Confirmar Pedido </button>
+        </form>
+    </div>
 </body>
 </html>
