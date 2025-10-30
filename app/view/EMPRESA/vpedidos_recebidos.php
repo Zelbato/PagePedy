@@ -4,13 +4,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Pedidos Recebidos</title>
+<link rel="stylesheet" href="../../../public/assets/css/pedidos_recebidos.css">
 </head>
 <body>
 <h1> Pedidos Recebidos</h1>
 
 <table border="1" cellpadding="5">
 <tr>
-    <th>ID</th>
+    <th>Numero do pedido</th>
     <th>Cliente</th>
     <th>Data</th>
     <th>Valor Total</th>
