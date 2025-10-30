@@ -91,7 +91,7 @@
 
           
                 <div class="tamanhos-copo card">
-                    <h2>1️⃣ Escolha o tamanho da base:</h2>
+                    <h2>Escolha o tamanho da base:</h2>
                     <?php
                     require_once '../DADOS/config.php';
                     $sql = "SELECT id_prod, nome_prod, preco FROM produto 
@@ -112,7 +112,7 @@
                 </div>
 
                 <div class="acompanhamentos card oculto" id="acompanhamentos">
-                    <h2>2️⃣ Escolha seus acompanhamentos:</h2>
+                    <h2>Escolha seus acompanhamentos:</h2>
                     <div class="acomp-list">
                         <?php
                         $sql = "SELECT id_mp, nome_mp, preco_unitario FROM materia_prima WHERE tipo_mp = 'acompanhamento'";
