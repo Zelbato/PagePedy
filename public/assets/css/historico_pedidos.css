@@ -100,9 +100,6 @@ td {
     color: var(--cinzaEscuro);
 }
 
-/* ===================== */
-/* RESPONSIVIDADE */
-/* ===================== */
 
 @media screen and (max-width: 900px) {
     .historico-container {

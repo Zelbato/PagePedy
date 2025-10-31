@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("isssdds", $forn_id, $nome_mp, $unidade,$tipo_mp, $quantidade, $preco_unitario, $data_compra);
     
     if ($stmt->execute()) {
-        echo "Matéria-prima cadastrada com sucesso!";
+        header("Location: ");
     } else {
         echo "Erro ao cadastrar matéria-prima: " . $stmt->error;
     }   
