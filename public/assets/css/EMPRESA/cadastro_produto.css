@@ -1,17 +1,7 @@
-:root{
-    --roxo-escuro: #300a33;
-    --roxoclaro:#890AA3;
-    --verdeClaro:#7af21b;
-    --verdeEscuro:#10a417;
-    --branco: #f3f6f9;
-    --brancoFull:#fff;
-    --cinza:#c6c6c6;
-    --cinzaEscuro:#333;
-    --preto: rgb(25, 25, 25);
-    --laranja: orange;
-    --font: 'Fredoka', sans-serif;
-}
-
+/*Import Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import '../variables.css';
 
 * {
     margin: 0;
@@ -46,9 +36,8 @@ button {
     z-index: 30;
     display: flex;
     align-items: center;
-    height: 70px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    
+
 }
 
 body {
@@ -56,15 +45,12 @@ body {
     background: var(--branco);
 }
 
-/* ==========================
-   NAVBAR
-========================== */
 .navbar {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 60px;
     position: relative;
 }
 
@@ -75,20 +61,17 @@ body {
     text-decoration: none;
 }
 
-.txt-logo {
-    font-size: 1.8rem;
+.img-logo {
+    width: 100%;
+    max-width: 70px;
     margin: 0;
-    color: var(--roxoclaro);
 }
 
-.txt-logo span {
-    color: var(--verdeClaro);
-}
 
 /* MENU PRINCIPAL */
 .nav-menu {
     display: flex;
-    gap: 25px;
+    /* gap: 25px; */
     align-items: center;
     list-style: none;
     margin: 0;
@@ -102,7 +85,7 @@ body {
 .nav-link {
     font-size: 1rem;
     color: var(--roxo-escuro);
-    font-weight: 500;
+    /* font-weight: 500; */
     text-decoration: none;
     padding: 20px 10px;
     display: flex;
@@ -177,7 +160,7 @@ body {
         font-size: 24px;
         background: transparent;
         cursor: pointer;
-        z-index: 25;
+        z-index: 10;
         /* acima do menu */
     }
 
@@ -210,6 +193,12 @@ body {
     body.showMobileMenu .nav-menu {
         left: 0;
     }
+
+    .img-logo {
+        width: 80px;
+        padding: 10px 0;
+    }
+
 
     /* Itens do menu */
     .nav-menu li {
@@ -327,6 +316,8 @@ body {
 }
 
 .fieldset {
+    height: 70vh;
+    /*Tamanho da Tela*/
     border: 1px solid var(--cinza);
     border-radius: 10px;
     padding: 20px;
@@ -418,9 +409,13 @@ body {
 
 /* TABELAS */
 .table-container {
+    width: 100%;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(48, 10, 51, 0.15);
+    margin-top: 15px;
+    height: 70vh;
 }
 
 .table {
@@ -592,7 +587,7 @@ body {
     .main-content {
         margin: 15px auto;
         width: 95%;
-        
+
     }
 
     .fieldset {
