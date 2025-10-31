@@ -13,7 +13,6 @@ body {
 }
 
 .historico-container {
-
     max-width: 1200px;
     width: 90%;
     background: var(--branco);
@@ -52,7 +51,7 @@ h1 {
 .barra-pesquisa input:focus {
     outline: none;
     border-color: var(--roxoclaro);
-    /* box-shadow: 0 0 8px var(--roxoclaro); */
+    box-shadow: 0 0 8px var(--roxoclaro);
 }
 
 /* Tabela */
@@ -64,10 +63,11 @@ table {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
+    min-width: 600px;
+    /* Garante boa leitura antes do scroll */
 }
 
 th {
-
     background: var(--roxoclaro);
     color: var(--branco);
     border: 1px solid var(--roxo-escuro);
@@ -77,7 +77,6 @@ th {
 
 tr:hover {
     background: var(--branco);
-    /* transform: scale(1.01); */
     transition: 0.2s ease-in-out;
 }
 
@@ -88,11 +87,8 @@ td {
     transition: background 0.3s;
 }
 
-
-
 #tabelaPedidos tbody tr.highlight {
     box-shadow: 0 6px 18px rgba(137, 10, 163, 0.12);
-    /* transform: translateY(-3px); */
     transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
@@ -104,39 +100,75 @@ td {
     color: var(--cinzaEscuro);
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
+/* ===================== */
+/* RESPONSIVIDADE */
+/* ===================== */
 
-    table,
-    thead,
-    tbody,
+@media screen and (max-width: 900px) {
+    .historico-container {
+        padding: 20px;
+        margin-top: 25px;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .barra-pesquisa input {
+        max-width: 100%;
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    table {
+        min-width: 500px;
+        font-size: 14px;
+    }
+
     th,
-    td,
-    tr {
-        display: block;
-    }
-
-    tr {
-        margin-bottom: 15px;
-        background: var(--branco);
-        border-radius: 10px;
-        box-shadow: 0 0 5px var(--pretoTransparen);
-        padding: 10px;
-    }
-
     td {
-        border: none;
-        display: flex;
-        justify-content: space-between;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 0 10px;
     }
 
-    td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        color: var(--roxoclaro);
+    .historico-container {
+        width: 100%;
+        box-shadow: none;
+        padding: 15px;
+        border-radius: 12px;
     }
 
-    th {
-        display: none;
+    h1 {
+        font-size: 20px;
+    }
+
+    .barra-pesquisa {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .barra-pesquisa input {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .tabela-wrapper {
+        overflow-x: auto;
+    }
+
+    table {
+        font-size: 13px;
+        min-width: 450px;
+    }
+
+    th,
+    td {
+        padding: 6px;
     }
 }
