@@ -35,24 +35,24 @@ if (!empty($acompanhamentos)) {
 
         <div class="cards-wrapper">
             <div class="card-produto card-hover">
-                <h2>Base</h2>
-                <p><?= htmlspecialchars($base['nome_prod']) ?> — <span class="preco">R$ <?= number_format($base['preco'], 2, ',', '.') ?></span></p>
+                <h2>Produto</h2>
+                <p><?= htmlspecialchars($base['nome_prod']) ?> — 
+                    <span class="preco">R$ <?= number_format($base['preco'], 2, ',', '.') ?></span>
+                </p>
             </div>
 
-            <div class="card-produto card-hover">
-                <h2>Acompanhamentos</h2>
-                <ul>
-                <?php
-                if (!empty($itens)) {
-                    foreach ($itens as $item) {
-                        echo "<li>🍧 {$item['nome_mp']} — <span class='preco'>R$ " . number_format($item['preco_unitario'], 2, ',', '.') . "</span></li>";
-                    }
-                } else {
-                    echo "<li>Nenhum acompanhamento selecionado.</li>";
-                }
-                ?>
-                </ul>
-            </div>
+            <?php if (!empty($itens)) : ?>
+                <div class="card-produto card-hover">
+                    <h2>Acompanhamentos</h2>
+                    <ul>
+                        <?php foreach ($itens as $item): ?>
+                            <li>🍧 <?= htmlspecialchars($item['nome_mp']) ?> — 
+                                <span class="preco">R$ <?= number_format($item['preco_unitario'], 2, ',', '.') ?></span>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            <?php endif; ?>
 
             <div class="total-card card-hover">
                 <h2>Total</h2>
@@ -62,11 +62,9 @@ if (!empty($acompanhamentos)) {
 
         <form action="../FUNCAO/ffinalizar_pedido.php" method="POST" class="form-finalizar">
             <input type="hidden" name="base_id" value="<?= $base_id ?>">
-            <?php
-            foreach ($acompanhamentos as $id_mp) {
-                echo "<input type='hidden' name='acompanhamentos[]' value='$id_mp'>";
-            }
-            ?>
+            <?php foreach ($acompanhamentos as $id_mp): ?>
+                <input type="hidden" name="acompanhamentos[]" value="<?= $id_mp ?>">
+            <?php endforeach; ?>
             <input type="hidden" name="total" value="<?= $total ?>">
 
             <label for="destino">Destino (endereço):</label>
@@ -74,6 +72,7 @@ if (!empty($acompanhamentos)) {
 
             <button type="submit" class="btn-finalizar">Confirmar Pedido </button>
         </form>
+<button type="submit" class="btn-cancelar"><a href="vcardapio.php">Cancelar Pedido</a></button>
     </div>
 </body>
 </html>
