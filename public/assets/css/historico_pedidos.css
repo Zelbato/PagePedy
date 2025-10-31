@@ -1,20 +1,5 @@
-:root {
-    --roxo-escuro: #300a33;
-    --roxoclaro: #890AA3;
-    --verdeClaro: #7af21b;
-    --verdeEscuro: #10a417;
-    --branco: #f3f6f9;
-    --brancoFull: #fff;
-    --cinza: #c6c6c6;
-    --cinzaEscuro: #333;
-    --preto: rgb(25, 25, 25);
-    --pretoTransparen: rgba(0, 0, 0, 0.247);
-    --laranja: orange;
-    --laranjaEscuro: rgb(170, 117, 18);
-    --btnDelete: red;
-    --btnDeleteHover: rgb(184, 6, 6);
-    --font: 'Fredoka', sans-serif;
-}
+@import './variables.css';
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
 /* Estrutura geral */
 body {
@@ -28,9 +13,9 @@ body {
 }
 
 .historico-container {
-    max-width: 1000px;
+    max-width: 1200px;
     width: 90%;
-    background: var(--brancoFull);
+    background: var(--branco);
     padding: 25px;
     margin-top: 40px;
     border-radius: 18px;
@@ -60,7 +45,7 @@ h1 {
     font-family: var(--font);
     font-size: 15px;
     transition: 0.3s;
-    background-color: var(--brancoFull);
+    background-color: var(--branco);
 }
 
 .barra-pesquisa input:focus {
@@ -78,30 +63,32 @@ table {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
+    min-width: 600px;
+    /* Garante boa leitura antes do scroll */
 }
 
 th {
     background: var(--roxoclaro);
-    color: var(--brancoFull);
+    color: var(--branco);
+    border: 1px solid var(--roxo-escuro);
     padding: 12px;
     font-size: 16px;
 }
 
+tr:hover {
+    background: var(--branco);
+    transition: 0.2s ease-in-out;
+}
+
 td {
+    border: 1px solid var(--cinza);
     padding: 10px;
     border-bottom: 1px solid var(--cinza);
     transition: background 0.3s;
 }
 
-tr:hover {
-    background: var(--branco);
-    transform: scale(1.01);
-    transition: 0.2s ease-in-out;
-}
-
 #tabelaPedidos tbody tr.highlight {
     box-shadow: 0 6px 18px rgba(137, 10, 163, 0.12);
-    transform: translateY(-3px);
     transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
@@ -113,31 +100,75 @@ tr:hover {
     color: var(--cinzaEscuro);
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-    table, thead, tbody, th, td, tr {
-        display: block;
+/* ===================== */
+/* RESPONSIVIDADE */
+/* ===================== */
+
+@media screen and (max-width: 900px) {
+    .historico-container {
+        padding: 20px;
+        margin-top: 25px;
     }
 
-    tr {
-        margin-bottom: 15px;
-        background: var(--brancoFull);
-        border-radius: 10px;
-        box-shadow: 0 0 5px var(--pretoTransparen);
-        padding: 10px;
+    h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
     }
 
+    .barra-pesquisa input {
+        max-width: 100%;
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    table {
+        min-width: 500px;
+        font-size: 14px;
+    }
+
+    th,
     td {
-        border: none;
-        display: flex;
-        justify-content: space-between;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 0 10px;
     }
 
-    td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        color: var(--roxoclaro);
+    .historico-container {
+        width: 100%;
+        box-shadow: none;
+        padding: 15px;
+        border-radius: 12px;
     }
 
-    th { display: none; }
+    h1 {
+        font-size: 20px;
+    }
+
+    .barra-pesquisa {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .barra-pesquisa input {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .tabela-wrapper {
+        overflow-x: auto;
+    }
+
+    table {
+        font-size: 13px;
+        min-width: 450px;
+    }
+
+    th,
+    td {
+        padding: 6px;
+    }
 }

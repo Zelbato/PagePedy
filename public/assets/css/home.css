@@ -47,18 +47,16 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 40px;
+    padding: 0 40px;
 }
 
 
 
-.navbar .nav-logo .txt-logo {
-    color: var(--roxoclaro);
+.img-logo {
+    width: 70px;
+    padding: 10px 0;
 }
 
-.navbar .nav-logo .txt-logo span {
-    color: var(--verdeClaro);
-}
 
 .navbar .nav-menu {
     display: flex;

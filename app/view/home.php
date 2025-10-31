@@ -38,7 +38,8 @@
     <header class="header" role="banner">
         <nav class="navbar section-content">
             <a href="home.php" class="nav-logo">
-                <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2>
+                <img src="../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
+                <!-- <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2> -->
             </a>
 
             <ul class="nav-menu">
@@ -170,7 +171,8 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">
-                <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2>
+                <img src="../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
+                <!-- <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2> -->
                 <p>Mais que sabor, uma explosão de energia em cada copo!</p>
             </div>
 

@@ -117,7 +117,7 @@
                </fieldset>
     </form>
     </section>
-    <hr>
+  
 
 
   <!-- Seção Editar -->
@@ -143,15 +143,15 @@
           </div>
           </div>
           <div class="form-group">
-        <label for="img_prod_edit">Nova Imagem (opcional):</label><br>
+        <label for="img_prod_edit">Nova Imagem (opcional):</label>
         <input type="file" id="img_prod_edit" name="img_prod" accept="image/*">
              </div>
           <div class="form-group">
-        <label for="nome_prod">Nome:</label><br>
+        <label for="nome_prod">Nome:</label>
         <input type="text" id="nome_prod" name="nome_prod" required>
            </div>
                    <div class="form-group">
-        <label for="descricao">Descrição:</label><br>
+        <label for="descricao">Descrição:</label>
         <textarea id="descricao" name="descricao" required></textarea>
                    </div>
                 <div class="form-group">
@@ -159,7 +159,7 @@
         <input type="number" step="0.01" id="preco" name="preco" required>
                   </div>
                 <div class="form-group">
-        <label for="quantidade_estoque">Quantidade em Estoque:</label><br>
+        <label for="quantidade_estoque">Quantidade em Estoque:</label>
         <input type="number" id="quantidade_estoque" name="quantidade_estoque" required>
                </div>
                  <div class="form-actions">
@@ -168,7 +168,7 @@
               </fieldset>
     </form>
           </section>
-    <hr>
+    
     <!-- Seção Deletar -->
            <section class="section section-deletar" aria-labelledby="deletar-mp">
      <h2 id="deletar-mp" class="section-title">Deletar Produto</h2>
@@ -195,9 +195,24 @@
               </fieldset>
     </form>
           </section>
-    <hr>
+   
 
-    <h1>Lista de Produtos</h1>
+          <!-- Seção Listar -->
+     <section class="section section-listar" aria-labelledby="listar-mp">
+     <h2 id="listar-mp" class="section-title">Todos os produtos</h2>
+       <div class="table-container">
+          <table class="table table-bordered table-striped table-hover">
+            <thead class="table-primary">
+           <tr>
+            <th>Imagem</th>
+            <th>Nome</th> 
+            <th>Categoria</th>
+            <th>Preço</th>
+            <th>Descrição</th>
+            <th>Data de Cadastro</th>
+          </tr>
+                 </thead>
+                <tbody>
     <?php
     $sql = "SELECT p.id_prod,p.img_prod, p.nome_prod, p.preco, p.descricao, p.data_cadastro, c.nome_cat 
             FROM produto p 
@@ -234,11 +249,13 @@
     }
     ?>
 
-
-
-
-
-
+     </tbody>
+      </table>
+        </div>
+          </section>
+    </div>
+  </main>
+   
  <footer class="footer">
     <div class="footer-content">
       <div class="footer-logo">
@@ -290,6 +307,13 @@
       });
     });
   </script>
+
+
+
+
+
+ 
+  
 
 </body>
 </html>
