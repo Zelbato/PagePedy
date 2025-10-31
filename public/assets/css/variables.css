@@ -5,8 +5,10 @@
 --verdeClaro:#7af21b;
 --verdeEscuro:#10a417;
 --branco: #fff;/*f3f6f9*/
+--MeioTrnsparent: #890aa327;/*f3f6f9*/
 --cinza:#c6c6c6;
 --cinzaEscuro:#333;
+--cinzaEscuroTransparent:#33333327;
 --preto: rgb(25, 25, 25);
 --pretoTransparen:rgba(0, 0, 0, 0.247);
 --laranja:orange;
