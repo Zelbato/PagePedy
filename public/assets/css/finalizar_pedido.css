@@ -10,62 +10,80 @@ body {
     justify-content: center;
 }
 
+/* Container principal */
 .resumo-container {
-    max-width: 900px;
+    max-width: 750px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
+    /* mais compacto */
+    padding: 15px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Título do resumo */
 .titulo-pedido {
-    font-size: 2.4rem;
+    font-size: 2rem;
     text-align: center;
     color: var(--roxo-escuro);
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
 /* Wrapper de cards */
 .cards-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* cards menores */
+    gap: 12px;
+    /* gap reduzido */
 }
 
 /* Cards */
-.card-produto, .total-card {
+.card-produto,
+.total-card {
     background: var(--branco);
-    border-radius: 20px;
-    padding: 25px 30px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 16px;
+    padding: 16px 20px;
+    /* padding menor */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.card-produto h2, .total-card h2 {
+/* Títulos nos cards */
+.card-produto h2,
+.total-card h2 {
     color: var(--roxoclaro);
-    margin-bottom: 12px;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    font-weight: 600;
 }
 
+/* Lista dentro dos cards */
 .card-produto ul {
     list-style: none;
     padding-left: 0;
+    margin: 0;
 }
 
 .card-produto li {
     color: var(--cinzaEscuro);
-    padding: 6px 0;
+    padding: 4px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 0.95rem;
     font-weight: 500;
 }
 
+/* Preço */
 .preco {
     font-weight: 600;
     color: var(--roxo-escuro);
@@ -79,78 +97,135 @@ body {
 }
 
 .total-card .total-value {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    margin-top: 8px;
+    margin-top: 6px;
+}
+
+/* Último card como Dinheiro */
+.card-dinheiro {
+    border: 2px dashed var(--laranja);
+    position: relative;
+}
+
+.card-dinheiro::after {
+    content: "Dinheiro";
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background: var(--laranja);
+    color: var(--branco);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 6px;
 }
 
 /* Formulário */
 .form-finalizar {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    margin-top: 20px;
+    gap: 12px;
+    margin-top: 15px;
 }
 
 .form-finalizar label {
     font-weight: 600;
     color: var(--roxo-escuro);
+    font-size: 0.95rem;
 }
 
 .form-finalizar input[type="text"] {
-    padding: 14px;
-    border-radius: 12px;
+    padding: 12px;
+    border-radius: 10px;
     border: 1px solid var(--cinza);
     outline: none;
-    font-size: 15px;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-finalizar input[type="text"]:focus {
     border-color: var(--roxoclaro);
-    box-shadow: 0 0 8px rgba(128, 0, 128, 0.2);
+    box-shadow: 0 0 6px rgba(128, 0, 128, 0.2);
 }
 
-/* Botão */
-.btn-finalizar {
-    width: 100%;
-    max-width: 300px;
-    padding: 15px;
-    background: var(--laranja);
-    color: var(--branco);
-    border: none;
+/* Botões mais chamativos */
+/* Container para os botões */
+.botao-wrapper {
+    display: flex;
+    justify-content: center; /* centraliza os botões horizontalmente */
+    gap: 15px; /* espaço entre os botões */
+    margin-top: 15px;
+}
+
+/* Botões lado a lado */
+.btn-finalizar,
+.btn-cancelar {
+    flex: 1; /* cada botão ocupa metade do container */
+    padding: 12px 0;
     border-radius: 14px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    align-self: center;
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* Botão finalizar */
+.btn-finalizar {
+    background: var(--verdeEscuro);
+    border: 2px solid var(--verdeEscuro);
+    color: var(--branco);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-finalizar:hover {
-    background: var(--verdeEscuro);
     transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Botão cancelar */
+.btn-cancelar {
+    background: var(--btnDelete);
+    border: 2px solid var(--btnDeleteHover);
+    color: var(--branco);
+}
+
+.btn-cancelar a {
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.btn-cancelar:hover {
+    background: var(--btnDeleteHover);
+    color: var(--branco);
+}
 
 /* Responsividade */
-
 @media (max-width: 768px) {
-    .Login-container {
-        flex-direction: column;
-        box-shadow: none;
+    .cards-wrapper {
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
-    .login_usuario_info {
-        padding: 40px 20px;
-        display: none;
+    .resumo-container {
+        padding: 10px;
     }
 
-    .Login-form {
-        padding: 40px 20px;
+    .titulo-pedido {
+        font-size: 1.8rem;
     }
 
-    button {
-        padding: 12px;
+    .card-produto,
+    .total-card {
+        padding: 12px 16px;
+    }
+
+    .btn-finalizar,
+    .btn-cancelar {
+        font-size: 0.95rem;
+        max-width: 100%;
     }
 }
