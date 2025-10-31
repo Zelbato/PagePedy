@@ -63,6 +63,7 @@
     <div class="actions-bar">
       <button class="active" data-card="cadastrar">Cadastrar</button>
       <button data-card="deletar">Deletar</button>
+       <button data-card="listar">Listar</button>
     </div>
 
 
@@ -110,23 +111,30 @@
          </div>
             <div class="form-actions">
         <button type="submit" class="btn btn-danger">Deletar Categoria</button>
-        </div>
-    </form>
+     </div>
+          </fieldset>
+        </form>
+      </section>
+
    
 
 
 
 
-    
-    <table border="1"   style="margin-top:20px;"     >
+         <!-- Seção Listar -->
+             <section class="section section-listar" aria-labelledby="listar-mp">
+        <h2 id="listar-mp" class="section-title">Todas as Categorias de Produtos</h2>
+            <div class="table-container">
+          <table class="table table-bordered table-striped table-hover">
+            <thead class="table-primary">
+    <table border="1"   style="margin-top:20px;">
         <tr>
-              <thead class="table-primary">
-              
             <th>ID</th>
             <th>Nome da Categoria</th>
             <th>Descrição</th>
-        </thread>
         </tr>
+            </th ead>
+           <tbody>
         <?php
         require_once '../../DADOS/config.php';
          $todas = $conexao->query("SELECT * FROM categoria");
@@ -143,10 +151,12 @@
         }
         ?>
   </table>
-    </fieldset>
-        </form>
+    </tbody>
+          </table>
+        </div>
       </section>
-
+    </div>
+  </main>
 
 
 

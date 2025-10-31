@@ -600,6 +600,7 @@ body {
         border: none;
         padding: 10px;
         gap: 10px;
+        height: 75vh;
     }
 
     .btn-primary {
