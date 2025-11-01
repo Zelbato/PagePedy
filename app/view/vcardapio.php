@@ -106,21 +106,23 @@
             <form class="form-pedido" action="../view/vfinalizar_pedido.php" method="POST">
                 <h1 class="titulo-pedido">Monte seu Pedido</h1>
                 <p class="descricao-pedido">Escolha a base e os acompanhamentos do seu açaí do seu jeito!</p>
+
+                <!-- SEÇÃO DE BASE -->
                 <div class="tamanhos-copo card">
                     <h2>Escolha o tamanho da base:</h2>
                     <div class="opcoes-container">
                         <?php
                         require_once '../DADOS/config.php';
                         $sql = "SELECT id_prod, nome_prod, preco FROM produto 
-            JOIN categoria ON produto.categoria_id = categoria.id_cat 
-            WHERE categoria.nome_cat = 'Base'";
+                        JOIN categoria ON produto.categoria_id = categoria.id_cat 
+                        WHERE categoria.nome_cat = 'Base'";
                         $res = $conexao->query($sql);
                         if ($res->num_rows > 0) {
                             while ($row = $res->fetch_assoc()) {
                                 echo "<label class='opcao'>
-                    <input type='radio' name='base_id' value='{$row['id_prod']}' required> 
-                    <span><b>{$row['nome_prod']}</b> - R$ " . number_format($row['preco'], 2, ',', '.') . "</span>
-                  </label>";
+                                <input type='radio' name='base_id' value='{$row['id_prod']}' required> 
+                                <span><b>{$row['nome_prod']}</b> - R$ " . number_format($row['preco'], 2, ',', '.') . "</span>
+                              </label>";
                             }
                         } else {
                             echo "<p>Nenhuma base disponível.</p>";
@@ -129,7 +131,7 @@
                     </div>
                 </div>
 
-
+                <!-- SEÇÃO DE ACOMPANHAMENTOS (ESCONDIDA INICIALMENTE) -->
                 <div class="acompanhamentos card oculto" id="acompanhamentos">
                     <h2>Escolha seus acompanhamentos:</h2>
                     <div class="acomp-list">
@@ -139,9 +141,9 @@
                         if ($res->num_rows > 0) {
                             while ($row = $res->fetch_assoc()) {
                                 echo "<label class='opcao'>
-                        <input type='checkbox' name='acompanhamentos[{$row['id_mp']}]' value='{$row['id_mp']}'>
-                        <span>{$row['nome_mp']} - R$ " . number_format($row['preco_unitario'], 2, ',', '.') . "</span>
-                      </label>";
+                                <input type='checkbox' name='acompanhamentos[{$row['id_mp']}]' value='{$row['id_mp']}'>
+                                <span>{$row['nome_mp']} - R$ " . number_format($row['preco_unitario'], 2, ',', '.') . "</span>
+                              </label>";
                             }
                         } else {
                             echo "<p>Nenhum acompanhamento disponível.</p>";
@@ -149,13 +151,14 @@
                         ?>
                     </div>
                 </div>
-                <button type="submit" class="btn-finalizar">Finalizar Pedido</button>
+
+                <!-- BOTÃO FINALIZAR (ESCONDIDO ATÉ ESCOLHER A BASE) -->
+                <div class="btn-container oculto" id="btnFinalizarContainer">
+                    <button type="submit" class="btn-finalizar">Finalizar Pedido</button>
+                </div>
 
             </form>
         </section>
-    </main>
-
-    <main>
 
         <section class="categorias">
             <h2>Escolha sua categoria</h2>
@@ -250,26 +253,7 @@
         </div>
     </footer>
 
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const botoes = document.querySelectorAll('.btnCategoria button');
-            const produtos = document.querySelectorAll('.card-produto');
-
-            botoes.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    botoes.forEach(b => b.classList.remove('ativo'));
-                    btn.classList.add('ativo');
-                    const categoria = btn.dataset.categoria;
-
-                    produtos.forEach(prod => {
-                        prod.style.display = (categoria === 'todos' || prod.classList.contains(categoria)) ? '' : 'none';
-                    });
-                });
-            });
-        });
-    </script>
 
     <script src="../../public/assets/js/script.js"></script>
     <script src="../../public/assets/js/cardápio.js"></script>
