@@ -32,3 +32,46 @@ radios.forEach(radio => {
     acompDiv.classList.add('mostrar');
   });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ========= Atualiza o ano automaticamente =========
+    const anoElemento = document.getElementById("year");
+    if (anoElemento) {
+        anoElemento.textContent = new Date().getFullYear();
+    }
+
+    // ========= Sistema de filtro por categoria =========
+    const botoes = document.querySelectorAll('.btnCategoria button');
+    const produtos = document.querySelectorAll('.card-produto');
+
+    if (botoes.length > 0 && produtos.length > 0) {
+        botoes.forEach(btn => {
+            btn.addEventListener('click', () => {
+                botoes.forEach(b => b.classList.remove('ativo'));
+                btn.classList.add('ativo');
+                const categoria = btn.dataset.categoria;
+
+                produtos.forEach(prod => {
+                    prod.style.display = (categoria === 'todos' || prod.classList.contains(categoria)) ? '' : 'none';
+                });
+            });
+        });
+    }
+
+    // ========= Exibir acompanhamentos e botão após escolher a base =========
+    const radiosBase = document.querySelectorAll('input[name="base_id"]');
+    const divAcompanhamentos = document.getElementById('acompanhamentos');
+    const btnFinalizarContainer = document.getElementById('btnFinalizarContainer');
+
+    if (radiosBase.length > 0 && divAcompanhamentos && btnFinalizarContainer) {
+        radiosBase.forEach(radio => {
+            radio.addEventListener('change', () => {
+                divAcompanhamentos.classList.remove('oculto');
+                btnFinalizarContainer.classList.remove('oculto');
+            });
+        });
+    }
+});
+
+
