@@ -19,28 +19,23 @@ body {
     padding: 20px;
 }
 
-.pedidos-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 h1 {
-    color: var(--roxo-escuro);
     text-align: center;
+    color: var(--roxo-escuro);
     margin-bottom: 25px;
 }
 
 .tabela-wrapper {
-    overflow-x: auto;
+    overflow-x: auto; /* permite scroll horizontal em telas pequenas */
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     background: var(--brancoFull);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
 thead {
@@ -66,12 +61,6 @@ tbody tr:hover {
 .status {
     font-weight: 600;
     text-transform: capitalize;
-}
-
-.sem-pedidos {
-    text-align: center;
-    color: var(--cinzaEscuro);
-    font-style: italic;
 }
 
 .form-status {
@@ -110,18 +99,60 @@ tbody tr:hover {
 }
 
 /* RESPONSIVIDADE */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     th, td {
         font-size: 13px;
-        padding: 8px 10px;
+        padding: 10px 12px;
     }
+}
 
+@media (max-width: 768px) {
+    table {
+        display: block;
+    }
+    thead {
+        display: none; /* esconde o cabeçalho */
+    }
+    tbody {
+        display: block;
+    }
+    tbody tr {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        background: var(--brancoFull);
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0;
+        font-size: 13px;
+    }
+    td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--cinzaEscuro);
+        margin-right: 5px;
+    }
     .form-status {
         flex-direction: column;
-        gap: 3px;
+        gap: 5px;
     }
-
-    .form-status button {
+    .form-status select, .form-status button {
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    tbody tr {
+        grid-template-columns: 1fr; /* cada linha ocupa toda a largura */
+    }
+    td {
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
