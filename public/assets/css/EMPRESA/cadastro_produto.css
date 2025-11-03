@@ -755,3 +755,80 @@ body {
         margin: 0 10px;
     }
 }
+
+/* Toast container */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Toast base */
+
+/*Deletar*/
+.custom-toast-popup {
+    position: relative;
+    /* necessário para a barra de progresso */
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 8px;
+    max-width: 400px;
+    min-width: 200px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 500;
+    color: var(--branco);
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInFade 0.5s forwards;
+}
+
+/* Barra de progresso */
+.custom-toast-popup .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Barra animando */
+@keyframes progressBar {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+/* Tipos de toast */
+/*Cadastro*/
+.custom-toast-popup.success {
+    background-color: #4caf50;
+}
+
+.custom-toast-popup.error {
+    background-color: #f44336;
+}
+
+/* Animação de entrada */
+@keyframes slideInFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -30,6 +30,6 @@ if (!empty($acompanhamentos)) {
     }
 }
 
-echo "<h2>Pedido realizado com sucesso! 🎉</h2>";
-echo "<a href='../view/vcardapio.php'>Voltar ao cardápio</a>";
+// retorna status 200 para JS
+http_response_code(200);
 ?>
