@@ -39,3 +39,13 @@ document.addEventListener('click', e => {
         });
     }
 });
+
+
+window.addEventListener('scroll', function() {
+  const header = document.getElementById('header');
+  if (window.scrollY > 150) { // quando rolar 50px
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});

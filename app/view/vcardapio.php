@@ -55,7 +55,7 @@
     ];
     ?>
     <!--Header & NavBar-->
-    <header class="header" role="banner">
+    <header id="header" class="header" role="banner">
         <nav class="navbar section-content">
             <a href="home.php" class="nav-logo">
                 <img src="../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
@@ -82,7 +82,7 @@
                     <a href="#" class="nav-link">Promoções</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Meus Pedidos</a>
+                    <a href="vmeus_pedidos.php" class="nav-link">Meus Pedidos</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
