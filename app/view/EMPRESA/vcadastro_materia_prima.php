@@ -40,6 +40,9 @@
     </nav>
   </header>
 
+  <div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;"></div>
+
+
   <main class="main-content">
     <!-- Coluna de Botões -->
     <div class="actions-bar">
@@ -263,6 +266,7 @@
   </footer>
 
   <script src="../../../public/assets/js/script.js"></script>
+  <script src="../../../public/assets/js/materiaPrima.js"></script>
 
   <script>
     // Alterna seções ao clicar nos botões

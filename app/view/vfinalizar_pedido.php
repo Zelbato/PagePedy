@@ -87,7 +87,7 @@ if (!empty($acompanhamentos)) {
             </div>
         </div>
 
-        <form action="../FUNCAO/ffinalizar_pedido.php" method="POST" class="form-finalizar">
+        <form class="form-finalizar">
             <input type="hidden" name="base_id" value="<?= $base_id ?>">
             <?php foreach ($acompanhamentos as $id_mp): ?>
                 <input type="hidden" name="acompanhamentos[]" value="<?= $id_mp ?>">
@@ -96,12 +96,17 @@ if (!empty($acompanhamentos)) {
 
             <label for="destino">Destino (endereço):</label>
             <input type="text" name="destino" id="destino" required placeholder="Digite seu endereço">
+
             <div class="botao-wrapper">
-                <button type="submit" class="btn-finalizar">Confirmar Pedido </button>
-                <button type="submit" class="btn-cancelar"><a href="vcardapio.php">Cancelar Pedido</a></button>
-            </div>  
+                <button type="submit" class="btn-finalizar">Confirmar Pedido</button>
+                <button class="btn-cancelar"><a href="vcardapio.php">Cancelar Pedido</a></button>
+            </div>
         </form>
     </div>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../public/assets/js/finalizarPedido.js"></script>
 </body>
 
 </html>
