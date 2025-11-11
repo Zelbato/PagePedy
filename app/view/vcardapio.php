@@ -67,19 +67,8 @@
                 <li class="nav-item">
                     <a href="home.php" class="nav-link primary">Inicio</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">Cardápio<i class="fa-solid fa-chevron-down"></i> </a>
-
-                    <ul class="dropdown-menu">
-                        <li class="nav-ms-link"><a href="vcardapio.php#acai" class="nav-link">Açaí</a></li>
-                        <li class="nav-ms-link"><a href="vcardapio.php#sorvete" class="nav-link">Sorvetes</a></li>
-                        <li class="nav-ms-link"><a href="vcardapio.php#milkshake" class="nav-link">Milk-shake</a></li>
-                        <li class="nav-ms-link"><a href="vcardapio.php#balde" class="nav-link">Baldes</a></li>
-                        <!-- <li class="nav-ms-link"><a href="#" class="nav-link">Balde de Sorvete</a></li> -->
-                    </ul>
-                </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Promoções</a>
+                    <a href="vcardapio.php#categorias" class="nav-link">Cardápio</a>
                 </li>
                 <li class="nav-item">
                     <a href="vmeus_pedidos.php" class="nav-link">Meus Pedidos</a>
@@ -90,19 +79,10 @@
             </ul>
             <button id="menuOpenBtn" class="fas fa-bars"></button>
         </nav>
-
     </header>
 
     <main>
-        <section class="banner-cardapio">
-            <div class="overlay"></div>
-            <!-- <div class="banner-text">
-                <h1>Cardápio</h1>
-                <p>Descubra o sabor perfeito: açaí, sorvetes e muito mais</p>
-            </div> -->
-        </section>
-
-        <section class="monteOseu">
+        <section class="monteOseu" id="monteOseu">
             <form class="form-pedido" action="../view/vfinalizar_pedido.php" method="POST">
                 <h1 class="titulo-pedido">Monte seu Pedido</h1>
                 <p class="descricao-pedido">Escolha a base e os acompanhamentos do seu açaí do seu jeito!</p>
@@ -160,7 +140,7 @@
             </form>
         </section>
 
-        <section class="categorias">
+        <section class="categorias" id="categorias">
             <h2>Escolha sua categoria</h2>
             <div class="btnCategoria">
                 <button data-categoria="todos" class="ativo"><i class="fa-solid fa-layer-group"></i> Todos</button>

@@ -33,12 +33,39 @@
 </head>
 
 <body>
+    <!--Header & NavBar-->
+    <header id="header" class="header" role="banner">
+        <nav class="navbar section-content">
+            <a href="home.php" class="nav-logo">
+                <img src="../../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
+                <!-- <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2> -->
+            </a>
 
+            <ul class="nav-menu">
+                <button id="menuCloseBtn" class="fas fa-times"></button>
+                <li class="nav-item">
+                    <a href="home.php" class="nav-link primary">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="vcardapio.php#categorias" class="nav-link">Cardápio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="vmeus_pedidos.php" class="nav-link">Meus Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                </li>
+            </ul>
+            <button id="menuOpenBtn" class="fas fa-bars"></button>
+        </nav>
+    </header>
+    <main class="main">
 
-
-    <main>
-        <h1>🏢 Painel da Empresa</h1>
-        <p>Bem-vindo(a), <?php echo $_SESSION['empresa_nome'] ?? 'Empresa'; ?>!</p>
+        <div class="logo-text">
+            <h1>Painel da Empresa</h1>
+            <p>Bem-vindo(a), <?php echo $_SESSION['empresa_nome'] ?? 'Empresa'; ?>!</p>
+        </div>
+        </div>
 
         <div class="home-grid">
 
@@ -73,6 +100,47 @@
             </a>
         </div>
     </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
+                <!-- <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2> -->
+                <p>Mais que sabor, uma explosão de energia em cada copo!</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="home.php">Início</a></li>
+                    <li><a href="vcardapio.php">Cardápio</a></li>
+                    <li><a href="#">Promoções</a></li>
+                    <li><a href="#">Meus Pedidos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> PedyAçaí - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+
+    <script src="../../public/assets/js/script.js"></script>
 
 </body>
 
