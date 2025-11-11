@@ -36,7 +36,6 @@
 </head>
 
 <body>
-
     <!--Header & NavBar-->
     <header id="header" class="header" role="banner">
         <nav class="navbar section-content">
@@ -50,19 +49,8 @@
                 <li class="nav-item">
                     <a href="home.php" class="nav-link primary">Inicio</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">Cardápio<i class="fa-solid fa-chevron-down"></i> </a>
-
-                    <ul class="dropdown-menu">
-                        <li class="nav-ms-link"><a href="vcardapio.php#acai" class="nav-link">Açaí</a></li>
-                        <li class="nav-ms-link"><a href="vcardapio.php#sorvete" class="nav-link">Sorvetes</a></li>
-                        <li class="nav-ms-link"><a href="vcardapio.php#milkshake" class="nav-link">Milk-shake</a></li>
-                        <li class="nav-ms-link"><a href="vcardapio.php#balde" class="nav-link">Baldes</a></li>
-                        <!-- <li class="nav-ms-link"><a href="#" class="nav-link">Balde de Sorvete</a></li> -->
-                    </ul>
-                </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Promoções</a>
+                    <a href="vcardapio.php#categorias" class="nav-link">Cardápio</a>
                 </li>
                 <li class="nav-item">
                     <a href="vmeus_pedidos.php" class="nav-link">Meus Pedidos</a>
@@ -73,10 +61,10 @@
             </ul>
             <button id="menuOpenBtn" class="fas fa-bars"></button>
         </nav>
-
     </header>
+
     <main class="container">
-        <h1>🧾 Meus Pedidos</h1>
+        <h1>Meus Pedidos</h1>
 
         <?php if ($res && $res->num_rows > 0): ?>
             <div class="tabela-container">

@@ -47,19 +47,8 @@
                 <li class="nav-item">
                     <a href="home.php" class="nav-link primary">Inicio</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">Cardápio<i class="fa-solid fa-chevron-down"></i> </a>
-
-                    <ul class="dropdown-menu">
-                        <li class="nav-ms-link"><a href="vcardapio.php#acai" class="nav-link">Açaí</a></li>
-                        <li class="nav-ms-link"><a href="vcardapio.php#sorvete" class="nav-link">Sorvetes</a></li>
-                        <li class="nav-ms-link"><a href="vcardapio.php#milkshake" class="nav-link">Milk-shake</a></li>
-                        <li class="nav-ms-link"><a href="vcardapio.php#balde" class="nav-link">Baldes</a></li>
-                        <!-- <li class="nav-ms-link"><a href="#" class="nav-link">Balde de Sorvete</a></li> -->
-                    </ul>
-                </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Promoções</a>
+                    <a href="vcardapio.php#categorias" class="nav-link">Cardápio</a>
                 </li>
                 <li class="nav-item">
                     <a href="vmeus_pedidos.php" class="nav-link">Meus Pedidos</a>
@@ -70,7 +59,6 @@
             </ul>
             <button id="menuOpenBtn" class="fas fa-bars"></button>
         </nav>
-
     </header>
 
     <main class="main">
@@ -81,7 +69,7 @@
                     <h3 class="subTitle">Mais que sabor, uma explosão de energia em cada copo</h3>
                     <p>Experimente agora e descubra por que todo mundo ama o nosso açaí!</p>
                     <div class="btn">
-                        <a href="vcardapio.php" class="btnCadapio order-now">Monte seu Açaí</a>
+                        <a href="vcardapio.php#monteOseu" class="btnCadapio order-now">Monte seu Açaí</a>
                     </div><!--Btn-->
                 </div><!--Hero-details-->
 
@@ -168,6 +156,7 @@
             </div>
         </section> -->
     </main><!--Main-->
+    
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">
