@@ -6,6 +6,47 @@
     <title>Document</title>
 </head>
 <body>
+    <body>
+  <!-- Header -->
+  <header class="header" role="banner">
+    <nav class="navbar section-content">
+      <a href="home.php" class="nav-logo">
+        <img src="../../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
+        <!-- <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2> -->
+      </a>
+      <ul class="nav-menu">
+        <button id="menuCloseBtn" class="fas fa-times"></button>
+        <li class="nav-item"><a href="home.php" class="nav-link primary">Inicio</a></li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link">Cardápio<i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li class="nav-ms-link"><a href="vcardapio.php#acai" class="nav-link">Açaí</a></li>
+            <li class="nav-ms-link"><a href="vcardapio.php#sorvete" class="nav-link">Sorvetes</a></li>
+            <li class="nav-ms-link"><a href="vcardapio.php#milkshake" class="nav-link">Milk-shake</a></li>
+            <li class="nav-ms-link"><a href="vcardapio.php#balde" class="nav-link">Baldes</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link">Promoções</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Meus Pedidos</a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      </ul>
+      <button id="menuOpenBtn" class="fas fa-bars"></button>
+    </nav>
+  </header>
+
+  <div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;"></div>
+
+
+  <main class="main-content">
+    <!-- Coluna de Botões -->
+    <div class="actions-bar">
+      <button class="active" data-card="cadastrar">Cadastrar</button>
+      <button data-card="editar">Editar</button>
+      <button data-card="deletar">Deletar</button>
+      <button data-card="listar">Listar</button>
+    </div>
+
+
     <form action="../../FUNCAO/fcadastro_fornecedor.php" method="POST">
         <h2>Cadastro de Fornecedor</h2>
         
@@ -100,5 +141,61 @@
     }
     $conexao->close();
     ?>
+
+
+
+<footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="../../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
+        <!-- <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2> -->
+        <p>Mais que sabor, uma explosão de energia em cada copo!</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="home.php">Início</a></li>
+          <li><a href="vcardapio.php">Cardápio</a></li>
+          <li><a href="#">Promoções</a></li>
+          <li><a href="#">Meus Pedidos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h3>Siga-nos</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> PedyAçaí - Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="../../../public/assets/js/script.js"></script>
+  <script src="../../../public/assets/js/cadastroProduto.js"></script>
+
+  <script>
+    // Alterna seções ao clicar nos botões
+    const botoes = document.querySelectorAll('.actions-bar button');
+    const secoes = document.querySelectorAll('.section');
+
+    botoes.forEach(btn => {
+      btn.addEventListener('click', () => {
+        botoes.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        secoes.forEach(sec => sec.classList.remove('active'));
+        const alvo = btn.getAttribute('data-card');
+        document.querySelector(`.section-${alvo}`).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
