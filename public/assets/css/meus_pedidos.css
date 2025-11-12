@@ -43,7 +43,6 @@ img {
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ===== EFEITO SCROLLED ===== */
 #header.scrolled {
     background: linear-gradient(135deg,
             var(--roxo-escuro) 70%,
@@ -148,7 +147,6 @@ img {
     display: none;
 }
 
-/* ===== MOBILE ===== */
 @media screen and (max-width:900px) {
 
     body.showMobileMenu .header:before {
@@ -265,11 +263,10 @@ img {
     }
 }
 
-/* ======= CONTAINER PRINCIPAL ======= */
 .container {
     max-width: 1100px;
-    max-height: 100%;
-    height: 100vh;
+    min-height: 70vh;
+    height: auto;
     margin: 80px auto 40px;
     background: var(--branco);
     border-radius: 16px;
@@ -291,7 +288,6 @@ img {
     }
 }
 
-/* ======= TÍTULO ======= */
 h1 {
     text-align: center;
     color: var(--roxoclaro);
@@ -300,7 +296,6 @@ h1 {
     font-weight: 600;
 }
 
-/* ======= TABELA ======= */
 .tabela-container {
     max-height: 400px;
     overflow: auto;
@@ -363,7 +358,6 @@ h1 {
     background: var(--branco);
 }
 
-/* ======= STATUS ======= */
 .status {
     font-weight: 600;
     text-transform: capitalize;
@@ -390,7 +384,6 @@ h1 {
     color: var(--preto);
 }
 
-/* ======= MENSAGEM DE TABELA VAZIA ======= */
 .sem-pedidos {
     text-align: center;
     color: var(--cinzaEscuro);
