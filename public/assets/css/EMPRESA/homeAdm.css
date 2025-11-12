@@ -292,7 +292,7 @@ img {
 /* Grid dos blocos */
 .home-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
     gap: 25px;
     margin-bottom: 50px;
 }
@@ -301,7 +301,7 @@ img {
 .home-block {
     background-color: var(--branco);
     border-radius: 20px;
-    padding: 40px 20px;
+    padding: 30px;
     text-align: center;
     text-decoration: none;
     color: var(--cinzaEscuro);
@@ -336,24 +336,37 @@ img {
 }
 
 /* Cores personalizadas */
-.home-block.pedidos {
-    background-color: #ffe3e3;
+.home-block.categoria {
+    background-color: var(--branco);
+}
+
+.home-block.fornecedor {
+    background-color: var(--branco);
+}
+
+/*
+e8e0d8 -> meio marrom escuro
+efeae6 -> meio marrom clarovar(--branco) -> branco
+*/
+
+.home-block.materiaPrima {
+    background-color: var(--branco);
+}
+
+.home-block.producao {
+    background-color: var(--branco);
+}
+
+.home-block.produto {
+    background-color: var(--branco);
+}
+
+.home-block.pedidoRecebido {
+    background-color: var(--branco);
 }
 
 .home-block.historico {
-    background-color: #fff0b3;
-}
-
-.home-block.produtos {
-    background-color: #d3f0ff;
-}
-
-.home-block.relatorios {
-    background-color: #e2ffd9;
-}
-
-.home-block.config {
-    background-color: #f2e3ff;
+    background-color: var(--branco);
 }
 
 /* Hover */
@@ -364,7 +377,7 @@ img {
 
 .home-block:hover .icon {
     transform: rotate(10deg) scale(1.1);
-    color: var(--roxoclaro);
+    color: var(--cinzaEscuro);
 }
 
 /* Clique */

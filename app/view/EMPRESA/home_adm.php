@@ -69,34 +69,46 @@
 
         <div class="home-grid">
 
-            <a href="pedidos_recebidos.php" class="home-block pedidos">
+            <a href="vcadastro_categoria.php" class="home-block categoria">
                 <i class="fas fa-cart-shopping icon"></i>
-                <h3>Pedidos Recebidos</h3>
-                <p>Gerencie os pedidos ativos em tempo real.</p>
+                <h3>Cadastro de Categoria</h3>
+                <p>Cadastre e edite as categorias do seu produto</p>
             </a>
 
-            <a href="vhistorico_pedidos_empresa.php" class="home-block historico">
+            <a href="vcadastro_fornecedor.php" class="home-block fornecedor">
                 <i class="fas fa-scroll icon"></i>
-                <h3>Histórico de Pedidos</h3>
+                <h3>Cadastro de Fornecedores</h3>
                 <p>Veja pedidos antigos e seus detalhes.</p>
             </a>
 
-            <a href="cadastro_produtos.php" class="home-block produtos">
+            <a href="vcadastro_materia_prima.php" class="home-block materiaPrima">
                 <i class="fas fa-boxes-stacked icon"></i>
-                <h3>Produtos</h3>
+                <h3>Cadastro de Materia Prima</h3>
                 <p>Cadastre e edite seus produtos facilmente.</p>
             </a>
 
-            <a href="relatorios_vendas.php" class="home-block relatorios">
-                <i class="fas fa-chart-line icon"></i>
-                <h3>Relatórios</h3>
-                <p>Acompanhe suas vendas e resultados.</p>
+            <a href="vcadastro_producao.php" class="home-block producao">
+                <i class="fas fa-gear icon"></i>
+                <h3>Cadastro da Produção</h3>
+                <p>Cadastre e gerencie a produção.</p>
             </a>
 
-            <a href="config_empresa.php" class="home-block config">
+            <a href="vcadastro_produto.php" class="home-block produto">
                 <i class="fas fa-gear icon"></i>
-                <h3>Configurações</h3>
-                <p>Atualize informações da sua empresa.</p>
+                <h3>Cadastro de Produto</h3>
+                <p>Cadastre e edite seus produtos.</p>
+            </a>
+            
+            <a href="vpedidos_recebidos.php" class="home-block pedidoRecebido">
+                <i class="fas fa-chart-line icon"></i>
+                <h3>Pedidos Pendentes</h3>
+                <p>Pedidos em aberto.</p>
+            </a>
+
+            <a href="vhistorico_pedidos_empresa.php" class="home-block historico">
+                <i class="fas fa-chart-line icon"></i>
+                <h3>Histórico de Pedidos</h3>
+                <p>Histórico de pedidos recebidos.</p>
             </a>
         </div>
     </main>
@@ -104,7 +116,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
+                <img src="../../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
                 <!-- <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2> -->
                 <p>Mais que sabor, uma explosão de energia em cada copo!</p>
             </div>
