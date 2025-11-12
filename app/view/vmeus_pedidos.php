@@ -31,7 +31,8 @@
     <!--Font Awesome-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <title>Meus Pedidos</title>
+    <title>PedyAçaí - Meus Pedidos</title>
+    <link rel="icon" type="image/png" href="../../public/assets/img/logoOficialTransparentRecortada.png">
     <link rel="stylesheet" href="../../public/assets/css/meus_pedidos.css">
 </head>
 
