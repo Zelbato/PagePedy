@@ -28,7 +28,7 @@
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <!--Font Awesome-->
-
+    <link rel="icon" type="image/png" href="../../public/assets/img/logoOficialTransparentRecortada.png">
     <link rel="stylesheet" href="../../public/assets/css/home.css">
     <title>PedyAçaí</title>
 </head>
@@ -66,8 +66,11 @@
             <div class="section-content">
                 <div class="hero-details">
                     <h2 class="title">Pedy<span>Açaí</span> </h2>
-                    <h3 class="subTitle">Mais que sabor, uma explosão de energia em cada copo</h3>
-                    <p>Experimente agora e descubra por que todo mundo ama o nosso açaí!</p>
+                    <h3 class="subTitle">O sabor que recarrega o seu dia!</h3>
+                    <p>Açaí cremoso, irresistível e feito na medida certa pra quem ama energia e prazer em cada colher.
+                        <span class="subTitle-negrito"> Monte o seu e descubra o porquê do nosso sucesso!</span>
+                    </p>
+                    <p></p>
                     <div class="btn">
                         <a href="vcardapio.php#monteOseu" class="btnCadapio order-now">Monte seu Açaí</a>
                     </div><!--Btn-->
@@ -128,14 +131,18 @@
                 <div class="sobre-default">
                     <div class="sobre-text">
                         <p class="txt-sobre">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Adipisci doloribus, esse laboriosam perferendis molestias
-                            consequatur sed hic ex reprehenderit saepe voluptate? Fuga,
-                            in quasi. Provident neque harum necessitatibus deserunt repudiandae!
+                            A PedyAçaí nasceu com o propósito de oferecer o verdadeiro
+                            sabor do açaí, combinando qualidade, frescor e dedicação
+                            em cada detalhe. Nosso compromisso é proporcionar uma experiência única,
+                            feita com ingredientes selecionados e preparo cuidadoso, para garantir
+                            o equilíbrio perfeito entre sabor e energia.
+                            Aqui, cada copo representa o nosso amor pelo que fazemos e o desejo de
+                            entregar sempre o melhor aos nossos clientes.
+                            <span class="txt-finaly">PedyAçaí — qualidade e sabor em cada momento.</span>
                         </p>
-                        <div class="image-sobre">
-                            <img src="../../public/assets/img/hrdeacai.png" alt="imagem sobre a empresa" class="image">
-                        </div>
+                        <!-- <div class="image-sobre">
+                            <img src="../../public/assets/img/pedyacai.png" alt="imagem sobre a empresa" class="image">
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -156,7 +163,7 @@
             </div>
         </section> -->
     </main><!--Main-->
-    
+
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">

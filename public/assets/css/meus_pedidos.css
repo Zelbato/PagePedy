@@ -80,7 +80,7 @@ img {
 }
 
 .img-logo {
-    width: 70px;
+    width: 80px;
     padding: 10px 0;
 }
 
@@ -90,7 +90,7 @@ img {
     margin: 0;
     align-items: center;
 }
-
+/* 
 .navbar .nav-item.dropdown {
     position: relative;
 }
@@ -126,13 +126,14 @@ img {
     color: var(--laranja);
 }
 
-/*Mostrar menu ao passar o mouse*/
+/*Mostrar menu ao passar o mouse*
 .navbar .nav-item.dropdown:hover .dropdown-menu {
     display: flex;
-}
+} */
 
 .navbar .nav-menu .nav-link {
     color: var(--roxo-escuro);
+    font-size: 18px;
 }
 
 .navbar .nav-menu .primary {

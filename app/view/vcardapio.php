@@ -32,6 +32,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <title>PedyAçaí - Cardápio</title>
+    <link rel="icon" type="image/png" href="../../public/assets/img/logoOficialTransparentRecortada.png">
     <link rel="stylesheet" href="../../public/assets/css/cardapio.css">
 </head>
 
