@@ -2,34 +2,32 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet" />
     <!--Icones Bootstrap-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!--Icones Bootstrap-->
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <!--Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!--Google Fonts-->
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!--Bootstrap-->
-
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous" />
     <!--Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <!--Font Awesome-->
-    <title>Home da Empresa</title>
-    <link rel="stylesheet" href="../../../public/assets/css/EMPRESA/homeAdm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <title>Painel Administrativo | PedyAçaí</title>
+    <link rel="stylesheet" href="../../../public/assets/css/EMPRESA/homeAdm.css" />
 </head>
 
 <body>
@@ -59,58 +57,57 @@
             <button id="menuOpenBtn" class="fas fa-bars"></button>
         </nav>
     </header>
+
     <main class="main">
-
-        <div class="logo-text">
+        <section class="welcome">
             <h1>Painel da Empresa</h1>
-            <p>Bem-vindo(a), <?php echo $_SESSION['empresa_nome'] ?? 'Empresa'; ?>!</p>
-        </div>
-        </div>
+            <p>Bem-vindo(a), <strong><?php echo $_SESSION['empresa_nome'] ?? 'Empresa'; ?></strong>!</p>
+        </section>
 
-        <div class="home-grid">
-
-            <a href="vcadastro_categoria.php" class="home-block categoria">
-                <i class="fas fa-cart-shopping icon"></i>
+        <section class="dashboard-grid">
+            <!-- ===== Blocos do Painel Administrativo ===== -->
+            <a href="vcadastro_categoria.php" class="dashboard-card">
+                <i class="fas fa-layer-group icon"></i>
                 <h3>Cadastro de Categoria</h3>
-                <p>Cadastre e edite as categorias do seu produto</p>
+                <p>Gerencie e edite as categorias dos produtos.</p>
             </a>
 
-            <a href="vcadastro_fornecedor.php" class="home-block fornecedor">
-                <i class="fas fa-scroll icon"></i>
+            <a href="vcadastro_fornecedor.php" class="dashboard-card">
+                <i class="fas fa-truck-field icon"></i>
                 <h3>Cadastro de Fornecedores</h3>
-                <p>Veja pedidos antigos e seus detalhes.</p>
+                <p>Cadastre ou atualize seus fornecedores.</p>
             </a>
 
-            <a href="vcadastro_materia_prima.php" class="home-block materiaPrima">
+            <a href="vcadastro_materia_prima.php" class="dashboard-card">
                 <i class="fas fa-boxes-stacked icon"></i>
-                <h3>Cadastro de Materia Prima</h3>
-                <p>Cadastre e edite seus produtos facilmente.</p>
+                <h3>Cadastro de Matéria-Prima</h3>
+                <p>Gerencie seu estoque de insumos e ingredientes.</p>
             </a>
 
-            <a href="vcadastro_producao.php" class="home-block producao">
-                <i class="fas fa-gear icon"></i>
-                <h3>Cadastro da Produção</h3>
-                <p>Cadastre e gerencie a produção.</p>
+            <a href="vcadastro_producao.php" class="dashboard-card">
+                <i class="fas fa-gears icon"></i>
+                <h3>Controle de Produção</h3>
+                <p>Monitore a produção e registre novas etapas.</p>
             </a>
 
-            <a href="vcadastro_produto.php" class="home-block produto">
-                <i class="fas fa-gear icon"></i>
+            <a href="vcadastro_produto.php" class="dashboard-card">
+                <i class="fas fa-ice-cream icon"></i>
                 <h3>Cadastro de Produto</h3>
-                <p>Cadastre e edite seus produtos.</p>
-            </a>
-            
-            <a href="vpedidos_recebidos.php" class="home-block pedidoRecebido">
-                <i class="fas fa-chart-line icon"></i>
-                <h3>Pedidos Pendentes</h3>
-                <p>Pedidos em aberto.</p>
+                <p>Adicione e atualize seus produtos do cardápio.</p>
             </a>
 
-            <a href="vhistorico_pedidos_empresa.php" class="home-block historico">
-                <i class="fas fa-chart-line icon"></i>
-                <h3>Histórico de Pedidos</h3>
-                <p>Histórico de pedidos recebidos.</p>
+            <a href="vpedidos_recebidos.php" class="dashboard-card">
+                <i class="fas fa-receipt icon"></i>
+                <h3>Pedidos Pendentes</h3>
+                <p>Acompanhe pedidos em aberto em tempo real.</p>
             </a>
-        </div>
+
+            <a href="vhistorico_pedidos_empresa.php" class="dashboard-card">
+                <i class="fas fa-clock-rotate-left icon"></i>
+                <h3>Histórico de Pedidos</h3>
+                <p>Veja todos os pedidos finalizados e entregues.</p>
+            </a>
+        </section>
     </main>
 
     <footer class="footer">
@@ -126,18 +123,16 @@
                 <ul>
                     <li><a href="home.php">Início</a></li>
                     <li><a href="vcardapio.php">Cardápio</a></li>
-                    <li><a href="#">Promoções</a></li>
-                    <li><a href="#">Meus Pedidos</a></li>
+                    <li><a href="vmeus_pedidos.php">Meus Pedidos</a></li>
                 </ul>
             </div>
 
             <div class="footer-social">
                 <h3>Siga-nos</h3>
                 <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/pedy_acai?igsh=d25hN3lieHhreGRt"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/19xxsjamdX/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://wa.me/5517997669330"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -145,6 +140,9 @@
         <div class="footer-bottom">
             <p>&copy; <span id="year"></span> PedyAçaí - Todos os direitos reservados.</p>
         </div>
+        <small class="creditos">
+            Desenvolvido por Calebe | Heitor & João Pedro © 2025
+        </small>
     </footer>
 
     <script>
@@ -152,8 +150,7 @@
     </script>
 
 
-    <script src="../../public/assets/js/script.js"></script>
-
+    <script src="../../../public/assets/js/script.js"></script>
 </body>
 
 </html>
