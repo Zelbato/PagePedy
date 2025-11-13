@@ -90,7 +90,7 @@
                 <div class="product-content">
                     <div class="card-product">
                         <div class="cards">
-                            <a href="vcardapio.php#acai">
+                            <a href="vcardapio.php#categorias">
                                 <img src="../../public/assets/img/açai-5.png" alt="imagem de açaí" class="card-image">
                                 <div class="card-effect">
                                     <h3 class="card-text">Açaí</h3>
@@ -100,7 +100,7 @@
                     </div>
                     <div class="card-product">
                         <div class="cards">
-                            <a href="vcardapio.php#sorvete">
+                            <a href="vcardapio.php#categorias">
                                 <img src="../../public/assets/img/sorvete-1.png" alt="imagem de açaí" class="card-image">
                                 <div class="card-effect">
                                     <h3 class="card-text">Sorvetes</h3>
@@ -110,7 +110,7 @@
                     </div>
                     <div class="card-product">
                         <div class="cards">
-                            <a href="vcardapio.php#milkshake">
+                            <a href="vcardapio.php#categorias">
                                 <img src="../../public/assets/img/download__1_-removebg-preview.png" alt="imagem de açaí" class="card-image">
                                 <div class="card-effect">
                                     <h3 class="card-text">Milk-Shake</h3>
@@ -147,21 +147,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- <section class="avaliation-section">
-            <div class="avaliation-content">
-                <div class="title-avaliation">
-                    <h2 class="text-avaliation">Avaliações</h2>
-                </div>
-
-                <div class="avaliation-cards" id="avaliationCards">
-                    <div class="card" id="card">
-                        <img src="#" alt="imagem de avaliações" class="image-avalion">
-                       
-                    </div>
-                </div>
-            </div>
-        </section> -->
     </main><!--Main-->
 
     <footer class="footer">
@@ -177,18 +162,16 @@
                 <ul>
                     <li><a href="home.php">Início</a></li>
                     <li><a href="vcardapio.php">Cardápio</a></li>
-                    <li><a href="#">Promoções</a></li>
-                    <li><a href="#">Meus Pedidos</a></li>
+                    <li><a href="vmeus_pedidos.php">Meus Pedidos</a></li>
                 </ul>
             </div>
 
             <div class="footer-social">
                 <h3>Siga-nos</h3>
                 <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/pedy_acai?igsh=d25hN3lieHhreGRt"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/19xxsjamdX/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://wa.me/5517997669330"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -196,6 +179,9 @@
         <div class="footer-bottom">
             <p>&copy; <span id="year"></span> PedyAçaí - Todos os direitos reservados.</p>
         </div>
+        <small class="creditos">
+            Desenvolvido por Calebe | Heitor & João Pedro © 2025
+        </small>
     </footer>
 
     <script>

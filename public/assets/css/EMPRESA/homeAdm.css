@@ -4,27 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
 
-/* Cabeçalho principal */
-main {
-    flex: 1;
-    text-align: center;
-    padding: 100px 40px 20px;
-    height: 100vh;
-}
-
-main h1 {
-    font-size: 2.2rem;
-    font-family: var(--font);
-    color: var(preto);
-    margin-bottom: 10px;
-}
-
-main p {
-    font-size: 1.1rem;
-    color: var(--cinzaEscuro);
-    margin-bottom: 40px;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -60,6 +39,7 @@ img {
 .header {
     background-color: var(--branco);
     position: fixed;
+    top: 0;
     z-index: 30;
     width: 100%;
     border-bottom: 1px solid var(--cinza);
@@ -104,7 +84,7 @@ img {
 }
 
 .img-logo {
-    width: 70px;
+    width: 80px;
     padding: 10px 0;
 }
 
@@ -115,7 +95,7 @@ img {
     align-items: center;
 }
 
-.navbar .nav-item.dropdown {
+/* .navbar .nav-item.dropdown {
     position: relative;
 }
 
@@ -150,13 +130,14 @@ img {
     color: var(--laranja);
 }
 
-/*Mostrar menu ao passar o mouse*/
+/*Mostrar menu ao passar o mouse*
 .navbar .nav-item.dropdown:hover .dropdown-menu {
     display: flex;
-}
+} */
 
 .navbar .nav-menu .nav-link {
     color: var(--roxo-escuro);
+    font-size: 18px;
 }
 
 .navbar .nav-menu .primary {
@@ -288,137 +269,104 @@ img {
     }
 }
 
-
-/* Grid dos blocos */
-.home-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
-    gap: 25px;
-    margin-bottom: 50px;
-}
-
-/* Blocos principais */
-.home-block {
-    background-color: var(--branco);
-    border-radius: 20px;
-    padding: 30px;
+.welcome {
     text-align: center;
-    text-decoration: none;
-    color: var(--cinzaEscuro);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.5s forwards;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 40px 0;
+    padding: 80px 20px 10px;
 }
 
-/* Ícones grandes e animados */
-.home-block .icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease, color 0.3s ease;
+.welcome h1 {
+    color: var(--roxo-escuro);
+    font-size: 2rem;
+    font-weight: 600;
 }
 
-/* Títulos e descrições */
-.home-block h3 {
-    margin: 0 0 10px;
-    font-size: 1.5rem;
-}
-
-.home-block p {
-    margin: 0;
+.welcome p {
     font-size: 1rem;
-    color: var(--cinzaEscuro);
+    color: #555;
 }
 
-/* Cores personalizadas */
-.home-block.categoria {
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.dashboard-card {
     background-color: var(--branco);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 25px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--laranja);
 }
 
-.home-block.fornecedor {
-    background-color: var(--branco);
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
 }
 
-/*
-e8e0d8 -> meio marrom escuro
-efeae6 -> meio marrom clarovar(--branco) -> branco
-*/
-
-.home-block.materiaPrima {
-    background-color: var(--branco);
+.dashboard-card .icon {
+    font-size: 2rem;
+    color: var(--roxo-escuro);
+    margin-bottom: 15px;
 }
 
-.home-block.producao {
-    background-color: var(--branco);
+.dashboard-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-.home-block.produto {
-    background-color: var(--branco);
+.dashboard-card p {
+    font-size: 0.9rem;
+    color: #666;
 }
 
-.home-block.pedidoRecebido {
-    background-color: var(--branco);
+/* ======= BLOCO SUPERIOR (ESTILO PAINEL) ======= */
+.status-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-.home-block.historico {
-    background-color: var(--branco);
+.status-card {
+    background: var(--branco);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    text-align: center;
+    border-left: 6px solid var(--roxo-escuro);
 }
 
-/* Hover */
-.home-block:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+.status-card h4 {
+    color: var(--roxo-escuro);
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
-.home-block:hover .icon {
-    transform: rotate(10deg) scale(1.1);
-    color: var(--cinzaEscuro);
+.status-card p {
+    font-size: 1.3rem;
+    color: #333;
+    margin: 10px 0 5px;
+    font-weight: 600;
 }
 
-/* Clique */
-.home-block:active {
-    transform: scale(0.97);
-}
-
-/* Animação de entrada */
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* Responsividade */
-@media(max-width: 650px) {
-    main h1 {
-        font-size: 1.8rem;
-    }
-
-    main p {
-        font-size: 1rem;
-    }
-
-    .home-block {
-        padding: 30px 15px;
-    }
-
-    .home-block .icon {
-        font-size: 2.5rem;
-    }
-
-    .home-block h3 {
-        font-size: 1.3rem;
-    }
-
-    .home-block p {
-        font-size: 0.9rem;
-    }
+.status-card span {
+    display: inline-block;
+    font-size: 0.9rem;
+    background: var(--laranja);
+    color: var(--branco);
+    padding: 4px 10px;
+    border-radius: 20px;
 }
 
 /*Rodapé*/
@@ -442,6 +390,7 @@ efeae6 -> meio marrom clarovar(--branco) -> branco
 
 .footer-logo {
     flex: 1 1 250px;
+    width: 80px;
 }
 
 .footer-logo .txt-logo {
@@ -523,6 +472,14 @@ efeae6 -> meio marrom clarovar(--branco) -> branco
     color: var(--cinza);
 }
 
+.creditos {
+    color: var(--cinza);
+    text-align: center;
+    font-size: 12px;
+    margin: 0;
+    padding: 0 auto;
+}
+
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
@@ -556,5 +513,11 @@ efeae6 -> meio marrom clarovar(--branco) -> branco
 
     .social-icons a {
         margin: 0 10px;
+    }
+
+    .creditos {
+        display: block;
+        text-align: center;
+        margin-top: 8px;
     }
 }
