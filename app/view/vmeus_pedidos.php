@@ -87,7 +87,7 @@
                         <?php while ($row = $res->fetch_assoc()): ?>
                             <tr>
                                 <td data-label="ID"><?= $row['id_pedi'] ?></td>
-                                <td data-label="Data"><?= $row['data_pedido'] ?></td>
+                                <td data-label="Data"><?= date('s/m/Y', strtotime($row['data_pedido'])) ?></td>
                                 <td data-label="Valor Total">R$ <?= number_format($row['valor_total'], 2, ',', '.') ?></td>
                                 <td data-label="Status" class="status 
                             <?= strtolower(str_replace(' ', '-', $row['status_pedi'])) ?>">

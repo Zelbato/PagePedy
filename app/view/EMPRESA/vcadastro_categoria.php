@@ -1,5 +1,19 @@
+<?php
+require_once '../../../app/DADOS/config.php';
+
+// Consulta para pegar o admin
+$stmt = $conexao->prepare("SELECT nome FROM usuario WHERE acesso = 2 LIMIT 1");
+$stmt->execute();
+$stmt->bind_result($nomeAdmin);
+$stmt->fetch();
+$stmt->close();
+
+// Fallback caso não encontre
+$nomeAdmin = 'Administrador';
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -29,33 +43,35 @@
   <!--Font Awesome-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <!--Font Awesome-->
-  <title>Document</title>
+  <title>PedyAçaí - Cadastro Categoria</title>
+  <link rel="icon" type="image/png" href="../../../public/assets/img/logoOficialTransparentRecortada.png">
   <link rel="stylesheet" href="../../../public/assets/css/EMPRESA/cadastrocategoria.css"><!--IMPORTANTE -->
 </head>
 
 <body>
   <!-- Header -->
-  <header class="header" role="banner">
+  <header id="header" class="header" role="banner">
     <nav class="navbar section-content">
-      <a href="home.php" class="nav-logo">
+      <a href="home_adm.php" class="nav-logo" style="display: flex; align-items: center; gap: 10px;">
         <img src="../../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
-        <!-- <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2> -->
+        <!-- <span class="painel-texto">Painel Administrativo</span> -->
       </a>
       <ul class="nav-menu">
         <button id="menuCloseBtn" class="fas fa-times"></button>
-        <li class="nav-item"><a href="home.php" class="nav-link primary">Inicio</a></li>
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link">Cardápio<i class="fa-solid fa-chevron-down"></i></a>
-          <ul class="dropdown-menu">
-            <li class="nav-ms-link"><a href="vcardapio.php#acai" class="nav-link">Açaí</a></li>
-            <li class="nav-ms-link"><a href="vcardapio.php#sorvete" class="nav-link">Sorvetes</a></li>
-            <li class="nav-ms-link"><a href="vcardapio.php#milkshake" class="nav-link">Milk-shake</a></li>
-            <li class="nav-ms-link"><a href="vcardapio.php#balde" class="nav-link">Baldes</a></li>
-          </ul>
+        <span class="admin-nome"><span class="online"> ● </span>Painel: <?php echo $nomeAdmin; ?></span>
+        <span class="divider">&#x2502;</span>
+        <li class="nav-item">
+          <a href="home_adm.php" class="nav-link primary"> Inicio</a>
         </li>
-        <li class="nav-item"><a href="#" class="nav-link">Promoções</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Meus Pedidos</a></li>
-        <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        <li class="nav-item">
+          <a href="../vlogin_usuario.php" class="nav-link logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
+        </li>
+        <li class="nav-item">
+          <a href="vmeus_pedidos.php" class="nav-link"></a>
+        </li>
+        <!-- <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                </li> -->
       </ul>
       <button id="menuOpenBtn" class="fas fa-bars"></button>
     </nav>
