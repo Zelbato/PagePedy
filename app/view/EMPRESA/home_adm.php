@@ -27,6 +27,7 @@
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     <title>Painel Administrativo | PedyAçaí</title>
+        <link rel="icon" type="image/png" href="../../public/assets/img/logoOficialTransparentRecortada.png">
     <link rel="stylesheet" href="../../../public/assets/css/EMPRESA/homeAdm.css" />
 </head>
 

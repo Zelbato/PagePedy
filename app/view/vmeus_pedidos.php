@@ -57,8 +57,12 @@
                     <a href="vmeus_pedidos.php" class="nav-link">Meus Pedidos</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="vhistorico_pedidos_usuario.php" class="nav-link">Histórico</a>
                 </li>
+                <!-- <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                </li> -->
+            </ul>
             </ul>
             <button id="menuOpenBtn" class="fas fa-bars"></button>
         </nav>
@@ -114,6 +118,7 @@
                     <li><a href="home.php">Início</a></li>
                     <li><a href="vcardapio.php">Cardápio</a></li>
                     <li><a href="vmeus_pedidos.php">Meus Pedidos</a></li>
+                    <li><a href="vhistorico_pedidos_usuario.php">Histórico</a></li>
                 </ul>
             </div>
 

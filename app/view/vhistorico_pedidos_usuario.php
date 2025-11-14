@@ -31,48 +31,117 @@
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <!--Font Awesome-->
-    <title>Histórico de Pedidos</title>
+    <title>PedyAçaí - Histórico</title>
+    <link rel="icon" type="image/png" href="../../public/assets/img/logoOficialTransparentRecortada.png">
     <link rel="stylesheet" href="../../public/assets/css/historico_pedidos.css">
 </head>
 
 <body>
-    <div class="historico-container">
-        <h1>Histórico de Pedidos</h1>
 
-        <div class="barra-pesquisa">
-            <input type="text" id="busca" placeholder="Buscar por data, status, destino...">
-        </div>
+    <!--Header & NavBar-->
+    <header id="header" class="header" role="banner">
+        <nav class="navbar section-content">
+            <a href="home.php" class="nav-logo">
+                <img src="../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
+                <!-- <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2> -->
+            </a>
 
-        <div class="tabela-wrapper">
-            <table id="tabelaPedidos">
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Valor Total</th>
-                        <th>Status</th>
-                        <th>Destino</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    if ($res && $res->num_rows > 0) {
-                        while ($row = $res->fetch_assoc()) {
-                            echo "<tr>
+            <ul class="nav-menu">
+                <button id="menuCloseBtn" class="fas fa-times"></button>
+                <li class="nav-item">
+                    <a href="home.php" class="nav-link primary">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="vcardapio.php#categorias" class="nav-link">Cardápio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="vmeus_pedidos.php" class="nav-link">Meus Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="vhistorico_pedidos_usuario.php" class="nav-link">Histórico</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                </li> -->
+            </ul>
+            <button id="menuOpenBtn" class="fas fa-bars"></button>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="historicoPedido">
+            <div class="historico-container">
+                <h1>Histórico de Pedidos</h1>
+
+                <div class="barra-pesquisa">
+                    <input type="text" id="busca" placeholder="Buscar por data, status, destino...">
+                </div>
+
+                <div class="tabela-wrapper">
+                    <table id="tabelaPedidos">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Valor Total</th>
+                                <th>Status</th>
+                                <th>Destino</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            if ($res && $res->num_rows > 0) {
+                                while ($row = $res->fetch_assoc()) {
+                                    echo "<tr>
                                     
                                     <td>{$row['data_pedido']}</td>
                                     <td>R$ " . number_format($row['valor_total'], 2, ',', '.') . "</td>
                                     <td class='status'>{$row['status_pedi']}</td>
                                     <td>{$row['destino']}</td>
                                   </tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='5' class='sem-pedidos'>Nenhum pedido encontrado.</td></tr>";
-                    }
-                    ?>
-                </tbody>
-            </table>
+                                }
+                            } else {
+                                echo "<tr><td colspan='5' class='sem-pedidos'>Nenhum pedido encontrado.</td></tr>";
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
+                <!-- <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2> -->
+                <p>Mais que sabor, uma explosão de energia em cada copo!</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="home.php">Início</a></li>
+                    <li><a href="vcardapio.php">Cardápio</a></li>
+                    <li><a href="vmeus_pedidos.php">Meus Pedidos</a></li>
+                    <li><a href="vhistorico_pedidos_usuario.php">Histórico</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/pedy_acai?igsh=d25hN3lieHhreGRt"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/19xxsjamdX/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://wa.me/5517997669330"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
         </div>
-    </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> PedyAçaí - Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
     <script src="../../public/assets/js/historico_pedido.js"></script>
 </body>
