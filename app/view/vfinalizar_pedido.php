@@ -99,7 +99,7 @@ if (!empty($acompanhamentos)) {
 
             <div class="botao-wrapper">
                 <button type="submit" class="btn-finalizar">Confirmar Pedido</button>
-                <button class="btn-cancelar"><a href="vcardapio.php">Cancelar Pedido</a></button>
+                <a href="vcardapio.php" class="btn-cancelar">Cancelar Pedido</a>
             </div>
         </form>
     </div>

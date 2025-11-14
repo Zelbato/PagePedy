@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 require_once "../DADOS/config.php";
 session_start();
 
@@ -13,4 +13,4 @@ $stmt = $conexao->prepare($sql);
 $stmt->bind_param("i", $usuario_id);
 $stmt->execute();
 $res = $stmt->get_result();
-?>
+?> -->

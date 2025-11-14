@@ -1,3 +1,16 @@
+<?php
+require_once '../../../app/DADOS/config.php';
+
+// Consulta para pegar o admin
+$stmt = $conexao->prepare("SELECT nome FROM usuario WHERE acesso = 2 LIMIT 1");
+$stmt->execute();
+$stmt->bind_result($nomeAdmin);
+$stmt->fetch();
+$stmt->close();
+
+$nomeAdmin = 'Administrador';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -26,8 +39,8 @@
         crossorigin="anonymous" />
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-    <title>Painel Administrativo | PedyAçaí</title>
-        <link rel="icon" type="image/png" href="../../public/assets/img/logoOficialTransparentRecortada.png">
+    <title>PedyAçaí - Administrativo </title>
+    <link rel="icon" type="image/png" href="../../../public/assets/img/logoOficialTransparentRecortada.png">
     <link rel="stylesheet" href="../../../public/assets/css/EMPRESA/homeAdm.css" />
 </head>
 
@@ -35,25 +48,28 @@
     <!--Header & NavBar-->
     <header id="header" class="header" role="banner">
         <nav class="navbar section-content">
-            <a href="home.php" class="nav-logo">
+            <a href="home_adm.php" class="nav-logo" style="display: flex; align-items: center; gap: 10px;">
                 <img src="../../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
-                <!-- <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2> -->
+                <!-- <span class="painel-texto">Painel Administrativo</span> -->
             </a>
+
 
             <ul class="nav-menu">
                 <button id="menuCloseBtn" class="fas fa-times"></button>
+                <span class="admin-nome"><span class="online"> ● </span>Painel: <?php echo $nomeAdmin; ?></span>
+                <span class="divider">&#x2502;</span>
                 <li class="nav-item">
-                    <a href="home.php" class="nav-link primary">Inicio</a>
+                    <a href="home_adm.php" class="nav-link primary"> Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a href="vcardapio.php#categorias" class="nav-link">Cardápio</a>
+                    <a href="../vlogin_usuario.php" class="nav-link logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
                 </li>
                 <li class="nav-item">
-                    <a href="vmeus_pedidos.php" class="nav-link">Meus Pedidos</a>
+                    <a href="vmeus_pedidos.php" class="nav-link"></a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
-                </li>
+                </li> -->
             </ul>
             <button id="menuOpenBtn" class="fas fa-bars"></button>
         </nav>
@@ -62,7 +78,7 @@
     <main class="main">
         <section class="welcome">
             <h1>Painel da Empresa</h1>
-            <p>Bem-vindo(a), <strong><?php echo $_SESSION['empresa_nome'] ?? 'Empresa'; ?></strong>!</p>
+            <!-- <p>Bem-vindo(a), <strong></strong>!</p> -->
         </section>
 
         <section class="dashboard-grid">
@@ -83,12 +99,6 @@
                 <i class="fas fa-boxes-stacked icon"></i>
                 <h3>Cadastro de Matéria-Prima</h3>
                 <p>Gerencie seu estoque de insumos e ingredientes.</p>
-            </a>
-
-            <a href="vcadastro_producao.php" class="dashboard-card">
-                <i class="fas fa-gears icon"></i>
-                <h3>Controle de Produção</h3>
-                <p>Monitore a produção e registre novas etapas.</p>
             </a>
 
             <a href="vcadastro_produto.php" class="dashboard-card">
@@ -122,9 +132,8 @@
             <div class="footer-links">
                 <h3>Links Rápidos</h3>
                 <ul>
-                    <li><a href="home.php">Início</a></li>
-                    <li><a href="vcardapio.php">Cardápio</a></li>
-                    <li><a href="vmeus_pedidos.php">Meus Pedidos</a></li>
+                    <li><a href="home_adm.php">Início</a></li>
+                    <li><a href="../vlogin_usuario.php">Sair</a></li>
                 </ul>
             </div>
 
@@ -152,6 +161,7 @@
 
 
     <script src="../../../public/assets/js/script.js"></script>
+    <script src="../../../public/assets/js/homeAdm.js"></script>
 </body>
 
 </html>

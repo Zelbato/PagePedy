@@ -82,3 +82,32 @@ window.addEventListener('scroll', function () {
     header.classList.remove('scrolled');
   }
 });
+
+//Limite de Acompanhamentos 
+document.addEventListener("DOMContentLoaded", function () {
+    const limit = 3; // <<< ALTERA O LIMITE AQUI
+    const container = document.getElementById("acompanhamentos");
+    if (!container) return; // segurança
+
+    const checkboxes = container.querySelectorAll("input[type='checkbox']");
+
+    checkboxes.forEach(cb => {
+        cb.addEventListener("change", () => {
+            const marcados = Array.from(checkboxes).filter(c => c.checked);
+
+            if (marcados.length >= limit) {
+                checkboxes.forEach(c => {
+                    if (!c.checked) {
+                        c.disabled = true;
+                        c.parentElement.classList.add("desabilitado");
+                    }
+                });
+            } else {
+                checkboxes.forEach(c => {
+                    c.disabled = false;
+                    c.parentElement.classList.remove("desabilitado");
+                });
+            }
+        });
+    });
+});

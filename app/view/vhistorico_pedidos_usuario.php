@@ -1,4 +1,6 @@
 <?php require_once '../FUNCAO/fhistorico_pedidos.php'; ?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -91,9 +93,18 @@
                             <?php
                             if ($res && $res->num_rows > 0) {
                                 while ($row = $res->fetch_assoc()) {
-                                    echo "<tr>
                                     
-                                    <td>{$row['data_pedido']}</td>
+                                    // Define classe pela situação:
+                                    $classe = "";
+                                    if ($row['status_pedi'] === "entregue") {
+                                        $classe = "status-entregue";
+                                    } elseif ($row['status_pedi'] === "cancelado") {
+                                        $classe = "status-cancelado";
+                                    }
+
+
+                                    echo "<tr>
+                                    <td>" . date('s/m/Y', strtotime($row['data_pedido'])) . "</td>
                                     <td>R$ " . number_format($row['valor_total'], 2, ',', '.') . "</td>
                                     <td class='status'>{$row['status_pedi']}</td>
                                     <td>{$row['destino']}</td>
@@ -144,6 +155,7 @@
     </footer>
 
     <script src="../../public/assets/js/historico_pedido.js"></script>
+    <script src="../../public/assets/js/script.js"></script>
 </body>
 
 </html>

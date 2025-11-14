@@ -83,9 +83,21 @@ img {
     padding: 0 40px;
 }
 
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .img-logo {
     width: 80px;
     padding: 10px 0;
+}
+
+.painel-texto {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--verdeClaro);
 }
 
 .navbar .nav-menu {
@@ -94,6 +106,21 @@ img {
     margin: 0;
     align-items: center;
 }
+
+.navbar .nav-menu .divider {
+    color: var(--cinza);
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.nav-logo span,
+.admin-nome,
+.logout {
+    /*Sera criado*/
+    transition: color 0.3s ease;
+}
+
+
 
 /* .navbar .nav-item.dropdown {
     position: relative;
@@ -134,6 +161,26 @@ img {
 .navbar .nav-item.dropdown:hover .dropdown-menu {
     display: flex;
 } */
+
+.navbar .nav-menu .admin-nome {
+    color: var(--roxo-escuro);
+    font-size: 18px;
+}
+
+.header.scrolled .navbar .nav-menu .admin-nome {
+    color: var(--branco);
+    font-size: 18px;
+}
+
+.navbar .nav-menu .admin-nome .online {
+    color: #00C853;
+    font-size: 24px;
+}
+
+.header.scrolled .navbar .nav-menu .admin-nome .online {
+    color: #00C853;
+    font-size: 24px;
+}
 
 .navbar .nav-menu .nav-link {
     color: var(--roxo-escuro);
@@ -266,6 +313,10 @@ img {
 
     .navbar .nav-menu .nav-link:hover {
         color: var(--laranja);
+    }
+
+    .divider {
+        display: none;
     }
 }
 

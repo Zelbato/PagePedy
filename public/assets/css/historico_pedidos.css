@@ -349,6 +349,21 @@ tr:hover {
     transition: 0.2s ease-in-out;
 }
 
+.status-cancelado {
+    color: var(--vermelho) !important;
+    font-weight: 600;
+}
+
+.status-entregue {
+    color: var(--verde) !important;
+    font-weight: 600;
+}
+
+.status-andamento {
+    color: orange !important;
+    font-weight: 600;
+}
+
 td {
     border: 1px solid var(--cinza);
     padding: 10px;
@@ -388,7 +403,7 @@ td {
     }
 
     table {
-        min-width: 500px;
+        max-width: 600px;
         font-size: 14px;
     }
 
@@ -399,9 +414,6 @@ td {
 }
 
 @media screen and (max-width: 600px) {
-    body {
-        padding: 0 10px;
-    }
 
     .historico-container {
         width: 100%;
@@ -430,7 +442,7 @@ td {
 
     table {
         font-size: 13px;
-        min-width: 450px;
+        min-width: 350px;
     }
 
     th,
