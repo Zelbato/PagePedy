@@ -30,7 +30,7 @@
     <!--Font Awesome-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="../../../public/assets/css/EMPRESA/historicoPedidos.css">
+    <link rel="stylesheet" href="../../../public/assets/css/EMPRESA/historicoPedidos_empresa.css">
 
     <head>
         <meta charset="UTF-8">
@@ -38,16 +38,23 @@
     </head>
 
 <body>
+ <div class="historico-container">
+        <h1>Histórico de Pedidos - Empresa</h1>
 
-    <h1> Histórico de Pedidos</h1>
+
 
     <div class="pedidos-container">
         <?php include "../../FUNCAO/fhistorico_pedidos_empresa.php"; ?>
     </div>
-
-    <a href="vpedidos_recebidos.php" class="voltar">⬅️ Voltar para Pedidos Recebidos</a>
-
-    <script src="../../../public/assets/js/"></script>
+      <br>
+      <header id="header">
+ <a href="vpedidos_recebidos.php" class="voltar">
+    <i class="fa-solid fa-left-long"></i>
+    Voltar 
+</a>
+</header>
+    
+  <script src="../../public/assets/js/historico_pedido.js"></script>
 </body>
 
 </html>
