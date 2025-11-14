@@ -58,8 +58,8 @@
                 </li>
                 <!-- <li class="nav-item">
                     <a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
-                </li>
-            </ul> -->
+                </li>-->
+            </ul>
                 <button id="menuOpenBtn" class="fas fa-bars"></button>
         </nav>
     </header>
