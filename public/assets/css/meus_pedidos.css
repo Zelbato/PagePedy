@@ -90,6 +90,7 @@ img {
     margin: 0;
     align-items: center;
 }
+
 /* 
 .navbar .nav-item.dropdown {
     position: relative;
@@ -390,6 +391,21 @@ h1 {
     color: var(--cinzaEscuro);
     font-size: 1.1em;
     margin-top: 30px;
+}
+
+.status-cancelado {
+    color: var(--vermelho) !important;
+    font-weight: 600;
+}
+
+.status-entregue {
+    color: var(--verde) !important;
+    font-weight: 600;
+}
+
+.status-preparando {
+    color: orange !important;
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {

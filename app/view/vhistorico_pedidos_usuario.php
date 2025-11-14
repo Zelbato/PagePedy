@@ -93,7 +93,7 @@
                             <?php
                             if ($res && $res->num_rows > 0) {
                                 while ($row = $res->fetch_assoc()) {
-                                    
+
                                     // Define classe pela situação:
                                     $classe = "";
                                     if ($row['status_pedi'] === "entregue") {
@@ -104,10 +104,10 @@
 
 
                                     echo "<tr>
-                                    <td>" . date('s/m/Y', strtotime($row['data_pedido'])) . "</td>
-                                    <td>R$ " . number_format($row['valor_total'], 2, ',', '.') . "</td>
-                                    <td class='status'>{$row['status_pedi']}</td>
-                                    <td>{$row['destino']}</td>
+                                    <td data-label='Hora'>" . date('s/m/Y', strtotime($row['data_pedido'])) . "</td>
+                                    <td data-label='Valor Total'>R$ " . number_format($row['valor_total'], 2, ',', '.') . "</td>
+                                    <td data-label='Status'><span class='$classe'>{$row['status_pedi']}</span></td>
+                                    <td data-label='Destino'>" . htmlspecialchars($row['destino']) . "</td>
                                   </tr>";
                                 }
                             } else {
