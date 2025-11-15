@@ -608,10 +608,6 @@ img {
 /* Smartphones grandes */
 @media screen and (max-width: 768px) {
 
-    .main-content {
-
-    }
-
     .actions-bar button {
         flex: 1 1 calc(50% - 10px);
         padding: 8px 10px;
