@@ -135,11 +135,6 @@ $nomeAdmin = 'Administrador';
         </form>
       </section>
 
-
-
-
-
-
       <!-- Seção Listar -->
       <section class="section section-listar" aria-labelledby="listar-mp">
         <h2 id="listar-mp" class="section-title">Todas as Categorias de Produtos</h2>
