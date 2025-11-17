@@ -173,55 +173,7 @@ $nomeAdmin = 'Administrador';
     <script src="../../../public/assets/js/script.js"></script>
     <script src="../../../public/assets/js/pedidoRecebido.js"></script>
 
-    <script>
-        function showToast(message) {
-            const container = document.getElementById("toast-container");
-            if (!container) return;
-
-            const duration = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--toast-time"));
-            const toast = document.createElement("div");
-            toast.className = "toast";
-            toast.innerText = message;
-            container.appendChild(toast);
-
-            setTimeout(() => toast.classList.add("show"), 20);
-            setTimeout(() => {
-                toast.classList.remove("show");
-                setTimeout(() => toast.remove(), 300);
-            }, duration);
-        }
-
-        // intercepta os forms de atualização
-        document.querySelectorAll(".update-form").forEach(form => {
-            form.addEventListener("submit", function(e) {
-                e.preventDefault();
-                const formData = new FormData(form);
-
-                const row = form.closest("tr"); // pega a linha do pedido
-                const statusCell = row.querySelector("td:nth-child(5)"); // coluna do status
-
-                fetch("../../FUNCAO/fpedidos_recebidos.php", {
-                        method: "POST",
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        },
-                        body: formData
-                    })
-                    .then(res => res.json())
-                    .then(data => {
-                        showToast(data.msg);
-                        if (data.status === "success") {
-                            // Atualiza a célula do status na tabela
-                            statusCell.textContent = form.querySelector("select[name='novo_status']").value;
-                        }
-                    })
-                    .catch(() => showToast("Erro ao atualizar!"));
-            });
-        });
-    </script>
-
-
-
+    
     <script>
         // Alterna seções ao clicar nos botões
         const botoes = document.querySelectorAll('.actions-bar button');
