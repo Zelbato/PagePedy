@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_pedi'], $_POST['no
     $stmt->bind_param("si", $novo_status, $id_pedi);
     $stmt->execute();
 
-    echo "<p>Status do pedido #$id_pedi atualizado para <b>$novo_status</b>!</p>";
+    //echo "<p>Status do pedido #$id_pedi atualizado para <b>$novo_status</b>!</p>";
 }
 
 // Filtra pedidos pela data atual (sem hora)

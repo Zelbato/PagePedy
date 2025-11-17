@@ -100,3 +100,4 @@ editarForm.addEventListener('submit', function (e) {
         })
         .catch(err => showToast("Erro na requisição", "error"));
 });
+
