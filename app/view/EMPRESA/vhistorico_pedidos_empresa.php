@@ -81,7 +81,7 @@ $nomeAdmin = 'Administrador';
             </a>
         </section>
     </main>
-
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content container">
