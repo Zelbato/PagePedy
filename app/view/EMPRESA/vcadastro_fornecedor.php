@@ -42,9 +42,9 @@ $nomeAdmin = 'Administrador';
   <!--Font Awesome-->
   <title>PedyAçaí - Cadastro Fornecedor</title>
   <link rel="icon" type="image/png" href="../../../public/assets/img/logoOficialTransparentRecortada.png">
-  <link rel="stylesheet" href="../../../public/assets/css/EMPRESA/cadastro_produto.css"><!--IMPORTANTE -->
+  <link rel="stylesheet" href="../../../public/assets/css/EMPRESA/cadastro_fornecedor.css"><!--IMPORTANTE -->
   <meta charset="UTF-8">
-  <title>Gerenciar Fornecedor</title>
+  <title>PedyAçaí - Gerenciar Fornecedor</title>
 </head>
 
 <body>
@@ -57,8 +57,6 @@ $nomeAdmin = 'Administrador';
           <img src="../../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
           <!-- <span class="painel-texto">Painel Administrativo</span> -->
         </a>
-
-
         <ul class="nav-menu">
           <button id="menuCloseBtn" class="fas fa-times"></button>
           <span class="admin-nome"><span class="online"> ● </span>Painel: <?php echo $nomeAdmin; ?></span>
@@ -81,8 +79,6 @@ $nomeAdmin = 'Administrador';
     </header>
 
     <div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;"></div>
-
-
     <main class="main-content">
       <!-- Coluna de Botões -->
       <div class="actions-bar">
@@ -186,8 +182,8 @@ $nomeAdmin = 'Administrador';
 
 
           <!-- Seção Listar -->
-          <section class="section section-listar" aria-labelledby="listar-mp">
-            <h2 id="listar-mp" class="section-title">Todos os Fornecedores</h2>
+          <section class="section section-listar" aria-labelledby="listar-fornecedor">
+            <h2 id="listar-fornecedor" class="section-title">Todos os Fornecedores</h2>
             <div class="table-container">
               <table class="table table-bordered table-striped table-hover">
                 <thead class="table-primary">
@@ -202,39 +198,25 @@ $nomeAdmin = 'Administrador';
                 </thead>
                 <tbody>
                   <?php
-
                   require_once '../../DADOS/config.php';
-
-
                   $sql = "SELECT * FROM fornecedor";
-                  $result = $conexao->query($sql);
+                  $res = $conexao->query($sql);
 
-                  if ($result->num_rows > 0) {
-                    echo "<h2>Lista de Fornecedores</h2>";
-                    echo "<table border='1'>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>CNPJ</th>
-                    <th>Telefone</th>
-                    <th>Email</th>
-                    <th>Endereço</th>
-                </tr>";
-
-                    while ($row = $result->fetch_assoc()) {
-                      echo "<tr>
-                    <td>" . $row["id_forn"] . "</td>
-                    <td>" . $row["nome_forn"] . "</td>
-                    <td>" . $row["cnpj"] . "</td>
-                    <td>" . $row["telefone"] . "</td>
-                    <td>" . $row["email"] . "</td>
-                    <td>" . $row["endereco"] . "</td>
-                </tr>";
+                  if ($res->num_rows > 0) {
+                    while ($row = $res->fetch_assoc()) {
+                      echo "<tr>";
+                      echo "<td>{$row['id_forn']}</td>";
+                      echo "<td>{$row['nome_forn']}</td>";
+                      echo "<td>{$row['cnpj']}</td>";
+                      echo "<td>{$row['telefone']}</td>";
+                      echo "<td>{$row['email']}</td>";
+                      echo "<td>{$row['endereco']}</td>";
+                      echo "</tr>";
                     }
-                    echo "</table>";
                   } else {
-                    echo "Nenhum fornecedor encontrado.";
+                    echo "<tr><td colspan='6'>Nenhum fornecedor cadastrado</td></tr>";
                   }
+
                   $conexao->close();
                   ?>
                 </tbody>
@@ -278,7 +260,8 @@ $nomeAdmin = 'Administrador';
     </footer>
 
     <script src="../../../public/assets/js/script.js"></script>
-    <script src="../../public/assets/js/historico_pedido.js"></script>
+    <script src="../../../public/assets/js/materiaPrima.js"></script>
+
 
     <script>
       // Alterna seções ao clicar nos botões
@@ -296,6 +279,7 @@ $nomeAdmin = 'Administrador';
         });
       });
     </script>
+
 
 
   </body>

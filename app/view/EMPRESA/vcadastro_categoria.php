@@ -18,7 +18,6 @@ $nomeAdmin = 'Administrador';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!--Icones Bootstrap-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -90,10 +89,10 @@ $nomeAdmin = 'Administrador';
     <div class="card-container">
       <!-- Seção Cadastrar -->
       <section class="section section-cadastrar active" aria-labelledby="cadastro-mp">
-        <h2 id="cadastro-mp" class="section-title">Categoria de Produtos</h2>
+        <h2 id="cadastro-mp" class="section-title">Categoria de Categoria</h2>
         <form action="../../FUNCAO/fcadastro_categoria.php" method="POST" class="form form-cadastro">
           <fieldset class="fieldset">
-            <legend class="legend">Informações da categoria de produtos</legend>
+            <legend class="legend">Informações da Categoria</legend>
             <div class="form-group">
               <label for="nome_cat">Nome da Categoria:</label>
               <input type="text" id="nome_cat" name="nome_cat" required>
@@ -111,10 +110,10 @@ $nomeAdmin = 'Administrador';
       </form>
       <!-- Seção Deletar -->
       <section class="section section-deletar" aria-labelledby="deletar-mp">
-        <h2 id="deletar-mp" class="section-title">Deletar Categoria de Produtos</h2>
+        <h2 id="deletar-mp" class="section-title">Deletar Categoria </h2>
         <form action="../../FUNCAO/fcadastro_categoria.php" method="GET" class="form form-deletar">
           <fieldset class="fieldset">
-            <legend class="legend">Selecione a Categoria de Produto para Excluir</legend>
+            <legend class="legend">Selecione a Categoria para Excluir</legend>
             <div class="form-group">
               <label for="delete_id">ID da Categoria a ser deletada:</label>
               <select id="delete_id" name="delete_id" required>
@@ -136,39 +135,41 @@ $nomeAdmin = 'Administrador';
       </section>
 
       <!-- Seção Listar -->
-      <section class="section section-listar" aria-labelledby="listar-mp">
-        <h2 id="listar-mp" class="section-title">Todas as Categorias de Produtos</h2>
+      <section class="section section-listar" aria-labelledby="listar-categoria">
+        <h2 id="listar-categoria" class="section-title">Todas as Categorias</h2>
         <div class="table-container">
           <table class="table table-bordered table-striped table-hover">
             <thead class="table-primary">
-              <table border="1" style="margin-top:20px;">
-                <tr>
-                  <th>ID</th>
-                  <th>Nome da Categoria</th>
-                  <th>Descrição</th>
-                </tr>
-                </th ead>
-                <tbody>
-                  <?php
-                  require_once '../../DADOS/config.php';
-                  $todas = $conexao->query("SELECT * FROM categoria");
-                  if ($todas->num_rows > 0) {
-                    while ($row = $todas->fetch_assoc()) {
-                      echo "<tr>";
-                      echo "<td>" . $row['id_cat'] . "</td>";
-                      echo "<td>" . $row['nome_cat'] . "</td>";
-                      echo "<td>" . $row['descricao'] . "</td>";
-                      echo "</tr>";
-                    }
-                  } else {
-                    echo "<tr><td colspan='3'>Nenhuma categoria encontrada.</td></tr>";
-                  }
-                  ?>
-              </table>
-              </tbody>
+              <tr>
+                <th>ID</th>
+                <th>Nome da Categoria</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              require_once '../../DADOS/config.php';
+              $todas = $conexao->query("SELECT * FROM categoria");
+
+              if ($todas->num_rows > 0) {
+                while ($row = $todas->fetch_assoc()) {
+                  echo "<tr>
+                    <td>{$row['id_cat']}</td>
+                    <td>{$row['nome_cat']}</td>
+                    <td>{$row['descricao']}</td>
+                  </tr>";
+                }
+              } else {
+                echo "<tr><td colspan='3'>Nenhuma categoria encontrada.</td></tr>";
+              }
+
+              $conexao->close();
+              ?>
+            </tbody>
           </table>
         </div>
       </section>
+
     </div>
   </main>
 
