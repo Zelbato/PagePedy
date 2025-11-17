@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,34 +28,35 @@
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <!--Font Awesome-->
-    <title>Document</title>
- <link rel="stylesheet" href="../../public/assets/css/login.css"><!--IMPORTANTE -->
+    <title>Login Usuário</title>
+    <link rel="icon" type="image/png" href="../../public/assets/img/logoOficialTransparentRecortada.png">
+    <link rel="stylesheet" href="../../public/assets/css/login.css"><!--IMPORTANTE -->
 </head>
 
 <body>
 
     <section class="Login-container">
-           <div class="login_usuario_info">
+        <div class="login_usuario_info">
             <h2>Bem-vindo à Pedy<span>Açaí</span></h2>
             <img src="../../public/assets/img/pedyacai.png" alt="acai" class="img-info">
             <p>Cadastre-se e aproveite o melhor do sabor artesanal.</p>
         </div>
 
         <div class="Login-form">
-        <form action="../FUNCAO/flogin_usuario.php" method="POST" class="Formulario_Login">
-        <h2>Login de Usuário</h2>
-        <label for="nome">Nome</label>
-        <input type="nome" id="nome" name="nome" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required>
-        
-        <button type="submit">Entrar</button>
-    </form>
-</div>
+            <form action="../FUNCAO/flogin_usuario.php" method="POST" class="Formulario_Login">
+                <h2>Login de Usuário</h2>
+                <label for="nome">Nome</label>
+                <input type="nome" id="nome" name="nome" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
     </section>
 
 </body>

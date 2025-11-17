@@ -1,6 +1,5 @@
 @import '../variables.css';
 /*Import Google Fonts*/
-
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
 
@@ -320,10 +319,11 @@ img {
     }
 }
 
+
 .main-content {
     width: 90%;
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 120px auto 30px;
     display: flex;
     gap: 30px;
 }
