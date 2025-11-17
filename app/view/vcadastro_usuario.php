@@ -28,8 +28,9 @@
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <!--Font Awesome-->
+    <link rel="icon" type="image/png" href="../../public/assets/img/logoOficialTransparentRecortada.png">
     <link rel="stylesheet" href="/PAGEPEDY/public/assets/css/cadastro.css"><!--IMPORTANTE -->
-    <title>Pagina Principal</title>
+    <title>Cadastro Usuário</title>
 </head>
 
 <body>
@@ -91,4 +92,3 @@
 </body>
 
 </html>
-

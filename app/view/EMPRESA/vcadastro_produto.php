@@ -1,7 +1,22 @@
+<?php
+require_once '../../../app/DADOS/config.php';
+
+// Consulta para pegar o admin
+$stmt = $conexao->prepare("SELECT nome FROM usuario WHERE acesso = 2 LIMIT 1");
+$stmt->execute();
+$stmt->bind_result($nomeAdmin);
+$stmt->fetch();
+$stmt->close();
+
+// Fallback caso não encontre
+$nomeAdmin = 'Administrador';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
+  <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!--Icones Bootstrap-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -26,41 +41,41 @@
   <!--Font Awesome-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <!--Font Awesome-->
-  <title>Document</title>
+  <title>PedyAçaí - Cadastro Produto</title>
+  <link rel="icon" type="image/png" href="../../../public/assets/img/logoOficialTransparentRecortada.png">
   <link rel="stylesheet" href="../../../public/assets/css/EMPRESA/cadastro_produto.css"><!--IMPORTANTE -->
-  <meta charset="UTF-8">
-  <title>Gerenciar Produtos</title>
 </head>
 
 <body>
   <!-- Header -->
-  <header class="header" role="banner">
+  <header id="header" class="header" role="banner">
     <nav class="navbar section-content">
-      <a href="home.php" class="nav-logo">
+      <a href="home_adm.php" class="nav-logo" style="display: flex; align-items: center; gap: 10px;">
         <img src="../../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
-        <!-- <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2> -->
+        <!-- <span class="painel-texto">Painel Administrativo</span> -->
       </a>
       <ul class="nav-menu">
         <button id="menuCloseBtn" class="fas fa-times"></button>
-        <li class="nav-item"><a href="home.php" class="nav-link primary">Inicio</a></li>
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link">Cardápio<i class="fa-solid fa-chevron-down"></i></a>
-          <ul class="dropdown-menu">
-            <li class="nav-ms-link"><a href="vcardapio.php#acai" class="nav-link">Açaí</a></li>
-            <li class="nav-ms-link"><a href="vcardapio.php#sorvete" class="nav-link">Sorvetes</a></li>
-            <li class="nav-ms-link"><a href="vcardapio.php#milkshake" class="nav-link">Milk-shake</a></li>
-            <li class="nav-ms-link"><a href="vcardapio.php#balde" class="nav-link">Baldes</a></li>
-          </ul>
+        <span class="admin-nome"><span class="online"> ● </span>Painel: <?php echo $nomeAdmin; ?></span>
+        <span class="divider">&#x2502;</span>
+        <li class="nav-item">
+          <a href="home_adm.php" class="nav-link primary"> Inicio</a>
         </li>
-        <li class="nav-item"><a href="#" class="nav-link">Promoções</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Meus Pedidos</a></li>
-        <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        <li class="nav-item">
+          <a href="../vlogin_usuario.php" class="nav-link logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
+        </li>
+        <li class="nav-item">
+          <a href="vmeus_pedidos.php" class="nav-link"></a>
+        </li>
+        <!-- <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                </li> -->
       </ul>
       <button id="menuOpenBtn" class="fas fa-bars"></button>
     </nav>
   </header>
 
-    <div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;"></div>
+  <div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;"></div>
 
   <main class="main-content">
     <!-- Coluna de Botões -->
@@ -202,13 +217,13 @@
       </section>
 
 
-      <!-- Seção Listar -->
-      <section class="section section-listar" aria-labelledby="listar-mp">
-        <h2 id="listar-mp" class="section-title">Todos os produtos</h2>
+      <section class="section section-listar" aria-labelledby="listar-produtos">
+        <h2 id="listar-produtos" class="section-title">Todos os Produtos</h2>
         <div class="table-container">
           <table class="table table-bordered table-striped table-hover">
             <thead class="table-primary">
               <tr>
+                <th>ID</th>
                 <th>Imagem</th>
                 <th>Nome</th>
                 <th>Categoria</th>
@@ -219,23 +234,13 @@
             </thead>
             <tbody>
               <?php
-              $sql = "SELECT p.id_prod,p.img_prod, p.nome_prod, p.preco, p.descricao, p.data_cadastro, c.nome_cat 
-            FROM produto p 
-            JOIN categoria c ON p.categoria_id = c.id_cat
-            ORDER BY p.nome_prod ASC";
+              $sql = "SELECT p.id_prod, p.img_prod, p.nome_prod, p.preco, p.descricao, p.data_cadastro, c.nome_cat 
+                FROM produto p 
+                JOIN categoria c ON p.categoria_id = c.id_cat
+                ORDER BY p.nome_prod ASC";
               $res = $conexao->query($sql);
 
               if ($res->num_rows > 0) {
-                echo "<table border='1' cellpadding='5'>
-                <tr>
-                    <th>ID</th>
-                    <th>Imagem</th>
-                    <th>Nome</th>
-                    <th>Categoria</th>
-                    <th>Preço</th>
-                    <th>Descrição</th>
-                    <th>Data de Cadastro</th>
-                </tr>";
                 while ($row = $res->fetch_assoc()) {
                   $imgTag = !empty($row['img_prod']) ? "<img src='{$row['img_prod']}' width='60'>" : "—";
                   echo "<tr>
@@ -248,12 +253,10 @@
                     <td>{$row['data_cadastro']}</td>
                   </tr>";
                 }
-                echo "</table>";
               } else {
-                echo "<p>Nenhum produto cadastrado.</p>";
+                echo "<tr><td colspan='7'>Nenhum produto cadastrado.</td></tr>";
               }
               ?>
-
             </tbody>
           </table>
         </div>
