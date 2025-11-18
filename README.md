@@ -62,7 +62,7 @@ Alguns exemplos de telas do projeto:
 ---
 
 ### 🧾 Cadastro do Produto
-*Visualização simples e organizada das funções utilizadas pela empresa administradora.*
+*Cadastro, Edição, Exclusão e Visualização dos Produtos*
 ![Cadastro do Produto](public/assets/img/Dashborn/Cadastro-Produto.png)
 
 ## 🚀 Por Que o Pedy Açaí?
