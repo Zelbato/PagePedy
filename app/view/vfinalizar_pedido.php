@@ -52,7 +52,8 @@ if (!empty($acompanhamentos)) {
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <!--Font Awesome-->
-    <title>Finalizar Pedido</title>
+    <title>PedyAçaí - Finalizar Pedido</title>
+        <link rel="icon" type="image/png" href="../../public/assets/img/logoOficialTransparentRecortada.png">
     <link rel="stylesheet" href="../../public/assets/css/finalizar_pedido.css">
 </head>
 
