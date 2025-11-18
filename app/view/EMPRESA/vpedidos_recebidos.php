@@ -80,6 +80,8 @@ $nomeAdmin = 'Administrador';
         </nav>
     </header>
 
+    <div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;"></div>
+
     <main class="main-content">
         <section class="section section-listar" aria-labelledby="listar-pedidos">
             <h1 id="listar-pedidos">Pedidos Recebidos</h1>
@@ -115,10 +117,10 @@ $nomeAdmin = 'Administrador';
                 <form method='POST' class='form-inline update-form'>
                     <input type='hidden' name='id_pedi' value='{$row['id_pedi']}'>
                     <select name='novo_status'>
-                        <option value='preparando'>Preparando</option>
-                        <option value='a caminho'>A caminho</option>
-                        <option value='entregue'>Entregue</option>
-                        <option value='cancelado'>Cancelado</option>
+                        <option classe='update-form' value='preparando'>Preparando</option>
+                        <option classe='update-form' value='a caminho'>A caminho</option>
+                        <option classe='update-form' value='entregue'>Entregue</option>
+                        <option classe='update-form' value='cancelado'>Cancelado</option>
                     </select>
                     <button type='submit'>Atualizar</button>
                 </form>
@@ -173,7 +175,7 @@ $nomeAdmin = 'Administrador';
     <script src="../../../public/assets/js/script.js"></script>
     <script src="../../../public/assets/js/pedidoRecebido.js"></script>
 
-    
+
     <script>
         // Alterna seções ao clicar nos botões
         const botoes = document.querySelectorAll('.actions-bar button');
@@ -191,7 +193,6 @@ $nomeAdmin = 'Administrador';
         });
     </script>
 
-    <div class="toast-container" id="toast-container"></div>
 
 
 </body>

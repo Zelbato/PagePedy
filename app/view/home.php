@@ -30,7 +30,7 @@
     <!--Font Awesome-->
     <link rel="icon" type="image/png" href="../../public/assets/img/logoOficialTransparentRecortada.png">
     <link rel="stylesheet" href="../../public/assets/css/home.css">
-    <title>PedyAçaí</title>
+    <title>PedyAçaí - Principal </title>
 </head>
 
 <body>
