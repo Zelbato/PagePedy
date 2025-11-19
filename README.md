@@ -39,18 +39,31 @@ Alguns exemplos de telas do projeto:
 
 ### 🏠 Tela Inicial
 *Interface moderna com destaque para os principais produtos e promoções.*
+![Tela Inicial](public/assets/img/Dashborn/Tela-Inicial.png)
 
 ---
 
 ### 🍧 Montagem do Açaí
 *Monte seu açaí do seu jeito: escolha o tamanho, adicione frutas, caldas e toppings!*
+![Montagem do Açaí](public/assets/img/Dashborn/Montagem-Acai.png)
 
 ---
 
 ### 🧾 Painel de Pedidos
 *Visualização simples e organizada dos pedidos em andamento, status e tempo estimado.*
+![Painel de Pedidosl](public/assets/img/Dashborn/Meus-Pedidos.png)
 
 ---
+
+### 🧾 Painel do Administrador
+*Visualização simples e organizada das funções utilizadas pela empresa administradora.*
+![Painel do Administrador](public/assets/img/Dashborn/Painel-adm.png)
+
+---
+
+### 🧾 Cadastro do Produto
+*Cadastro, Edição, Exclusão e Visualização dos Produtos*
+![Cadastro do Produto](public/assets/img/Dashborn/Cadastro-Produto.png)
 
 ## 🚀 Por Que o Pedy Açaí?
 
