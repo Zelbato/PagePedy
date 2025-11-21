@@ -669,46 +669,140 @@ button.btnAtualiza:hover {
     }
 }
 
-
-/* Modal */
+/* ===================== MODAL OVERLAY ===================== */
 #modalPedido {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.788);
+    background: rgba(0, 0, 0, 0.35);
+    /* leve escurecimento */
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 99999;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
 }
 
-#modalContent {
+/* ===================== CONTEÚDO ===================== */
+.modal-content {
+    width: 95%;
+    max-width: 650px;
     background: var(--branco);
-    width: 90%;
-    max-width: 550px;
-    padding: 25px;
-    border-radius: 12px;
-    animation: fadeIn .3s;
+    border-radius: 20px;
+    padding: 30px 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    font-family: var(--font);
+    color: var(--roxo-escuro);
+    animation: zoomIn 0.3s ease;
+}
+
+/* ===================== HEADER ===================== */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--roxo-escuro);
+    letter-spacing: 0.5px;
 }
 
 #closeModalBtn {
-    float: right;
-    color: var(--vermelho);
+    background: var(--vermelho);
+    border: none;
+    color: var(--branco);
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 50px;
-    font-weight: bold;
+    font-weight: 600;
+    transition: 0.2s;
 }
 
-@keyframes fadeIn {
+#closeModalBtn:hover {
+    background: var(--vermelhoEscuro);
+}
+
+#modalBody {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+/* Scrollbar personalizada */
+#modalBody::-webkit-scrollbar {
+    width: 6px;
+}
+
+#modalBody::-webkit-scrollbar-thumb {
+    background: var(--roxoclaro);
+    border-radius: 10px;
+}
+
+#modalBody::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#modalBody p {
+    margin: 6px 0;
+    font-size: 1.05rem;
+    color: var(--cinzaEscuro);
+}
+
+#modalBody p b {
+    color: var(--roxo-escuro);
+}
+
+/* Títulos das seções */
+#modalBody h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: var(--roxoclaro);
+    border-bottom: 1px dashed var(--MeioTrnsparent);
+    padding-bottom: 4px;
+}
+
+#modalBody ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#modalBody li {
+    background: var(--MeioTrnsparent);
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--roxo-escuro);
+    transition: 0.2s;
+}
+
+#modalBody .total {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--verdeEscuro);
+    text-align: right;
+}
+
+@keyframes zoomIn {
     from {
+        transform: scale(0.9);
         opacity: 0;
-        transform: scale(.9);
     }
 
     to {
-        opacity: 1;
         transform: scale(1);
+        opacity: 1;
     }
 }
