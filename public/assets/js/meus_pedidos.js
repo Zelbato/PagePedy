@@ -33,3 +33,72 @@ if (inputBusca && linhas) {
 
     atualizarContador(linhas.length - 1);
 }
+
+
+document.getElementById("year").textContent = new Date().getFullYear();
+// Abrir modal
+document.querySelectorAll(".visualizar-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const id = btn.dataset.id;
+        document.getElementById("modalPedido").style.display = "flex";
+
+        fetch("../FUNCAO/fdetalhes_pedido.php?id=" + id)
+            .then(res => res.json())
+            .then(data => {
+
+                // -------------------------
+                // 👉 FORMATAR DATA AQUI
+                // -------------------------
+                const dataFormatada = new Date(data.pedido.data_pedido)
+                    .toLocaleString('pt-BR', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        year: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+
+                let html = `
+                    <p><b>Nº Pedido:</b> ${data.pedido.id_pedi}</p>
+                    <p><b>Data:</b> ${dataFormatada}</p>
+                    <p><b>Status:</b> ${data.pedido.status_pedi}</p>
+                    <p><b>Destino:</b> ${data.pedido.destino}</p>
+
+                    <hr>
+
+                    <h3>Produto Base</h3>
+                    <p><b>${data.base.nome_prod}</b> — R$ ${parseFloat(data.base.preco).toFixed(2)}</p>
+
+                    <hr>
+
+                    <h3>Acompanhamentos</h3>
+                `;
+
+                if (data.acompanhamentos.length > 0) {
+                    html += "<ul>";
+                    data.acompanhamentos.forEach(a => {
+                        html += `<li>${a.nome_mp} — R$ ${parseFloat(a.preco_unitario).toFixed(2)}</li>`;
+                    });
+                    html += "</ul>";
+                } else {
+                    html += "<p>Nenhum acompanhamento.</p>";
+                }
+
+                html += `
+                    <hr>
+                    <h3>Total</h3>
+                    <p><b>R$ ${parseFloat(data.pedido.valor_total).toFixed(2)}</b></p>
+                `;
+
+                document.getElementById("modalBody").innerHTML = html;
+            })
+            .catch(() => {
+                document.getElementById("modalBody").innerHTML = "<p>Erro ao carregar detalhes.</p>";
+            });
+    });
+});
+
+// Fechar modal
+document.getElementById("closeModalBtn").onclick = () => {
+    document.getElementById("modalPedido").style.display = "none";
+};

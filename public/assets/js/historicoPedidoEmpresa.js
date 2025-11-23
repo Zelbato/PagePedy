@@ -1,0 +1,68 @@
+
+window.addEventListener('scroll', () => {
+    const textoPainel = document.querySelector('.painel-texto');
+
+    if (window.scrollY > 150) { // exemplo
+        textoPainel.style.color = '#fff';
+    } else {
+        textoPainel.style.color = '#300a33';
+    }
+});
+
+
+// Fechar modal
+document.getElementById("closeModalBtn").onclick = () => {
+    document.getElementById("modalPedido").style.display = "none";
+};
+
+// Botões visualizar
+document.querySelectorAll(".btn-visualizar").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const id = btn.dataset.id;
+
+        document.getElementById("modalPedido").style.display = "flex";
+
+        fetch("../../FUNCAO/fdetalhes_pedido.php?id=" + id)
+            .then(res => res.json())
+            .then(data => {
+
+                let html = `
+                    <p><b>Nº Pedido:</b> ${data.pedido.id_pedi}</p>
+                    <p><b>Cliente:</b> ${data.pedido.cliente}</p>
+                    <p><b>Data:</b> ${data.pedido.data_pedido}</p>
+                    <p><b>Status:</b> ${data.pedido.status_pedi}</p>
+                    <p><b>Destino:</b> ${data.pedido.destino}</p>
+
+                    <hr>
+
+                    <h3>Produto Base</h3>
+                    <p><b>${data.base.nome_prod}</b> - R$ ${parseFloat(data.base.preco).toFixed(2)}</p>
+
+                    <hr>
+
+                    <h3>Acompanhamentos</h3>
+                `;
+
+                if (data.acompanhamentos.length > 0) {
+                    html += "<ul>";
+                    data.acompanhamentos.forEach(a => {
+                        html += `<li>${a.nome_mp} — R$ ${parseFloat(a.preco_unitario).toFixed(2)}</li>`;
+                    });
+                    html += "</ul>";
+                } else {
+                    html += "<p>Nenhum acompanhamento.</p>";
+                }
+
+                html += `
+                    <hr>
+                    <h3>Total</h3>
+                    <p><b>R$ ${parseFloat(data.pedido.valor_total).toFixed(2)}</b></p>
+                `;
+
+                document.getElementById("modalBody").innerHTML = html;
+            })
+            .catch(() => {
+                document.getElementById("modalBody").innerHTML = "<p>Erro ao carregar detalhes.</p>";
+            });
+    });
+});

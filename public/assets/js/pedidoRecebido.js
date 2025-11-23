@@ -1,3 +1,30 @@
+<<<<<<< HEAD
+// Fecha modal
+document.getElementById('closeModalBtn').onclick = () => {
+    document.getElementById('modalPedido').style.display = "none";
+};
+
+// Abrir modal
+document.querySelectorAll(".abrir-modal").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const id = btn.dataset.id;
+        document.getElementById('modalPedido').style.display = "flex";
+
+        fetch("../../FUNCAO/fdetalhes_pedido.php?id=" + id)
+            .then(res => res.json())
+            .then(data => {
+
+                // 👉 FORMATAR DATA
+                const dataFormatada = new Date(data.pedido.data_pedido)
+                    .toLocaleString('pt-BR', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        year: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+
+=======
 
 window.addEventListener('scroll', () => {
     const textoPainel = document.querySelector('.painel-texto');
@@ -43,6 +70,7 @@ document.querySelectorAll(".abrir-modal").forEach(btn => {
                 const dataFormatada = formatarData(data.pedido.data_pedido);
 
                 // Monta o HTML do modal
+>>>>>>> 804c249a951128051edda86b4b0942f102df3d0a
                 let html = `
                     <p><b>Nº Pedido:</b> ${data.pedido.id_pedi}</p>
                     <p><b>Cliente:</b> ${data.pedido.cliente}</p>
@@ -71,10 +99,17 @@ document.querySelectorAll(".abrir-modal").forEach(btn => {
                 }
 
                 html += `
+<<<<<<< HEAD
+                    <hr>
+                    <h3>Total</h3>
+                    <p><b>R$ ${parseFloat(data.pedido.valor_total).toFixed(2)}</b></p>
+                `;
+=======
                    <hr>
             <h3>Total</h3>
             <p><b>R$ ${parseFloat(data.pedido.valor_total).toFixed(2)}</b></p>
         `;
+>>>>>>> 804c249a951128051edda86b4b0942f102df3d0a
 
                 document.getElementById("modalBody").innerHTML = html;
             })
