@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once '../FUNCAO/fhistorico_pedidos.php';
 ?>
 <!DOCTYPE html>
@@ -28,204 +28,129 @@ require_once '../FUNCAO/fhistorico_pedidos.php';
 
 <body>
 
-<header id="header" class="header" role="banner">
-    <nav class="navbar section-content">
-        <a href="home.php" class="nav-logo">
-            <img src="../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
-        </a>
+    <header id="header" class="header" role="banner">
+        <nav class="navbar section-content">
+            <a href="home.php" class="nav-logo">
+                <img src="../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
+            </a>
 
-        <ul class="nav-menu">
-            <button id="menuCloseBtn" class="fas fa-times"></button>
+            <ul class="nav-menu">
+                <button id="menuCloseBtn" class="fas fa-times"></button>
 
-            <li><a href="home.php" class="nav-link primary">Inicio</a></li>
-            <li><a href="vcardapio.php#categorias" class="nav-link">Cardápio</a></li>
-            <li><a href="vmeus_pedidos.php" class="nav-link">Meus Pedidos</a></li>
-            <li><a href="vhistorico_pedidos_usuario.php" class="nav-link">Histórico</a></li>
-        </ul>
+                <li><a href="home.php" class="nav-link primary">Inicio</a></li>
+                <li><a href="vcardapio.php#categorias" class="nav-link">Cardápio</a></li>
+                <li><a href="vmeus_pedidos.php" class="nav-link">Meus Pedidos</a></li>
+                <li><a href="vhistorico_pedidos_usuario.php" class="nav-link">Histórico</a></li>
+            </ul>
 
-        <button id="menuOpenBtn" class="fas fa-bars"></button>
-    </nav>
-</header>
+            <button id="menuOpenBtn" class="fas fa-bars"></button>
+        </nav>
+    </header>
 
-<main class="main">
-    <section class="historicoPedido">
-        <div class="historico-container">
-            <h1>Histórico de Pedidos</h1>
+    <main class="main">
+        <section class="historicoPedido">
+            <div class="historico-container">
+                <h1>Histórico de Pedidos</h1>
 
-            <div class="barra-pesquisa">
-                <input type="text" id="busca" placeholder="Buscar por data, status, destino...">
-            </div>
+                <div class="barra-pesquisa">
+                    <input type="text" id="busca" placeholder="Buscar por data, status, destino...">
+                </div>
 
-            <div class="tabela-wrapper">
-                <table id="tabelaPedidos">
-                    <thead>
-                        <tr>
-                            <th>Data</th>
-                            <th>Valor Total</th>
-                            <th>Status</th>
-                            <th>Destino</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
+                <div class="tabela-wrapper">
+                    <table id="tabelaPedidos">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Valor Total</th>
+                                <th>Status</th>
+                                <th>Destino</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        <?php
-                        if ($res && $res->num_rows > 0) {
-                            while ($row = $res->fetch_assoc()) {
+                        <tbody>
+                            <?php
+                            if ($res && $res->num_rows > 0) {
+                                while ($row = $res->fetch_assoc()) {
 
-                                $classe = "";
-                                if ($row['status_pedi'] === "entregue") {
-                                    $classe = "status-entregue";
-                                } elseif ($row['status_pedi'] === "cancelado") {
-                                    $classe = "status-cancelado";
-                                }
+                                    $classe = "";
+                                    if ($row['status_pedi'] === "entregue") {
+                                        $classe = "status-entregue";
+                                    } elseif ($row['status_pedi'] === "cancelado") {
+                                        $classe = "status-cancelado";
+                                    }
 
-                                echo "
+                                    echo "
                                 <tr>
-                                    <td data-label='Data'>".date('d/m/Y H:i', strtotime($row['data_pedido']))."</td>
-                                    <td data-label='Valor Total'>R$ ".number_format($row['valor_total'], 2, ',', '.')."</td>
+                                    <td data-label='Data'>" . date('d/m/Y H:i', strtotime($row['data_pedido'])) . "</td>
+                                    <td data-label='Valor Total'>R$ " . number_format($row['valor_total'], 2, ',', '.') . "</td>
                                     <td data-label='Status'><span class='$classe'>{$row['status_pedi']}</span></td>
-                                    <td data-label='Destino'>".htmlspecialchars($row['destino'])."</td>
+                                    <td data-label='Destino'>" . htmlspecialchars($row['destino']) . "</td>
                                     <td>
-                                        <button class='btn btn-primary btn-sm visualizarPedido' data-id='{$row['id_pedi']}'>
+                                        <button class='btn visualizarPedido' data-id='{$row['id_pedi']}'>
                                             Visualizar
                                         </button>
                                     </td>
                                 </tr>
                                 ";
+                                }
+                            } else {
+                                echo "<tr><td colspan='5' class='sem-pedidos'>Nenhum pedido encontrado.</td></tr>";
                             }
-                        } else {
-                            echo "<tr><td colspan='5' class='sem-pedidos'>Nenhum pedido encontrado.</td></tr>";
-                        }
-                        ?>
-                    </tbody>
-                </table>
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="modalPedido">
+        <div id="modalContent">
+            <span id="closeModalBtn">&times;</span>
+
+            <h2>Detalhes do Pedido</h2>
+            <div id="modalBody">Carregando...</div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
+                <p>Mais que sabor, uma explosão de energia em cada copo!</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="home.php">Início</a></li>
+                    <li><a href="vcardapio.php">Cardápio</a></li>
+                    <li><a href="vmeus_pedidos.php">Meus Pedidos</a></li>
+                    <li><a href="vhistorico_pedidos_usuario.php">Histórico</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
             </div>
         </div>
-    </section>
-</main>
 
-<!-- MODAL -->
-<div id="modalPedido" style="
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,.65);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 99999;">
-    
-    <div id="modalContent" style="
-        background: #fff;
-        width: 90%;
-        max-width: 500px;
-        padding: 20px;
-        border-radius: 12px;">
-        
-        <span id="closeModalBtn" style="
-            float:right;
-            cursor:pointer;
-            font-size:22px;
-            font-weight:bold;">&times;</span>
-
-        <h2>Detalhes do Pedido</h2>
-        <div id="modalBody">Carregando...</div>
-    </div>
-</div>
-
-
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-logo">
-            <img src="../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
-            <p>Mais que sabor, uma explosão de energia em cada copo!</p>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> PedyAçaí - Todos os direitos reservados.</p>
         </div>
+    </footer>
 
-        <div class="footer-links">
-            <h3>Links Rápidos</h3>
-            <ul>
-                <li><a href="home.php">Início</a></li>
-                <li><a href="vcardapio.php">Cardápio</a></li>
-                <li><a href="vmeus_pedidos.php">Meus Pedidos</a></li>
-                <li><a href="vhistorico_pedidos_usuario.php">Histórico</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-social">
-            <h3>Siga-nos</h3>
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> PedyAçaí - Todos os direitos reservados.</p>
-    </div>
-</footer>
-
-<script>
-// Fechar modal
-document.getElementById('closeModalBtn').onclick = () => {
-    document.getElementById('modalPedido').style.display = "none";
-};
-
-// Abrir modal
-document.querySelectorAll(".visualizarPedido").forEach(btn => {
-    btn.addEventListener("click", () => {
-        const id = btn.dataset.id;
-        document.getElementById('modalPedido').style.display = "flex";
-
-        fetch("../FUNCAO/fdetalhes_pedido.php?id=" + id)
-        .then(res => res.json())
-        .then(data => {
-
-            let html = `
-                <p><b>Nº Pedido:</b> ${data.pedido.id_pedi}</p>
-                <p><b>Data:</b> ${data.pedido.data_pedido}</p>
-                <p><b>Status:</b> ${data.pedido.status_pedi}</p>
-                <p><b>Destino:</b> ${data.pedido.destino}</p>
-
-                <hr>
-
-                <h3>Produto Base</h3>
-                <p><b>${data.base.nome_prod}</b> – R$ ${parseFloat(data.base.preco).toFixed(2)}</p>
-
-                <hr>
-
-                <h3>Acompanhamentos</h3>
-            `;
-
-            if (data.acompanhamentos.length > 0) {
-                html += "<ul>";
-                data.acompanhamentos.forEach(a => {
-                    html += `<li>${a.nome_mp} — R$ ${parseFloat(a.preco_unitario).toFixed(2)}</li>`;
-                });
-                html += "</ul>";
-            } else {
-                html += "<p>Nenhum acompanhamento.</p>";
-            }
-
-            html += `
-                <hr>
-                <h3>Total</h3>
-                <p><b>R$ ${parseFloat(data.pedido.valor_total).toFixed(2)}</b></p>
-            `;
-
-            document.getElementById("modalBody").innerHTML = html;
-        })
-        .catch(() => {
-            document.getElementById("modalBody").innerHTML = "<p>Erro ao carregar detalhes.</p>";
-        });
-    });
-});
-</script>
-
-<script src="../../public/assets/js/historico_pedido.js"></script>
-<script src="../../public/assets/js/script.js"></script>
+    <script src="../../public/assets/js/historico_pedido.js"></script>
+    <script src="../../public/assets/js/script.js"></script>
 
 </body>
+
 </html>

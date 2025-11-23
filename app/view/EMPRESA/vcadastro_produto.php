@@ -75,7 +75,7 @@ $nomeAdmin = 'Administrador';
     </nav>
   </header>
 
-  <div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;"></div>
+  <!-- <div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;"></div> -->
 
   <main class="main-content">
     <!-- Coluna de Botões -->
@@ -275,20 +275,17 @@ $nomeAdmin = 'Administrador';
       <div class="footer-links">
         <h3>Links Rápidos</h3>
         <ul>
-          <li><a href="home.php">Início</a></li>
-          <li><a href="vcardapio.php">Cardápio</a></li>
-          <li><a href="#">Promoções</a></li>
-          <li><a href="#">Meus Pedidos</a></li>
+          <li><a href="home_adm.php">Início</a></li>
+          <li><a href="../vlogin_usuario.php">Sair</a></li>
         </ul>
       </div>
 
       <div class="footer-social">
         <h3>Siga-nos</h3>
         <div class="social-icons">
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://www.instagram.com/pedy_acai?igsh=d25hN3lieHhreGRt"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/19xxsjamdX/"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://wa.me/5517997669330"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
     </div>
@@ -296,6 +293,9 @@ $nomeAdmin = 'Administrador';
     <div class="footer-bottom">
       <p>&copy; <span id="year"></span> PedyAçaí - Todos os direitos reservados.</p>
     </div>
+    <small class="creditos">
+      Desenvolvido por Calebe | Heitor & João Pedro © 2025
+    </small>
   </footer>
 
   <script src="../../../public/assets/js/script.js"></script>

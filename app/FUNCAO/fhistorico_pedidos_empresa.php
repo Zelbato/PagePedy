@@ -58,7 +58,7 @@ if ($res && $res->num_rows > 0) {
             <td><span class='$classe'>{$row['status_pedi']}</span></td>
             <td>" . htmlspecialchars($row['destino']) . "</td>
             <td>
-                <button class='btn-visualizar btn btn-primary btn-sm' data-id='{$row['id_pedi']}'>
+                <button class='btn-visualizar btn' data-id='{$row['id_pedi']}'>
                     Visualizar Pedido
                 </button>
             </td>

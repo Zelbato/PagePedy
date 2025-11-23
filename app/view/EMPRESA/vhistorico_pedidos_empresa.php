@@ -8,156 +8,134 @@ $stmt->bind_result($nomeAdmin);
 $stmt->fetch();
 $stmt->close();
 
-$nomeAdmin = $nomeAdmin ?: 'Administrador';
+$nomeAdmin = 'Administrador';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet" />
+    <!--Icones Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous" />
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     <title>PedyAçaí - Histórico Empresa</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="icon" type="image/png" href="../../../public/assets/img/logoOficialTransparentRecortada.png">
     <link rel="stylesheet" href="../../../public/assets/css/EMPRESA/historicoPedidos_empresa.css">
-
-    <style>
-        /* Modal */
-        #modalPedido {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,.65);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 99999;
-        }
-
-        #modalContent {
-            background: #fff;
-            width: 90%;
-            max-width: 550px;
-            padding: 25px;
-            border-radius: 12px;
-            animation: fadeIn .3s;
-        }
-
-        #closeModalBtn {
-            float: right;
-            cursor: pointer;
-            font-size: 22px;
-            font-weight: bold;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-    </style>
 </head>
 
 <body>
 
-<header class="header">
-    <nav class="navbar section-content">
-        <a href="home_adm.php" class="nav-logo" style="display: flex; align-items: center; gap: 10px;">
-            <img src="../../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo">
-        </a>
+    <header id="header" class="header" role="banner">
+        <nav class="navbar section-content">
+            <a href="home_adm.php" class="nav-logo" style="display: flex; align-items: center; gap: 10px;">
+                <img src="../../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo">
+            </a>
+            <ul class="nav-menu">
+                <button id="menuCloseBtn" class="fas fa-times"></button>
+                <span class="admin-nome"><span class="online"> ● </span>Painel: <?php echo $nomeAdmin; ?></span>
+                <span class="divider">&#x2502;</span>
+                <li class="nav-item">
+                    <a href="home_adm.php" class="nav-link primary"> Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../vlogin_usuario.php" class="nav-link logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                </li>
+                <li class="nav-item">
+                    <a href="vmeus_pedidos.php" class="nav-link"></a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                </li> -->
+            </ul>
+            <button id="menuOpenBtn" class="fas fa-bars"></button>
+        </nav>
+    </header>
 
-        <ul class="nav-menu">
-            <span class="admin-nome"><span class="online">●</span> Painel: <?= $nomeAdmin ?></span>
-            <li><a class="nav-link" href="home_adm.php">Início</a></li>
-            <li><a class="nav-link logout" href="../vlogin_usuario.php">Sair</a></li>
-        </ul>
-    </nav>
-</header>
+    <main class="historico-container">
+        <section class="section-historico">
+            <h1>Histórico de Pedidos - Empresa</h1>
 
-<main class="historico-container">
-    <section class="section-historico">
-        <h1>Histórico de Pedidos - Empresa</h1>
+            <div class="pedidos-container">
+                <?php include "../../FUNCAO/fhistorico_pedidos_empresa.php"; ?>
+            </div>
 
-        <div class="pedidos-container">
-            <?php include "../../FUNCAO/fhistorico_pedidos_empresa.php"; ?>
+            <a href="home_adm.php" class="voltar">
+                <i class="fa-solid fa-left-long"></i> Voltar
+            </a>
+        </section>
+    </main>
+
+    <!-- MODAL -->
+    <div id="modalPedido">
+        <div id="modalContent">
+            <span id="closeModalBtn">&times;</span>
+            <h2>Detalhes do Pedido</h2>
+            <div id="modalBody">Carregando...</div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../../../public/assets/img/logoOficialTransparentRecortada.png" class="img-logo" alt="Logo-PedyAçaí">
+                <!-- <h2 class="txt-logo">Pedy<span class="txt-gradient">Açaí</span></h2> -->
+                <p>Mais que sabor, uma explosão de energia em cada copo!</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="home_adm.php">Início</a></li>
+                    <li><a href="../vlogin_usuario.php">Sair</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/pedy_acai?igsh=d25hN3lieHhreGRt"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/19xxsjamdX/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://wa.me/5517997669330"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
         </div>
 
-        <a href="home_adm.php" class="voltar">
-            <i class="fa-solid fa-left-long"></i> Voltar
-        </a>
-    </section>
-</main>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> PedyAçaí - Todos os direitos reservados.</p>
+        </div>
+        <!-- <small class="creditos">
+            Desenvolvido por Calebe | Heitor & João Pedro © 2025
+        </small> -->
+    </footer>
 
-<!-- MODAL -->
-<div id="modalPedido">
-    <div id="modalContent">
-        <span id="closeModalBtn">&times;</span>
-        <h2>Detalhes do Pedido</h2>
-        <div id="modalBody">Carregando...</div>
-    </div>
-</div>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
-<script>
-// Fechar modal
-document.getElementById("closeModalBtn").onclick = () => {
-    document.getElementById("modalPedido").style.display = "none";
-};
 
-// Botões visualizar
-document.querySelectorAll(".btn-visualizar").forEach(btn => {
-    btn.addEventListener("click", () => {
-        const id = btn.dataset.id;
-
-        document.getElementById("modalPedido").style.display = "flex";
-
-        fetch("../../FUNCAO/fdetalhes_pedido.php?id=" + id)
-            .then(res => res.json())
-            .then(data => {
-
-                let html = `
-                    <p><b>Nº Pedido:</b> ${data.pedido.id_pedi}</p>
-                    <p><b>Cliente:</b> ${data.pedido.cliente}</p>
-                    <p><b>Data:</b> ${data.pedido.data_pedido}</p>
-                    <p><b>Status:</b> ${data.pedido.status_pedi}</p>
-                    <p><b>Destino:</b> ${data.pedido.destino}</p>
-
-                    <hr>
-
-                    <h3>Produto Base</h3>
-                    <p><b>${data.base.nome_prod}</b> - R$ ${parseFloat(data.base.preco).toFixed(2)}</p>
-
-                    <hr>
-
-                    <h3>Acompanhamentos</h3>
-                `;
-
-                if (data.acompanhamentos.length > 0) {
-                    html += "<ul>";
-                    data.acompanhamentos.forEach(a => {
-                        html += `<li>${a.nome_mp} — R$ ${parseFloat(a.preco_unitario).toFixed(2)}</li>`;
-                    });
-                    html += "</ul>";
-                } else {
-                    html += "<p>Nenhum acompanhamento.</p>";
-                }
-
-                html += `
-                    <hr>
-                    <h3>Total</h3>
-                    <p><b>R$ ${parseFloat(data.pedido.valor_total).toFixed(2)}</b></p>
-                `;
-
-                document.getElementById("modalBody").innerHTML = html;
-            })
-            .catch(() => {
-                document.getElementById("modalBody").innerHTML = "<p>Erro ao carregar detalhes.</p>";
-            });
-    });
-});
-</script>
-
-<script src="../../../public/assets/js/script.js"></script>
+    <script src="../../../public/assets/js/script.js"></script>
+    <script src="../../../public/assets/js/historicoPedidoEmpresa.js"></script>
 
 </body>
+
 </html>

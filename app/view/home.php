@@ -183,9 +183,9 @@
         <div class="footer-bottom">
             <p>&copy; <span id="year"></span> PedyAçaí - Todos os direitos reservados.</p>
         </div>
-        <small class="creditos">
+        <!-- <small class="creditos">
             Desenvolvido por Calebe | Heitor & João Pedro © 2025
-        </small>
+        </small> -->
     </footer>
 
     <script>
