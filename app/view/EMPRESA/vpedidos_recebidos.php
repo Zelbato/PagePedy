@@ -86,9 +86,9 @@ require_once '../../FUNCAO/fpedidos_recebidos.php';
                             <th>Nº Pedido</th>
                             <th>Cliente</th>
                             <th>Data</th>
-                            <th>Total</th>
+                            <!-- <th>Total</th> -->
                             <th>Status</th>
-                            <th>Destino</th>
+                            <!-- <th>Destino</th> -->
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -103,9 +103,9 @@ require_once '../../FUNCAO/fpedidos_recebidos.php';
 
                 <td>{$row['cliente']}</td>
                 <td>" . date('d/m/Y H:i', strtotime($row['data_pedido'])) . "</td>
-                <td>R$ " . number_format($row['valor_total'], 2, ',', '.') . "</td>
+               <!-- <td>R$ " . number_format($row['valor_total'], 2, ',', '.') . "</td> -->
                 <td>{$row['status_pedi']}</td>
-                <td>{$row['destino']}</td>
+              <!--  <td>{$row['destino']}</td> -->
 
                 <td>
 
@@ -142,12 +142,19 @@ require_once '../../FUNCAO/fpedidos_recebidos.php';
 
             <!-- MODAL -->
             <div id="modalPedido">
-                <div id="modalContent">
-                    <span id="closeModalBtn">&times;</span>
-                    <h2>Detalhes do Pedido</h2>
-                    <div id="modalBody">Carregando...</div>
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h2>Detalhes do Pedido</h2>
+                        <button id="closeModalBtn">X</button>
+                    </div>
+
+                    <div id="modalBody">
+                        <!-- conteúdo do JS -->
+                    </div>
                 </div>
             </div>
+
         </section>
     </main>
 
@@ -190,7 +197,7 @@ require_once '../../FUNCAO/fpedidos_recebidos.php';
     </script>
 
     <script src="../../../public/assets/js/pedidoRecebido.js"></script>
-    <script src="../../../public/assets/js/homeAdm.js"></script>
+    <script src="../../../public/assets/js/script.js"></script>
 
 </body>
 

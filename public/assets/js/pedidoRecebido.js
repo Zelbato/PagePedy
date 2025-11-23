@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Fecha modal
 document.getElementById('closeModalBtn').onclick = () => {
     document.getElementById('modalPedido').style.display = "none";
@@ -23,6 +24,53 @@ document.querySelectorAll(".abrir-modal").forEach(btn => {
                         minute: '2-digit'
                     });
 
+=======
+
+window.addEventListener('scroll', () => {
+    const textoPainel = document.querySelector('.painel-texto');
+
+    if (window.scrollY > 150) { // exemplo
+        textoPainel.style.color = '#fff';
+    } else {
+        textoPainel.style.color = '#300a33';
+    }
+});
+
+// Função para formatar a data em "dd/mm/aaaa HH:MM"
+function formatarData(dataStr) {
+    const dataObj = new Date(dataStr.replace(" ", "T")); // transforma "YYYY-MM-DD HH:MM:SS" em objeto Date
+    const dia = String(dataObj.getDate()).padStart(2, '0');
+    const mes = String(dataObj.getMonth() + 1).padStart(2, '0');
+    const ano = dataObj.getFullYear();
+    const hora = String(dataObj.getHours()).padStart(2, '0');
+    const minuto = String(dataObj.getMinutes()).padStart(2, '0');
+    return `${dia}/${mes}/${ano} ${hora}:${minuto}`;
+}
+
+// Fecha modal
+document.getElementById('closeModalBtn').onclick = () => {
+    document.getElementById('modalPedido').style.display = "none";
+};
+
+// Abrir modal
+document.querySelectorAll(".abrir-modal").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const id = btn.dataset.id;
+        const modal = document.getElementById('modalPedido');
+        const modalBody = document.getElementById("modalBody");
+
+        modal.style.display = "flex";
+        modalBody.innerHTML = "<p>Carregando detalhes...</p>";
+
+        fetch(`../../FUNCAO/fdetalhes_pedido.php?id=${id}`)
+            .then(res => res.json())
+            .then(data => {
+
+                // Formata a data
+                const dataFormatada = formatarData(data.pedido.data_pedido);
+
+                // Monta o HTML do modal
+>>>>>>> 804c249a951128051edda86b4b0942f102df3d0a
                 let html = `
                     <p><b>Nº Pedido:</b> ${data.pedido.id_pedi}</p>
                     <p><b>Cliente:</b> ${data.pedido.cliente}</p>
@@ -51,10 +99,17 @@ document.querySelectorAll(".abrir-modal").forEach(btn => {
                 }
 
                 html += `
+<<<<<<< HEAD
                     <hr>
                     <h3>Total</h3>
                     <p><b>R$ ${parseFloat(data.pedido.valor_total).toFixed(2)}</b></p>
                 `;
+=======
+                   <hr>
+            <h3>Total</h3>
+            <p><b>R$ ${parseFloat(data.pedido.valor_total).toFixed(2)}</b></p>
+        `;
+>>>>>>> 804c249a951128051edda86b4b0942f102df3d0a
 
                 document.getElementById("modalBody").innerHTML = html;
             })
